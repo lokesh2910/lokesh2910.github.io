@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restore Mahadevtoli Temple - Birsa Vahini Foundation</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- 1. Global Styles & Variables --- */
+        :root {
+            --color-teal-dark: #004d40; /* Deep Teal for backgrounds */
+            --color-orange-cta: #d84315; /* Warm Orange/Brown for CTAs */
+            --color-white: #ffffff;
+            --color-text-light: #f5f5f5;
+            --color-text-dark: #333333;
+            --color-info-bg: #e0f2f1; /* Light teal for info box */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-white);
+            color: var(--color-text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--color-teal-dark);
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        /* --- 2. Header & Footer (Mirrors existing site) --- */
+        .main-header, .main-footer {
+            background-color: #f8f9fa; /* Assuming a light header/footer like the ref site */
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #dee2e6;
+            text-align: center; /* Simplified for this example */
+        }
+        
+        .main-footer {
+            background-color: var(--color-teal-dark);
+            color: var(--color-text-light);
+            border-top: 1px solid #dee2e6;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .main-footer h3 {
+             color: var(--color-white);
+        }
+
+        /* --- 3. Hero Section --- */
+        #hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--color-white);
+            /* === REPLACE THIS IMAGE PATH === */
+            background: url('https://i.imgur.com/8m4Qk6q.jpeg') no-repeat center center/cover;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-teal-dark);
+            opacity: 0.75;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            color: var(--color-white);
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            background-color: var(--color-orange-cta);
+            color: var(--color-white);
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #bf360c; /* Darker orange */
+            transform: translateY(-3px);
+        }
+
+        /* --- 4. Story Section --- */
+        #story .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* --- 5. Restoration Plan Section --- */
+        #plan {
+            background-color: #f7f7f7;
+        }
+
+        .plan-boxes {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .plan-box {
+            background-color: var(--color-teal-dark);
+            color: var(--color-white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .plan-box .icon {
+            margin-bottom: 1.5rem;
+            height: 50px;
+            width: 50px;
+        }
+
+        .plan-box h3 {
+            color: var(--color-white);
+            font-size: 1.5rem;
+        }
+
+        /* --- 6. Donate Section --- */
+        #donate .container {
+            text-align: center;
+        }
+        
+        .donation-methods {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+            text-align: left;
+        }
+        
+        .donation-column {
+            padding: 2rem;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+        }
+
+        .donation-column h3 {
+            border-bottom: 2px solid var(--color-orange-cta);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .qr-code img {
+            max-width: 250px;
+            width: 100%;
+            margin: 1rem auto;
+            display: block;
+            border-radius: 10px;
+        }
+        
+        .bank-details table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .bank-details td {
+            padding: 0.8rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .bank-details td:first-child {
+            font-weight: 600;
+            width: 40%;
+        }
+        
+        .info-box {
+            background-color: var(--color-info-bg);
+            border-left: 5px solid var(--color-orange-cta);
+            padding: 1.5rem;
+            margin-top: 3rem;
+            border-radius: 0 8px 8px 0;
+            text-align: left;
+        }
+
+        /* --- 7. Responsive Design --- */
+        @media (min-width: 768px) {
+            h1 { font-size: 3.5rem; }
+            #story .container { grid-template-columns: 1fr 1fr; }
+            .plan-boxes { grid-template-columns: repeat(3, 1fr); }
+            .donation-methods { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (min-width: 1024px) {
+            .hero-content h1 { font-size: 4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <h2>Birsa Vahini Foundation</h2>
+    </header>
+
+    <main>
+
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Revive Our Ancestral Legacy: Restore the 3000-Year-Old Mahadevtoli Temple</h1>
+                <p>This sacred site of ancient Shivlings is neglected. Join us as we seek to become the instrument of its restoration.</p>
+                <a href="#donate" class="cta-button" id="hero-cta-button">Contribute to the Restoration</a>
+            </div>
+        </section>
+
+        <section id="story">
+            <div class="container">
+                <div class="gallery">
+                    <img src="https://i.imgur.com/2s45V6o.jpeg" alt="Mahadevtoli Temple Ruins">
+                    <img src="https://i.imgur.com/kYq3t6f.jpeg" alt="Ancient Carvings at the site">
+                    <img src="https://i.imgur.com/k9vY5cI.jpeg" alt="Scattered artifacts">
+                    <img src="https://i.imgur.com/Pq9Fp2V.jpeg" alt="Weathered Shivling">
+                </div>
+                <div class="story-text">
+                    <h2>Centuries of History, Weathered by Time's Neglect</h2>
+                    <p>Deep within Mahadevtoli village lie the silent remnants of a once-thriving temple. These sacred stones, carved by our ancestors over 3,000 years ago, have withstood the test of time. Today, this holy site is neglected, its priceless artifacts scattered and unprotected.</p>
+                    <p>Without our immediate intervention, this invaluable link to our heritage could be lost forever. Birsa Vahini Foundation has pledged to protect and restore this site, and we need your support to make it happen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="plan">
+            <div class="container">
+                <h2 style="text-align: center;">Our Phased Restoration Plan</h2>
+                <div class="plan-boxes">
+                    <div class="plan-box">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                        <h3>Site Reclamation & Protection</h3>
+                        <p>Our first step is to secure the area to prevent further damage, clear overgrowth, and carefully catalog every artifact.</p>
+                    </div>
+                    <div class="plan-box">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                        <h3>Archaeological Assessment</h3>
+                        <p>We will work with archaeologists and historians to study the site and ensure the restoration is historically accurate and respectful.</p>
+                    </div>
+                    <div class="plan-box">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+                        <h3>Restoration & Rebuilding</h3>
+                        <p>Under expert supervision, skilled artisans will begin the painstaking process of cleaning, repairing, and reassembling the temple structure to restore its sanctity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="donate">
+            <div class="container">
+                <h2>Be a Part of This Sacred Endeavor</h2>
+                <div class="donation-methods">
+                    <div class="donation-column">
+                        <h3>Donate via UPI</h3>
+                        <div class="qr-code">
+                             <img src="https://i.imgur.com/2s4P60n.png" alt="PhonePe QR Code for Donation">
+                        </div>
+                        <p>Scan the code with any UPI app (PhonePe, GPay, Paytm, etc.) to contribute instantly.</p>
+                    </div>
+                    <div class="donation-column">
+                        <h3>Direct Bank Transfer (NEFT/IMPS)</h3>
+                        <div class="bank-details">
+                            <table>
+                                <tr><td>Bank Name:</td><td>HDFC BANK</td></tr>
+                                <tr><td>Beneficiary Name:</td><td>Birsa Vahini Foundation</td></tr>
+                                <tr><td>Account Type:</td><td>Current</td></tr>
+                                <tr><td>Account Number:</td><td>50200096789240</td></tr>
+                                <tr><td>IFSC Code:</td><td>HDFC0005770</td></tr>
+                                <tr><td>MICR Code:</td><td>834240014</td></tr>
+                                <tr><td>Branch Code:</td><td>834240014</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <p><strong>For 80G Tax Receipt:</strong> After donating, please email a screenshot of your transaction, your Full Name, and your PAN number to <strong>info@birsavahinifoundation.org</strong>. This is required to issue your tax exemption certificate.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <h3>Birsa Vahini Foundation</h3>
+        <p>6C, Block B, ASSRI HERITAGE, HESAG, HATIA, RANCHI, JHARKHAND – 834003</p>
+    </footer>
+
+    <script>
+        document.getElementById('hero-cta-button').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+</body>
+</html>

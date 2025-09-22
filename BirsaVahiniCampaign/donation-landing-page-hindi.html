@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="hi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>महादेवटोली मंदिर जीर्णोद्धार - बिरसा वाहिनी फाउंडेशन</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* --- 1. Global Styles & Variables --- */
+      :root {
+        --color-teal-dark: #004d40; /* Deep Teal */
+        --color-orange-cta: #d84315; /* Warm Orange/Brown for CTAs */
+        --color-yellow-accent: #ffc107; /* Yellow Accent */
+        --color-white: #ffffff;
+        --color-text-light: #f5f5f5;
+        --color-text-dark: #333333;
+        --color-info-bg: #e0f2f1; /* Light teal for info box */
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--color-white);
+        color: var(--color-text-dark);
+        line-height: 1.8; /* Increased for better Hindi readability */
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: var(--color-teal-dark);
+      }
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      /* --- 2. Header & Footer --- */
+      .main-header {
+        background-color: #d84315; /* Changed to warm orange/brown */
+        padding: 1rem 2rem;
+        border-bottom: 1px solid #a03112; /* Darker border for contrast */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+
+      .logo img {
+        max-height: 60px; /* Adjust as needed */
+      }
+
+      .main-footer {
+        background-color: var(--color-teal-dark);
+        color: var(--color-text-light);
+        border-top: 1px solid #dee2e6;
+        padding: 2rem;
+        text-align: center;
+      }
+
+      .main-footer h3 {
+        color: var(--color-white);
+      }
+
+      /* --- 3. Hero Section --- */
+      #hero {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--color-white);
+        /* === UPDATED IMAGE PATH === */
+        background: url("images/hero-background.jpg") no-repeat center
+          center/cover;
+      }
+
+      #hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-teal-dark);
+        opacity: 0.75;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        padding: 2rem;
+      }
+
+      .hero-content h1 {
+        font-size: 3rem;
+        color: var(--color-white);
+        margin-bottom: 1rem;
+        line-height: 1.3;
+      }
+
+      .hero-content p {
+        font-size: 1.25rem;
+        margin-bottom: 2.5rem;
+        font-weight: 400;
+      }
+
+      .cta-button {
+        background-color: var(--color-orange-cta);
+        color: var(--color-white);
+        padding: 1rem 3rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 600;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .cta-button:hover {
+        background-color: #bf360c; /* Darker orange */
+        transform: translateY(-3px);
+      }
+
+      /* --- 4. Story Section --- */
+      #story .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .gallery img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+        transition: transform 0.3s ease;
+      }
+
+      .gallery img:hover {
+        transform: scale(1.05);
+      }
+
+      /* --- 5. Restoration Plan Section --- */
+      #plan {
+        background-color: #f7f7f7;
+      }
+
+      .plan-boxes {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .plan-box {
+        background-color: var(--color-teal-dark);
+        color: var(--color-white);
+        padding: 2.5rem;
+        border-radius: 15px;
+        text-align: center;
+      }
+
+      .plan-box .icon {
+        margin-bottom: 1.5rem;
+        height: 50px;
+        width: 50px;
+        fill: var(--color-yellow-accent); /* Yellow accent for icons */
+      }
+
+      .plan-box h3 {
+        color: var(--color-white);
+        font-size: 1.5rem;
+      }
+
+      /* --- 6. Donate Section --- */
+      #donate .container {
+        text-align: center;
+      }
+
+      .donation-methods {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        margin-top: 2rem;
+        text-align: left;
+      }
+
+      .donation-column {
+        padding: 2rem;
+        border: 1px solid #ddd;
+        border-radius: 15px;
+      }
+
+      .donation-column h3 {
+        border-bottom: 2px solid var(--color-orange-cta);
+        padding-bottom: 0.5rem;
+        display: inline-block;
+      }
+
+      .qr-code img {
+        max-width: 250px;
+        width: 100%;
+        margin: 1rem auto;
+        display: block;
+        border-radius: 10px;
+      }
+
+      .bank-details table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1rem;
+      }
+
+      .bank-details td {
+        padding: 0.8rem;
+        border-bottom: 1px solid #eee;
+      }
+
+      .bank-details td:first-child {
+        font-weight: 600;
+        width: 40%;
+      }
+
+      .info-box {
+        background-color: var(--color-info-bg);
+        border-left: 5px solid var(--color-yellow-accent); /* Yellow accent border */
+        padding: 1.5rem;
+        margin-top: 3rem;
+        border-radius: 0 8px 8px 0;
+        text-align: left;
+      }
+
+      /* --- 7. Responsive Design --- */
+      @media (min-width: 768px) {
+        .main-header {
+          justify-content: flex-start;
+        }
+        h1 {
+          font-size: 3.5rem;
+        }
+        #story .container {
+          grid-template-columns: 1fr 1fr;
+        }
+        .plan-boxes {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .donation-methods {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .hero-content h1 {
+          font-size: 4rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="logo">
+        <img src="images/your-logo.png.png" alt="बिरसा वाहिनी फाउंडेशन लोगो" />
+      </div>
+    </header>
+
+    <main>
+      <section id="hero">
+        <div class="hero-content">
+          <h1>
+            हमारी पूर्वजों की धरोहर को पुनर्जीवित करें: 3000 वर्ष प्राचीन
+            महादेवटोली मंदिर का जीर्णोद्धार करें
+          </h1>
+          <p>
+            प्राचीन शिवलिंगों का यह पवित्र स्थल उपेक्षित है। इसके जीर्णोद्धार का
+            माध्यम बनने के हमारे प्रयास में शामिल हों।
+          </p>
+          <a href="#donate" class="cta-button" id="hero-cta-button"
+            >जीर्णोद्धार में योगदान दें</a
+          >
+        </div>
+      </section>
+
+      <section id="story">
+        <div class="container">
+          <div class="gallery">
+            <img
+              src="images/gallery-photo-1.jpg.jpeg"
+              alt="महादेवटोली मंदिर के खंडहर"
+            />
+            <img
+              src="images/gallery-photo-2.jpg.jpeg"
+              alt="स्थल पर प्राचीन नक्काशी"
+            />
+            <img
+              src="images/gallery-photo-3.jpg.jpeg"
+              alt="बिखरी हुई कलाकृतियाँ"
+            />
+            <img
+              src="images/gallery-photo-4.jpg.jpeg"
+              alt="जीर्ण-शीर्ण शिवलिंग"
+            />
+          </div>
+          <div class="story-text">
+            <h2>सदियों का इतिहास, समय की उपेक्षा से प्रभावित</h2>
+            <p>
+              महादेवटोली गाँव की गहराई में एक समय के भव्य मंदिर के शांत अवशेष
+              स्थित हैं। 3,000 साल पहले हमारे पूर्वजों द्वारा तराशे गए ये पवित्र
+              पत्थर, समय की कसौटी पर खरे उतरे हैं। आज, यह पवित्र स्थल उपेक्षित
+              है, इसकी अमूल्य कलाकृतियाँ बिखरी हुई और असुरक्षित हैं।
+            </p>
+            <p>
+              हमारे तत्काल हस्तक्षेप के बिना, हमारी विरासत से यह अमूल्य जुड़ाव
+              हमेशा के लिए खो सकता है। बिरसा वाहिनी फाउंडेशन ने इस स्थल की रक्षा
+              और जीर्णोद्धार का संकल्प लिया है, और इसे साकार करने के लिए हमें
+              आपके समर्थन की आवश्यकता है।
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="plan">
+        <div class="container">
+          <h2 style="text-align: center">हमारी चरणबद्ध जीर्णोद्धार योजना</h2>
+          <div class="plan-boxes">
+            <div class="plan-box">
+              <svg
+                class="icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"
+                />
+              </svg>
+              <h3>स्थल सुधार एवं संरक्षण</h3>
+              <p>
+                हमारा पहला कदम आगे के नुकसान को रोकने के लिए क्षेत्र को सुरक्षित
+                करना, झाड़ियों को साफ करना और प्रत्येक कलाकृति को सावधानीपूर्वक
+                सूचीबद्ध करना है।
+              </p>
+            </div>
+            <div class="plan-box">
+              <svg
+                class="icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                />
+              </svg>
+              <h3>पुरातात्विक मूल्यांकन</h3>
+              <p>
+                हम पुरातत्वविदों और इतिहासकारों के साथ मिलकर साइट का अध्ययन
+                करेंगे ताकि यह सुनिश्चित हो सके कि जीर्णोद्धार ऐतिहासिक रूप से
+                सटीक और सम्मानजनक हो।
+              </p>
+            </div>
+            <div class="plan-box">
+              <svg
+                class="icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
+              </svg>
+              <h3>जीर्णोद्धार एवं पुनर्निर्माण</h3>
+              <p>
+                विशेषज्ञ पर्यवेक्षण के तहत, कुशल कारीगर मंदिर की पवित्रता को
+                बहाल करने के लिए उसकी संरचना की सफाई, मरम्मत और पुनः संयोजन की
+                कठिन प्रक्रिया शुरू करेंगे।
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="donate">
+        <div class="container">
+          <h2>इस पवित्र प्रयास का हिस्सा बनें</h2>
+          <div class="donation-methods">
+            <div class="donation-column">
+              <h3>UPI द्वारा दान करें</h3>
+              <div class="qr-code">
+                <img
+                  src="images/qr-code.png.png"
+                  alt="दान के लिए PhonePe QR कोड"
+                />
+              </div>
+              <p>
+                तुरंत योगदान देने के लिए किसी भी UPI ऐप (PhonePe, GPay, Paytm,
+                आदि) से कोड स्कैन करें।
+              </p>
+            </div>
+            <div class="donation-column">
+              <h3>सीधे बैंक ट्रांसफर (NEFT/IMPS)</h3>
+              <div class="bank-details">
+                <table>
+                  <tr>
+                    <td>बैंक का नाम:</td>
+                    <td>HDFC BANK</td>
+                  </tr>
+                  <tr>
+                    <td>लाभार्थी का नाम:</td>
+                    <td>Birsa Vahini Foundation</td>
+                  </tr>
+                  <tr>
+                    <td>खाता प्रकार:</td>
+                    <td>Current</td>
+                  </tr>
+                  <tr>
+                    <td>खाता संख्या:</td>
+                    <td>50200096789240</td>
+                  </tr>
+                  <tr>
+                    <td>IFSC कोड:</td>
+                    <td>HDFC0005770</td>
+                  </tr>
+                  <tr>
+                    <td>MICR कोड:</td>
+                    <td>834240014</td>
+                  </tr>
+                  <tr>
+                    <td>शाखा कोड:</td>
+                    <td>834240014</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <p>
+              <strong>80G कर रसीद के लिए:</strong> दान करने के बाद, कृपया अपने
+              लेन-देन का स्क्रीनशॉट, अपना पूरा नाम, और अपना पैन नंबर हमें
+              <strong>info@birsavahinifoundation.org</strong> पर ईमेल करें। आपका
+              कर छूट प्रमाण पत्र जारी करने के लिए यह आवश्यक है।
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <h3>बिरसा वाहिनी फाउंडेशन</h3>
+      <p>
+        6C, Block B, ASSRI HERITAGE, HESAG, HATIA, RANCHI, JHARKHAND – 834003
+      </p>
+    </footer>
+
+    <script>
+      document
+        .getElementById("hero-cta-button")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+    </script>
+  </body>
+</html>
