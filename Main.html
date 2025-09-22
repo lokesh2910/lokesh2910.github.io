@@ -7,7 +7,6 @@
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    /* Global Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { 
       font-family: 'Poppins', sans-serif; 
@@ -26,19 +25,23 @@
     }
     header h1 { font-size: 3em; font-weight: 700; }
     header p { font-size: 1.2em; margin-top: 10px; opacity: 0.9; }
-    .social { margin-top: 20px; }
-    .social a { 
+
+    /* Buttons */
+    .btn { 
       display: inline-block; 
-      margin: 0 10px; 
-      padding: 10px 20px; 
-      background: white; 
-      color: #1e3a8a; 
-      border-radius: 25px; 
+      margin: 10px; 
+      padding: 12px 25px; 
+      border-radius: 30px; 
       font-weight: bold; 
-      text-decoration: none;
-      transition: 0.3s ease;
+      text-decoration: none; 
+      transition: 0.3s ease; 
     }
-    .social a:hover { background: #1e3a8a; color: white; }
+    .btn-primary { background: white; color: #1e3a8a; }
+    .btn-primary:hover { background: #1e3a8a; color: white; }
+    .btn-resume { background: #3b82f6; color: white; }
+    .btn-resume:hover { background: white; color: #1e3a8a; border: 2px solid #1e3a8a; }
+
+    .social { margin-top: 20px; }
 
     /* Navigation */
     nav { 
@@ -84,11 +87,6 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.15); 
     }
 
-    ul { margin-left: 20px; }
-
-    /* Contact Section */
-    #contact p { margin: 8px 0; }
-
     /* Footer */
     footer { 
       background: #1e3a8a; 
@@ -113,9 +111,10 @@
     <h1>Lokesh Sandeep Aslekar</h1>
     <p>Computer Science Engineer | Aspiring Software Developer</p>
     <div class="social">
-      <a href="mailto:lokeshaslekar@gmail.com">Email</a>
-      <a href="https://www.linkedin.com/in/lokesh-aslekar-b22726242/" target="_blank">LinkedIn</a>
-      <a href="https://github.com/lokesh2910" target="_blank">GitHub</a>
+      <a href="mailto:lokeshaslekar@gmail.com" class="btn btn-primary">Email</a>
+      <a href="https://www.linkedin.com/in/lokesh-aslekar-b22726242/" target="_blank" class="btn btn-primary">LinkedIn</a>
+      <a href="https://github.com/lokesh2910" target="_blank" class="btn btn-primary">GitHub</a>
+      <a href="resume.pdf" download class="btn btn-resume">📄 Download Resume</a>
     </div>
   </header>
 
@@ -129,7 +128,7 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- Sections -->
+  <!-- Sections (same as before) -->
   <section id="objective">
     <h2>Career Objective</h2>
     <div class="card">
