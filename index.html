@@ -12,10 +12,10 @@
             font-family: 'Inter', sans-serif;
         }
         .glass-effect {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.4); /* Slightly less transparent for better readability on new bg */
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
         .scroll-reveal {
             opacity: 0;
@@ -28,7 +28,7 @@
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-slate-50 text-gray-800">
 
     <!-- Header -->
     <header class="fixed top-0 left-0 right-0 z-50 glass-effect">
@@ -69,40 +69,40 @@
         <section id="skills" class="py-20 scroll-reveal">
             <h2 class="text-4xl font-bold text-center mb-12">Technical Skills</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="skill-card text-center p-6 rounded-2xl glass-effect transform hover:-translate-y-2 transition-transform duration-300">
-                    <i data-lucide="code-2" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
+                <div class="skill-card text-center p-6 bg-white/60 rounded-2xl shadow-sm transform hover:-translate-y-2 transition-transform duration-300">
+                    <i data-lucide="code-2" class="mx-auto h-12 w-12 text-sky-500 mb-4"></i>
                     <h3 class="text-xl font-semibold mb-2">Programming Languages</h3>
                     <p>Python</p>
                     <p>Java</p>
                     <p>R</p>
                 </div>
-                <div class="skill-card text-center p-6 rounded-2xl glass-effect transform hover:-translate-y-2 transition-transform duration-300">
-                    <i data-lucide="database" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
+                <div class="skill-card text-center p-6 bg-white/60 rounded-2xl shadow-sm transform hover:-translate-y-2 transition-transform duration-300">
+                    <i data-lucide="database" class="mx-auto h-12 w-12 text-sky-500 mb-4"></i>
                     <h3 class="text-xl font-semibold mb-2">Databases</h3>
                     <p>MySQL</p>
                     <p>SQL</p>
                 </div>
-                <div class="skill-card text-center p-6 rounded-2xl glass-effect transform hover:-translate-y-2 transition-transform duration-300">
-                    <i data-lucide="bar-chart-3" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
+                <div class="skill-card text-center p-6 bg-white/60 rounded-2xl shadow-sm transform hover:-translate-y-2 transition-transform duration-300">
+                    <i data-lucide="bar-chart-3" class="mx-auto h-12 w-12 text-sky-500 mb-4"></i>
                     <h3 class="text-xl font-semibold mb-2">Data Visualization & BI</h3>
                     <p>Tableau</p>
                     <p>Power BI</p>
                 </div>
-                <div class="skill-card text-center p-6 rounded-2xl glass-effect transform hover:-translate-y-2 transition-transform duration-300">
-                    <i data-lucide="terminal-square" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
+                <div class="skill-card text-center p-6 bg-white/60 rounded-2xl shadow-sm transform hover:-translate-y-2 transition-transform duration-300">
+                    <i data-lucide="terminal-square" class="mx-auto h-12 w-12 text-sky-500 mb-4"></i>
                     <h3 class="text-xl font-semibold mb-2">Dev & Project Management</h3>
                     <p>VS Code</p>
                     <p>Jira</p>
                     <p>Brevo</p>
                 </div>
-                <div class="skill-card text-center p-6 rounded-2xl glass-effect transform hover:-translate-y-2 transition-transform duration-300">
-                    <i data-lucide="cloud-cog" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
+                <div class="skill-card text-center p-6 bg-white/60 rounded-2xl shadow-sm transform hover:-translate-y-2 transition-transform duration-300">
+                    <i data-lucide="cloud-cog" class="mx-auto h-12 w-12 text-sky-500 mb-4"></i>
                     <h3 class="text-xl font-semibold mb-2">Cloud & Web</h3>
                     <p>Cloud Technologies</p>
                     <p>HTML & CSS</p>
                 </div>
-                <div class="skill-card text-center p-6 rounded-2xl glass-effect transform hover:-translate-y-2 transition-transform duration-300">
-                    <i data-lucide="brain-circuit" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
+                <div class="skill-card text-center p-6 bg-white/60 rounded-2xl shadow-sm transform hover:-translate-y-2 transition-transform duration-300">
+                    <i data-lucide="brain-circuit" class="mx-auto h-12 w-12 text-sky-500 mb-4"></i>
                     <h3 class="text-xl font-semibold mb-2">Core Concepts</h3>
                     <p>Data Structures</p>
                     <p>Algorithms</p>
@@ -124,8 +124,8 @@
                         </div>
                         <p class="text-gray-600 mt-2">A comprehensive system to manage library operations, including book tracking, member management, and borrowing records. Built to streamline library processes.</p>
                         <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="tech-tag bg-gray-200 text-sm font-medium py-1 px-3 rounded-full">Java</span>
-                            <span class="tech-tag bg-gray-200 text-sm font-medium py-1 px-3 rounded-full">MySQL</span>
+                            <span class="tech-tag bg-slate-200 text-sm font-medium py-1 px-3 rounded-full">Java</span>
+                            <span class="tech-tag bg-slate-200 text-sm font-medium py-1 px-3 rounded-full">MySQL</span>
                         </div>
                     </div>
                 </div>
@@ -138,8 +138,8 @@
                         </div>
                         <p class="text-gray-600 mt-2">A project focusing on Digital Image Processing techniques to stitch multiple images together, creating a seamless panoramic view from overlapping photos.</p>
                         <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="tech-tag bg-gray-200 text-sm font-medium py-1 px-3 rounded-full">Python</span>
-                            <span class="tech-tag bg-gray-200 text-sm font-medium py-1 px-3 rounded-full">OpenCV</span>
+                            <span class="tech-tag bg-slate-200 text-sm font-medium py-1 px-3 rounded-full">Python</span>
+                            <span class="tech-tag bg-slate-200 text-sm font-medium py-1 px-3 rounded-full">OpenCV</span>
                         </div>
                     </div>
                 </div>
@@ -152,8 +152,8 @@
                         </div>
                         <p class="text-gray-600 mt-2">An ongoing project to develop a system that uses computer vision to detect and classify different types of waste, aiming to aid in automated recycling processes.</p>
                         <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="tech-tag bg-gray-200 text-sm font-medium py-1 px-3 rounded-full">Python</span>
-                            <span class="tech-tag bg-gray-200 text-sm font-medium py-1 px-3 rounded-full">AI/ML</span>
+                            <span class="tech-tag bg-slate-200 text-sm font-medium py-1 px-3 rounded-full">Python</span>
+                            <span class="tech-tag bg-slate-200 text-sm font-medium py-1 px-3 rounded-full">AI/ML</span>
                         </div>
                     </div>
                 </div>
@@ -163,9 +163,9 @@
         <!-- Internship Section -->
         <section id="internship" class="py-20 scroll-reveal">
              <h2 class="text-4xl font-bold text-center mb-12">Internship Experience</h2>
-             <div class="max-w-2xl mx-auto glass-effect rounded-2xl p-8">
+             <div class="max-w-2xl mx-auto bg-white/60 rounded-2xl p-8 shadow-sm">
                 <div class="flex items-start">
-                    <i data-lucide="briefcase" class="h-10 w-10 text-sky-400 mr-6 mt-1"></i>
+                    <i data-lucide="briefcase" class="h-10 w-10 text-sky-500 mr-6 mt-1 flex-shrink-0"></i>
                     <div>
                         <div class="flex justify-between items-center mb-1">
                              <h3 class="text-2xl font-bold">Python Internship</h3>
@@ -180,43 +180,49 @@
         <!-- Education Section -->
         <section id="education" class="py-20 scroll-reveal">
             <h2 class="text-4xl font-bold text-center mb-12">Education</h2>
-            <div class="max-w-3xl mx-auto relative">
+            <div class="max-w-3xl mx-auto relative pl-12 md:pl-0">
                 <!-- Vertical Line -->
-                <div class="absolute left-4 md:left-1/2 top-0 h-full w-0.5 bg-gray-300"></div>
+                <div class="absolute left-4 md:left-1/2 top-0 h-full w-0.5 bg-slate-300"></div>
                 
-                <!-- B.Tech -->
-                <div class="timeline-item mb-12 flex items-center w-full">
-                    <div class="order-1 md:w-1/2"></div>
-                    <div class="z-20 flex items-center order-1 bg-sky-500 shadow-xl w-8 h-8 rounded-full">
-                         <i data-lucide="graduation-cap" class="h-4 w-4 mx-auto text-white"></i>
+                <!-- Timeline Item: B.Tech -->
+                <div class="mb-12 relative flex items-center">
+                    <div class="hidden md:block md:w-1/2"></div>
+                    <div class="absolute md:relative left-[-30px] md:left-auto z-20">
+                        <div class="bg-sky-500 shadow-xl w-8 h-8 rounded-full flex items-center justify-center">
+                            <i data-lucide="graduation-cap" class="h-4 w-4 text-white"></i>
+                        </div>
                     </div>
-                    <div class="order-1 bg-white rounded-lg shadow-xl w-full md:w-1/2 p-6 ml-6 md:ml-0 md:mr-6 md:text-right">
+                    <div class="bg-white rounded-lg shadow-md w-full md:w-1/2 p-6">
                         <p class="text-sm font-medium text-sky-500">2024 - Present</p>
                         <h3 class="text-xl font-bold mb-1">B.Tech in Computer Science</h3>
                         <p class="text-gray-600">Deccan Education Society Pune University (DESPU)</p>
                     </div>
                 </div>
 
-                <!-- Diploma -->
-                <div class="timeline-item mb-12 flex items-center w-full flex-row-reverse md:flex-row">
-                    <div class="order-1 md:w-1/2"></div>
-                     <div class="z-20 flex items-center order-1 bg-sky-500 shadow-xl w-8 h-8 rounded-full">
-                         <i data-lucide="award" class="h-4 w-4 mx-auto text-white"></i>
+                <!-- Timeline Item: Diploma -->
+                <div class="mb-12 relative flex items-center">
+                    <div class="hidden md:block md:w-1/2"></div>
+                    <div class="absolute md:relative left-[-30px] md:left-auto z-20">
+                        <div class="bg-sky-500 shadow-xl w-8 h-8 rounded-full flex items-center justify-center">
+                            <i data-lucide="award" class="h-4 w-4 text-white"></i>
+                        </div>
                     </div>
-                    <div class="order-1 bg-white rounded-lg shadow-xl w-full md:w-1/2 p-6 mr-6 md:mr-0 md:ml-6">
+                    <div class="bg-white rounded-lg shadow-md w-full md:w-1/2 p-6">
                         <p class="text-sm font-medium text-sky-500">2021 - 2023</p>
                         <h3 class="text-xl font-bold mb-1">Diploma in Computer Science</h3>
                         <p class="text-gray-600">Bhivarabai Sawant College of Engineering and Research</p>
                     </div>
                 </div>
                 
-                <!-- SSC -->
-                <div class="timeline-item mb-12 flex items-center w-full">
-                    <div class="order-1 md:w/2"></div>
-                    <div class="z-20 flex items-center order-1 bg-sky-500 shadow-xl w-8 h-8 rounded-full">
-                         <i data-lucide="book-marked" class="h-4 w-4 mx-auto text-white"></i>
+                <!-- Timeline Item: SSC -->
+                <div class="mb-12 relative flex items-center">
+                    <div class="hidden md:block md:w-1/2"></div>
+                    <div class="absolute md:relative left-[-30px] md:left-auto z-20">
+                        <div class="bg-sky-500 shadow-xl w-8 h-8 rounded-full flex items-center justify-center">
+                           <i data-lucide="book-marked" class="h-4 w-4 text-white"></i>
+                        </div>
                     </div>
-                    <div class="order-1 bg-white rounded-lg shadow-xl w-full md:w-1/2 p-6 ml-6 md:ml-0 md:mr-6 md:text-right">
+                    <div class="bg-white rounded-lg shadow-md w-full md:w-1/2 p-6">
                         <p class="text-sm font-medium text-sky-500">2020</p>
                         <h3 class="text-xl font-bold mb-1">Secondary School Certificate</h3>
                         <p class="text-gray-600">M.E.S. Boys High School, Pune</p>
@@ -228,7 +234,7 @@
     </main>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-gray-200 py-12">
+    <footer id="contact" class="bg-slate-100 py-12">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
             <p class="max-w-2xl mx-auto mb-8 text-gray-600">
@@ -239,18 +245,18 @@
                     <i data-lucide="mail" class="h-6 w-6"></i>
                     <span>lokeshaslekar@gmail.com</span>
                 </a>
-                <span class="hidden md:inline text-gray-400">|</span>
+                <span class="hidden md:inline text-slate-400">|</span>
                 <a href="tel:+919404361842" class="flex items-center space-x-2 hover:text-sky-500 transition-colors">
                     <i data-lucide="phone" class="h-6 w-6"></i>
                     <span>+91 9404361842</span>
                 </a>
-                <span class="hidden md:inline text-gray-400">|</span>
+                <span class="hidden md:inline text-slate-400">|</span>
                  <a href="https://github.com/lokesh2910" target="_blank" class="flex items-center space-x-2 hover:text-sky-500 transition-colors">
                     <i data-lucide="github" class="h-6 w-6"></i>
                     <span>lokesh2910</span>
                 </a>
-                <span class="hidden md:inline text-gray-400">|</span>
-                <a href="https://www.linkedin.com/in/your-profile-url" target="_blank" class="flex items-center space-x-2 hover:text-sky-500 transition-colors">
+                <span class="hidden md:inline text-slate-400">|</span>
+                <a href="https://www.linkedin.com/in/lokesh-aslekar-b22726242/" target="_blank" class="flex items-center space-x-2 hover:text-sky-500 transition-colors">
                     <i data-lucide="linkedin" class="h-6 w-6"></i>
                     <span>LinkedIn</span>
                 </a>
@@ -286,10 +292,6 @@
                 if (elementInView(el, 1.25)) {
                     displayScrollElement(el);
                 } 
-                // Optional: To hide elements when scrolled past
-                // else {
-                //     hideScrollElement(el);
-                // }
             })
         }
 
