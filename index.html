@@ -1,199 +1,327 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lokesh Aslekar | Portfolio</title>
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { 
-      font-family: 'Poppins', sans-serif; 
-      line-height: 1.6; 
-      background: #f9fafb; 
-      color: #333;
-      scroll-behavior: smooth;
-    }
-
-    /* Header / Hero */
-    header { 
-      background: linear-gradient(135deg, #1e3a8a, #3b82f6); 
-      color: white; 
-      text-align: center; 
-      padding: 100px 20px; 
-    }
-    header h1 { font-size: 3em; font-weight: 700; }
-    header p { font-size: 1.2em; margin-top: 10px; opacity: 0.9; }
-
-    /* Buttons */
-    .btn { 
-      display: inline-block; 
-      margin: 10px; 
-      padding: 12px 25px; 
-      border-radius: 30px; 
-      font-weight: bold; 
-      text-decoration: none; 
-      transition: 0.3s ease; 
-    }
-    .btn-primary { background: white; color: #1e3a8a; }
-    .btn-primary:hover { background: #1e3a8a; color: white; }
-    .btn-resume { background: #3b82f6; color: white; }
-    .btn-resume:hover { background: white; color: #1e3a8a; border: 2px solid #1e3a8a; }
-
-    .social { margin-top: 20px; }
-
-    /* Navigation */
-    nav { 
-      background: #111; 
-      padding: 15px; 
-      text-align: center; 
-      position: sticky; 
-      top: 0; 
-      z-index: 1000;
-    }
-    nav a { 
-      color: white; 
-      margin: 0 15px; 
-      text-decoration: none; 
-      font-weight: 500; 
-      transition: 0.3s ease;
-    }
-    nav a:hover { color: #3b82f6; }
-
-    /* Sections */
-    section { 
-      padding: 60px 20px; 
-      max-width: 1000px; 
-      margin: auto; 
-    }
-    h2 { 
-      color: #1e3a8a; 
-      margin-bottom: 20px; 
-      font-size: 2em; 
-      border-left: 5px solid #3b82f6; 
-      padding-left: 10px;
-    }
-    .card { 
-      background: white; 
-      padding: 20px; 
-      margin: 15px 0; 
-      border-radius: 12px; 
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover { 
-      transform: translateY(-5px); 
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15); 
-    }
-
-    /* Footer */
-    footer { 
-      background: #1e3a8a; 
-      color: white; 
-      text-align: center; 
-      padding: 20px; 
-      margin-top: 40px; 
-      font-size: 0.9em; 
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      header h1 { font-size: 2.2em; }
-      nav a { margin: 0 8px; font-size: 0.9em; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lokesh Aslekar | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .dark .glass-effect {
+             background: rgba(17, 24, 39, 0.6);
+             border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
-<body>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-500">
 
-  <!-- Hero -->
-  <header>
-    <h1>Lokesh Sandeep Aslekar</h1>
-    <p>Computer Science Engineer | Aspiring Software Developer</p>
-    <div class="social">
-      <a href="mailto:lokeshaslekar@gmail.com" class="btn btn-primary">Email</a>
-      <a href="https://www.linkedin.com/in/lokesh-aslekar-b22726242/" target="_blank" class="btn btn-primary">LinkedIn</a>
-      <a href="https://github.com/lokesh2910" target="_blank" class="btn btn-primary">GitHub</a>
-      <a href="resume.pdf" download class="btn btn-resume">📄 Download Resume</a>
-    </div>
-  </header>
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-effect">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">LA</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors">About</a>
+                <a href="#skills" class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors">Projects</a>
+                <a href="#education" class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors">Education</a>
+                <a href="#contact" class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors">Contact</a>
+            </nav>
+            <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500">
+                <svg id="theme-icon-light" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                <svg id="theme-icon-dark" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+            </button>
+        </div>
+    </header>
 
-  <!-- Navbar -->
-  <nav>
-    <a href="#objective">Objective</a>
-    <a href="#education">Education</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#internship">Internship</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <main class="container mx-auto px-6 pt-24 md:pt-32">
 
-  <!-- Sections (same as before) -->
-  <section id="objective">
-    <h2>Career Objective</h2>
-    <div class="card">
-      <p>Dedicated and detail-oriented Computer Science Engineering student at Deccan Education Society 
-      Pune University (DESPU) with a strong foundation in programming and problem-solving. Seeking an 
-      opportunity to apply technical knowledge and contribute to innovative projects, while enhancing 
-      skills in software development and team collaboration.</p>
-    </div>
-  </section>
+        <!-- Hero Section -->
+        <section id="about" class="min-h-[80vh] flex flex-col md:flex-row items-center justify-center text-center md:text-left scroll-reveal">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <span class="text-sky-500 dark:text-sky-400 font-semibold">Hello, I'm</span>
+                <h1 class="text-4xl md:text-6xl font-extrabold my-2 bg-gradient-to-r from-sky-500 to-indigo-600 dark:from-sky-400 dark:to-indigo-500 bg-clip-text text-transparent">Lokesh Sandeep Aslekar</h1>
+                <h2 class="text-2xl md:text-3xl font-semibold text-gray-600 dark:text-gray-400">Computer Science Student</h2>
+                <p class="mt-6 max-w-xl mx-auto md:mx-0 text-lg leading-relaxed">
+                    Dedicated and detail-oriented Computer Science Engineering student with a strong foundation in programming and problem-solving. Seeking to apply my technical knowledge and contribute to innovative projects.
+                </p>
+                <div class="mt-8 flex justify-center md:justify-start space-x-4">
+                    <a href="mailto:lokeshaslekar@gmail.com" class="bg-sky-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-sky-600 transition-transform transform hover:scale-105 shadow-lg">Contact Me</a>
+                    <a href="https://github.com/lokesh2910" target="_blank" class="bg-gray-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-800 transition-transform transform hover:scale-105 shadow-lg">View GitHub</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                 <img src="https://placehold.co/400x400/3B82F6/FFFFFF?text=LA" alt="Lokesh Aslekar" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-2xl border-4 border-sky-500/50">
+            </div>
+        </section>
+        
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 scroll-reveal">
+            <h2 class="text-4xl font-bold text-center mb-12">Technical Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <div class="skill-card text-center p-6 rounded-2xl glass-effect transform hover:-translate-y-2 transition-transform duration-300">
+                    <i data-lucide="code-2" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Languages</h3>
+                    <p>Python</p>
+                    <p>Java</p>
+                </div>
+                <div class="skill-card text-center p-6 rounded-2xl glass-effect transform hover:-translate-y-2 transition-transform duration-300">
+                    <i data-lucide="globe" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Web Development</h3>
+                    <p>HTML</p>
+                    <p>CSS</p>
+                </div>
+                <div class="skill-card text-center p-6 rounded-2xl glass-effect transform hover:-translate-y-2 transition-transform duration-300">
+                    <i data-lucide="database" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Databases</h3>
+                    <p>MySQL</p>
+                </div>
+                <div class="skill-card text-center p-6 rounded-2xl glass-effect transform hover:-translate-y-2 transition-transform duration-300">
+                    <i data-lucide="terminal-square" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Tools & Tech</h3>
+                    <p>VS Code</p>
+                    <p>Tableau</p>
+                </div>
+                <div class="skill-card text-center p-6 rounded-2xl glass-effect transform hover:-translate-y-2 transition-transform duration-300">
+                    <i data-lucide="brain-circuit" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Core Concepts</h3>
+                    <p>Data Structures</p>
+                    <p>Algorithms</p>
+                    <p>Digital Image Processing</p>
+                </div>
+            </div>
+        </section>
 
-  <section id="education">
-    <h2>Education</h2>
-    <div class="card">
-      <ul>
-        <li><b>B.Tech in Computer Science Engineering</b>, DESPU Pune (2024–Present), Score: 7.6</li>
-        <li><b>Diploma in Computer Science Engineering</b>, BSCOER’s TSSM Pune (2021–2023), Score: 75.14%</li>
-        <li><b>Secondary School Certificate</b>, M.E.S. Boys High School Pune (2020), Score: 75.80%</li>
-      </ul>
-    </div>
-  </section>
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 scroll-reveal">
+            <h2 class="text-4xl font-bold text-center mb-12">My Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                           <h3 class="text-2xl font-bold mb-2">Library Management System</h3>
+                           <span class="text-sm font-medium bg-sky-100 dark:bg-sky-900 text-sky-800 dark:text-sky-200 py-1 px-3 rounded-full">2024</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 mt-2">A comprehensive system to manage library operations, including book tracking, member management, and borrowing records. Built to streamline library processes.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="tech-tag bg-gray-200 dark:bg-gray-700 text-sm font-medium py-1 px-3 rounded-full">Java</span>
+                            <span class="tech-tag bg-gray-200 dark:bg-gray-700 text-sm font-medium py-1 px-3 rounded-full">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                           <h3 class="text-2xl font-bold mb-2">Image Stitching (DIP)</h3>
+                           <span class="text-sm font-medium bg-sky-100 dark:bg-sky-900 text-sky-800 dark:text-sky-200 py-1 px-3 rounded-full">2024</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 mt-2">A project focusing on Digital Image Processing techniques to stitch multiple images together, creating a seamless panoramic view from overlapping photos.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="tech-tag bg-gray-200 dark:bg-gray-700 text-sm font-medium py-1 px-3 rounded-full">Python</span>
+                            <span class="tech-tag bg-gray-200 dark:bg-gray-700 text-sm font-medium py-1 px-3 rounded-full">OpenCV</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div class="p-6">
+                         <div class="flex justify-between items-start">
+                           <h3 class="text-2xl font-bold mb-2">Waste Detection System</h3>
+                           <span class="text-sm font-medium bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 py-1 px-3 rounded-full">In Progress</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 mt-2">An ongoing project to develop a system that uses computer vision to detect and classify different types of waste, aiming to aid in automated recycling processes.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="tech-tag bg-gray-200 dark:bg-gray-700 text-sm font-medium py-1 px-3 rounded-full">Python</span>
+                            <span class="tech-tag bg-gray-200 dark:bg-gray-700 text-sm font-medium py-1 px-3 rounded-full">AI/ML</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="card">
-      <ul>
-        <li>Programming Languages: Python, Java</li>
-        <li>Web Development: HTML, CSS</li>
-        <li>Database: MySQL</li>
-        <li>Tools: VS Code, Tableau</li>
-        <li>Concepts: Data Structures, Algorithms, Digital Image Processing</li>
-      </ul>
-    </div>
-  </section>
+        <!-- Internship Section -->
+        <section id="internship" class="py-20 scroll-reveal">
+             <h2 class="text-4xl font-bold text-center mb-12">Internship Experience</h2>
+             <div class="max-w-2xl mx-auto glass-effect rounded-2xl p-8">
+                <div class="flex items-start">
+                    <i data-lucide="briefcase" class="h-10 w-10 text-sky-400 mr-6 mt-1"></i>
+                    <div>
+                        <div class="flex justify-between items-center mb-1">
+                             <h3 class="text-2xl font-bold">Python Internship</h3>
+                             <span class="text-sm font-medium text-gray-500 dark:text-gray-400">2022</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300">Gained practical experience in Python development, working on small projects, learning best practices in coding, and collaborating within a development environment to enhance my programming skills.</p>
+                    </div>
+                </div>
+             </div>
+        </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="card">
-      <ul>
-        <li>Library Management System (2024)</li>
-        <li>Digital Image Processing: Image Stitching (2024)</li>
-        <li>Waste Detection (2025)</li>
-      </ul>
-    </div>
-  </section>
+        <!-- Education Section -->
+        <section id="education" class="py-20 scroll-reveal">
+            <h2 class="text-4xl font-bold text-center mb-12">Education</h2>
+            <div class="max-w-3xl mx-auto relative">
+                <!-- Vertical Line -->
+                <div class="absolute left-4 md:left-1/2 top-0 h-full w-0.5 bg-gray-300 dark:bg-gray-700"></div>
+                
+                <!-- B.Tech -->
+                <div class="timeline-item mb-12 flex items-center w-full">
+                    <div class="order-1 md:w-1/2"></div>
+                    <div class="z-20 flex items-center order-1 bg-sky-500 shadow-xl w-8 h-8 rounded-full">
+                         <i data-lucide="graduation-cap" class="h-4 w-4 mx-auto text-white"></i>
+                    </div>
+                    <div class="order-1 bg-white dark:bg-gray-800 rounded-lg shadow-xl w-full md:w-1/2 p-6 ml-6 md:ml-0 md:mr-6 md:text-right">
+                        <p class="text-sm font-medium text-sky-500 dark:text-sky-400">2024 - Present</p>
+                        <h3 class="text-xl font-bold mb-1">B.Tech in Computer Science</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Deccan Education Society Pune University (DESPU)</p>
+                    </div>
+                </div>
 
-  <section id="internship">
-    <h2>Internship</h2>
-    <div class="card">
-      <p>Python Internship (2022)</p>
-    </div>
-  </section>
+                <!-- Diploma -->
+                <div class="timeline-item mb-12 flex items-center w-full flex-row-reverse md:flex-row">
+                    <div class="order-1 md:w-1/2"></div>
+                     <div class="z-20 flex items-center order-1 bg-sky-500 shadow-xl w-8 h-8 rounded-full">
+                         <i data-lucide="award" class="h-4 w-4 mx-auto text-white"></i>
+                    </div>
+                    <div class="order-1 bg-white dark:bg-gray-800 rounded-lg shadow-xl w-full md:w-1/2 p-6 mr-6 md:mr-0 md:ml-6">
+                        <p class="text-sm font-medium text-sky-500 dark:text-sky-400">2021 - 2023</p>
+                        <h3 class="text-xl font-bold mb-1">Diploma in Computer Science</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Bhivarabai Sawant College of Engineering and Research</p>
+                    </div>
+                </div>
+                
+                <!-- SSC -->
+                <div class="timeline-item mb-12 flex items-center w-full">
+                    <div class="order-1 md:w-1/2"></div>
+                    <div class="z-20 flex items-center order-1 bg-sky-500 shadow-xl w-8 h-8 rounded-full">
+                         <i data-lucide="book-marked" class="h-4 w-4 mx-auto text-white"></i>
+                    </div>
+                    <div class="order-1 bg-white dark:bg-gray-800 rounded-lg shadow-xl w-full md:w-1/2 p-6 ml-6 md:ml-0 md:mr-6 md:text-right">
+                        <p class="text-sm font-medium text-sky-500 dark:text-sky-400">2020</p>
+                        <h3 class="text-xl font-bold mb-1">Secondary School Certificate</h3>
+                        <p class="text-gray-600 dark:text-gray-400">M.E.S. Boys High School, Pune</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="card">
-      <p><b>Email:</b> <a href="mailto:lokeshaslekar@gmail.com">lokeshaslekar@gmail.com</a></p>
-      <p><b>Phone:</b> +91 9404361842</p>
-      <p><b>Location:</b> Sadashiv Peth, Pune, Maharashtra</p>
-    </div>
-  </section>
+    </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Lokesh Aslekar | Designed with ❤️</p>
-  </footer>
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-200 dark:bg-gray-800 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
+            <p class="max-w-2xl mx-auto mb-8 text-gray-600 dark:text-gray-400">
+                I'm currently seeking new opportunities. Feel free to reach out if you have any questions or just want to connect!
+            </p>
+            <div class="flex justify-center items-center space-x-6 text-gray-700 dark:text-gray-300">
+                <a href="mailto:lokeshaslekar@gmail.com" class="flex items-center space-x-2 hover:text-sky-500 dark:hover:text-sky-400 transition-colors">
+                    <i data-lucide="mail" class="h-6 w-6"></i>
+                    <span>lokeshaslekar@gmail.com</span>
+                </a>
+                <span class="text-gray-400 dark:text-gray-600">|</span>
+                <a href="tel:+919404361842" class="flex items-center space-x-2 hover:text-sky-500 dark:hover:text-sky-400 transition-colors">
+                    <i data-lucide="phone" class="h-6 w-6"></i>
+                    <span>+91 9404361842</span>
+                </a>
+                <span class="text-gray-400 dark:text-gray-600">|</span>
+                 <a href="https://github.com/lokesh2910" target="_blank" class="flex items-center space-x-2 hover:text-sky-500 dark:hover:text-sky-400 transition-colors">
+                    <i data-lucide="github" class="h-6 w-6"></i>
+                    <span>lokesh2910</span>
+                </a>
+            </div>
+            <p class="mt-8 text-sm text-gray-500 dark:text-gray-400">&copy; 2025 Lokesh Sandeep Aslekar. All Rights Reserved.</p>
+        </div>
+    </footer>
 
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Dark/Light mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIconLight = document.getElementById('theme-icon-light');
+        const themeIconDark = document.getElementById('theme-icon-dark');
+        const htmlEl = document.documentElement;
+
+        // Check for saved theme in localStorage
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlEl.classList.add('dark');
+            themeIconLight.classList.remove('hidden');
+        } else {
+            htmlEl.classList.remove('dark');
+            themeIconDark.classList.remove('hidden');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            htmlEl.classList.toggle('dark');
+            if (htmlEl.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+                themeIconDark.classList.add('hidden');
+                themeIconLight.classList.remove('hidden');
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeIconLight.classList.add('hidden');
+                themeIconDark.classList.remove('hidden');
+            }
+        });
+        
+        // Scroll reveal animation
+        const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+
+        const elementInView = (el, dividend = 1) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return (
+                elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+            );
+        };
+
+        const displayScrollElement = (element) => {
+            element.classList.add('visible');
+        };
+
+        const hideScrollElement = (element) => {
+             element.classList.remove('visible');
+        }
+
+        const handleScrollAnimation = () => {
+            scrollRevealElements.forEach((el) => {
+                if (elementInView(el, 1.25)) {
+                    displayScrollElement(el);
+                } 
+                // Optional: To hide elements when scrolled past
+                // else {
+                //     hideScrollElement(el);
+                // }
+            })
+        }
+
+        window.addEventListener('scroll', () => {
+            handleScrollAnimation();
+        });
+        
+        // Initial check on page load
+        handleScrollAnimation();
+
+    </script>
 </body>
 </html>
