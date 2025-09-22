@@ -12,10 +12,10 @@
             font-family: 'Inter', sans-serif;
         }
         .glass-effect {
-            background: rgba(255, 255, 255, 0.4); /* Slightly less transparent for better readability on new bg */
+            background: rgba(17, 24, 39, 0.6); /* Dark glass effect */
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(55, 65, 81, 0.5);
         }
         .scroll-reveal {
             opacity: 0;
@@ -28,18 +28,18 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-slate-50 to-sky-100 text-gray-800">
+<body class="bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 text-gray-200">
 
     <!-- Header -->
     <header class="fixed top-0 left-0 right-0 z-50 glass-effect">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold tracking-tight text-gray-900">LA</a>
+            <img src="logo.png" alt="Lokesh Aslekar Logo" class="h-8 w-auto">
             <nav class="hidden md:flex items-center space-x-8">
-                <a href="#about" class="hover:text-sky-500 transition-colors">About</a>
-                <a href="#skills" class="hover:text-sky-500 transition-colors">Skills</a>
-                <a href="#projects" class="hover:text-sky-500 transition-colors">Projects</a>
-                <a href="#education" class="hover:text-sky-500 transition-colors">Education</a>
-                <a href="#contact" class="hover:text-sky-500 transition-colors">Contact</a>
+                <a href="#about" class="text-gray-300 hover:text-sky-400 transition-colors">About</a>
+                <a href="#skills" class="text-gray-300 hover:text-sky-400 transition-colors">Skills</a>
+                <a href="#projects" class="text-gray-300 hover:text-sky-400 transition-colors">Projects</a>
+                <a href="#education" class="text-gray-300 hover:text-sky-400 transition-colors">Education</a>
+                <a href="#contact" class="text-gray-300 hover:text-sky-400 transition-colors">Contact</a>
             </nav>
         </div>
     </header>
@@ -49,19 +49,19 @@
         <!-- Hero Section -->
         <section id="about" class="min-h-[80vh] flex flex-col md:flex-row items-center justify-center text-center md:text-left scroll-reveal">
             <div class="md:w-1/2 mb-10 md:mb-0">
-                <span class="text-sky-500 font-semibold">Hello, I'm</span>
-                <h1 class="text-4xl md:text-6xl font-extrabold my-2 bg-gradient-to-r from-sky-500 to-indigo-600 bg-clip-text text-transparent">Lokesh Sandeep Aslekar</h1>
-                <h2 class="text-2xl md:text-3xl font-semibold text-gray-600">Computer Science Student</h2>
-                <p class="mt-6 max-w-xl mx-auto md:mx-0 text-lg leading-relaxed">
+                <span class="text-sky-400 font-semibold">Hello, I'm</span>
+                <h1 class="text-4xl md:text-6xl font-extrabold my-2 bg-gradient-to-r from-sky-400 to-indigo-500 bg-clip-text text-transparent">Lokesh Sandeep Aslekar</h1>
+                <h2 class="text-2xl md:text-3xl font-semibold text-gray-400">Computer Science Student</h2>
+                <p class="mt-6 max-w-xl mx-auto md:mx-0 text-lg leading-relaxed text-gray-300">
                     Dedicated and detail-oriented Computer Science Engineering student with a strong foundation in programming and problem-solving. Seeking to apply my technical knowledge and contribute to innovative projects.
                 </p>
                 <div class="mt-8 flex justify-center md:justify-start space-x-4">
-                    <a href="mailto:lokeshaslekar@gmail.com" class="bg-sky-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-sky-600 transition-transform transform hover:scale-105 shadow-lg">Contact Me</a>
-                    <a href="https://github.com/lokesh2910" target="_blank" class="bg-gray-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-800 transition-transform transform hover:scale-105 shadow-lg">View GitHub</a>
+                    <a href="mailto:lokeshaslekar@gmail.com" class="bg-sky-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-sky-600 transition-transform transform hover:scale-105 shadow-lg shadow-sky-500/20">Contact Me</a>
+                    <a href="https://github.com/lokesh2910" target="_blank" class="bg-gray-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-600 transition-transform transform hover:scale-105 shadow-lg">View GitHub</a>
                 </div>
             </div>
             <div class="md:w-1/2 flex justify-center">
-                 <img src="https://placehold.co/400x400/3B82F6/FFFFFF?text=LA" alt="Lokesh Aslekar" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-2xl border-4 border-sky-500/50">
+                 <img src="my-photo.jpg" alt="Lokesh Aslekar" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-2xl border-4 border-sky-500/50">
             </div>
         </section>
         
@@ -69,44 +69,44 @@
         <section id="skills" class="py-20 scroll-reveal">
             <h2 class="text-4xl font-bold text-center mb-12">Technical Skills</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="skill-card text-center p-6 bg-white/60 rounded-2xl shadow-sm transform hover:-translate-y-2 transition-transform duration-300">
-                    <i data-lucide="code-2" class="mx-auto h-12 w-12 text-sky-500 mb-4"></i>
+                <div class="skill-card text-center p-6 bg-slate-800/80 rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 border border-slate-700">
+                    <i data-lucide="code-2" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
                     <h3 class="text-xl font-semibold mb-2">Programming Languages</h3>
-                    <p>Python</p>
-                    <p>Java</p>
-                    <p>R</p>
+                    <p class="text-gray-400">Python</p>
+                    <p class="text-gray-400">Java</p>
+                    <p class="text-gray-400">R</p>
                 </div>
-                <div class="skill-card text-center p-6 bg-white/60 rounded-2xl shadow-sm transform hover:-translate-y-2 transition-transform duration-300">
-                    <i data-lucide="database" class="mx-auto h-12 w-12 text-sky-500 mb-4"></i>
+                <div class="skill-card text-center p-6 bg-slate-800/80 rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 border border-slate-700">
+                    <i data-lucide="database" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
                     <h3 class="text-xl font-semibold mb-2">Databases</h3>
-                    <p>MySQL</p>
-                    <p>SQL</p>
+                    <p class="text-gray-400">MySQL</p>
+                    <p class="text-gray-400">SQL</p>
                 </div>
-                <div class="skill-card text-center p-6 bg-white/60 rounded-2xl shadow-sm transform hover:-translate-y-2 transition-transform duration-300">
-                    <i data-lucide="bar-chart-3" class="mx-auto h-12 w-12 text-sky-500 mb-4"></i>
+                <div class="skill-card text-center p-6 bg-slate-800/80 rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 border border-slate-700">
+                    <i data-lucide="bar-chart-3" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
                     <h3 class="text-xl font-semibold mb-2">Data Visualization & BI</h3>
-                    <p>Tableau</p>
-                    <p>Power BI</p>
+                    <p class="text-gray-400">Tableau</p>
+                    <p class="text-gray-400">Power BI</p>
                 </div>
-                <div class="skill-card text-center p-6 bg-white/60 rounded-2xl shadow-sm transform hover:-translate-y-2 transition-transform duration-300">
-                    <i data-lucide="terminal-square" class="mx-auto h-12 w-12 text-sky-500 mb-4"></i>
+                <div class="skill-card text-center p-6 bg-slate-800/80 rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 border border-slate-700">
+                    <i data-lucide="terminal-square" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
                     <h3 class="text-xl font-semibold mb-2">Dev & Project Management</h3>
-                    <p>VS Code</p>
-                    <p>Jira</p>
-                    <p>Brevo</p>
+                    <p class="text-gray-400">VS Code</p>
+                    <p class="text-gray-400">Jira</p>
+                    <p class="text-gray-400">Brevo</p>
                 </div>
-                <div class="skill-card text-center p-6 bg-white/60 rounded-2xl shadow-sm transform hover:-translate-y-2 transition-transform duration-300">
-                    <i data-lucide="cloud-cog" class="mx-auto h-12 w-12 text-sky-500 mb-4"></i>
+                <div class="skill-card text-center p-6 bg-slate-800/80 rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 border border-slate-700">
+                    <i data-lucide="cloud-cog" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
                     <h3 class="text-xl font-semibold mb-2">Cloud & Web</h3>
-                    <p>Cloud Technologies</p>
-                    <p>HTML & CSS</p>
+                    <p class="text-gray-400">Cloud Technologies</p>
+                    <p class="text-gray-400">HTML & CSS</p>
                 </div>
-                <div class="skill-card text-center p-6 bg-white/60 rounded-2xl shadow-sm transform hover:-translate-y-2 transition-transform duration-300">
-                    <i data-lucide="brain-circuit" class="mx-auto h-12 w-12 text-sky-500 mb-4"></i>
+                <div class="skill-card text-center p-6 bg-slate-800/80 rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 border border-slate-700">
+                    <i data-lucide="brain-circuit" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
                     <h3 class="text-xl font-semibold mb-2">Core Concepts</h3>
-                    <p>Data Structures</p>
-                    <p>Algorithms</p>
-                    <p>Digital Image Processing</p>
+                    <p class="text-gray-400">Data Structures</p>
+                    <p class="text-gray-400">Algorithms</p>
+                    <p class="text-gray-400">Digital Image Processing</p>
                 </div>
             </div>
         </section>
@@ -116,44 +116,44 @@
             <h2 class="text-4xl font-bold text-center mb-12">My Projects</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project Card 1 -->
-                <div class="project-card bg-white rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <div class="project-card bg-slate-800 rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 border border-slate-700">
                     <div class="p-6">
                         <div class="flex justify-between items-start">
-                           <h3 class="text-2xl font-bold mb-2">Library Management System</h3>
-                           <span class="text-sm font-medium bg-sky-100 text-sky-800 py-1 px-3 rounded-full">2024</span>
+                           <h3 class="text-2xl font-bold mb-2 text-white">Library Management System</h3>
+                           <span class="text-sm font-medium bg-sky-900/50 text-sky-300 py-1 px-3 rounded-full">2024</span>
                         </div>
-                        <p class="text-gray-600 mt-2">A comprehensive system to manage library operations, including book tracking, member management, and borrowing records. Built to streamline library processes.</p>
+                        <p class="text-gray-400 mt-2">A comprehensive system to manage library operations, including book tracking, member management, and borrowing records. Built to streamline library processes.</p>
                         <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="tech-tag bg-slate-200 text-sm font-medium py-1 px-3 rounded-full">Java</span>
-                            <span class="tech-tag bg-slate-200 text-sm font-medium py-1 px-3 rounded-full">MySQL</span>
+                            <span class="tech-tag bg-slate-700 text-gray-300 text-sm font-medium py-1 px-3 rounded-full">Java</span>
+                            <span class="tech-tag bg-slate-700 text-gray-300 text-sm font-medium py-1 px-3 rounded-full">MySQL</span>
                         </div>
                     </div>
                 </div>
                 <!-- Project Card 2 -->
-                <div class="project-card bg-white rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <div class="project-card bg-slate-800 rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 border border-slate-700">
                     <div class="p-6">
                         <div class="flex justify-between items-start">
-                           <h3 class="text-2xl font-bold mb-2">Image Stitching (DIP)</h3>
-                           <span class="text-sm font-medium bg-sky-100 text-sky-800 py-1 px-3 rounded-full">2024</span>
+                           <h3 class="text-2xl font-bold mb-2 text-white">Image Stitching (DIP)</h3>
+                           <span class="text-sm font-medium bg-sky-900/50 text-sky-300 py-1 px-3 rounded-full">2024</span>
                         </div>
-                        <p class="text-gray-600 mt-2">A project focusing on Digital Image Processing techniques to stitch multiple images together, creating a seamless panoramic view from overlapping photos.</p>
+                        <p class="text-gray-400 mt-2">A project focusing on Digital Image Processing techniques to stitch multiple images together, creating a seamless panoramic view from overlapping photos.</p>
                         <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="tech-tag bg-slate-200 text-sm font-medium py-1 px-3 rounded-full">Python</span>
-                            <span class="tech-tag bg-slate-200 text-sm font-medium py-1 px-3 rounded-full">OpenCV</span>
+                            <span class="tech-tag bg-slate-700 text-gray-300 text-sm font-medium py-1 px-3 rounded-full">Python</span>
+                            <span class="tech-tag bg-slate-700 text-gray-300 text-sm font-medium py-1 px-3 rounded-full">OpenCV</span>
                         </div>
                     </div>
                 </div>
                 <!-- Project Card 3 -->
-                <div class="project-card bg-white rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <div class="project-card bg-slate-800 rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 border border-slate-700">
                     <div class="p-6">
                          <div class="flex justify-between items-start">
-                           <h3 class="text-2xl font-bold mb-2">Waste Detection System</h3>
-                           <span class="text-sm font-medium bg-indigo-100 text-indigo-800 py-1 px-3 rounded-full">In Progress</span>
+                           <h3 class="text-2xl font-bold mb-2 text-white">Waste Detection System</h3>
+                           <span class="text-sm font-medium bg-indigo-900/50 text-indigo-300 py-1 px-3 rounded-full">In Progress</span>
                         </div>
-                        <p class="text-gray-600 mt-2">An ongoing project to develop a system that uses computer vision to detect and classify different types of waste, aiming to aid in automated recycling processes.</p>
+                        <p class="text-gray-400 mt-2">An ongoing project to develop a system that uses computer vision to detect and classify different types of waste, aiming to aid in automated recycling processes.</p>
                         <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="tech-tag bg-slate-200 text-sm font-medium py-1 px-3 rounded-full">Python</span>
-                            <span class="tech-tag bg-slate-200 text-sm font-medium py-1 px-3 rounded-full">AI/ML</span>
+                            <span class="tech-tag bg-slate-700 text-gray-300 text-sm font-medium py-1 px-3 rounded-full">Python</span>
+                            <span class="tech-tag bg-slate-700 text-gray-300 text-sm font-medium py-1 px-3 rounded-full">AI/ML</span>
                         </div>
                     </div>
                 </div>
@@ -163,15 +163,15 @@
         <!-- Internship Section -->
         <section id="internship" class="py-20 scroll-reveal">
              <h2 class="text-4xl font-bold text-center mb-12">Internship Experience</h2>
-             <div class="max-w-2xl mx-auto bg-white/60 rounded-2xl p-8 shadow-sm">
+             <div class="max-w-2xl mx-auto bg-slate-800/80 rounded-2xl p-8 shadow-lg border border-slate-700">
                 <div class="flex items-start">
-                    <i data-lucide="briefcase" class="h-10 w-10 text-sky-500 mr-6 mt-1 flex-shrink-0"></i>
+                    <i data-lucide="briefcase" class="h-10 w-10 text-sky-400 mr-6 mt-1 flex-shrink-0"></i>
                     <div>
                         <div class="flex justify-between items-center mb-1">
-                             <h3 class="text-2xl font-bold">Python Internship</h3>
-                             <span class="text-sm font-medium text-gray-500">2022</span>
+                             <h3 class="text-2xl font-bold text-white">Python Internship</h3>
+                             <span class="text-sm font-medium text-gray-400">2022</span>
                         </div>
-                        <p class="text-gray-600">Gained practical experience in Python development, working on small projects, learning best practices in coding, and collaborating within a development environment to enhance my programming skills.</p>
+                        <p class="text-gray-400">Gained practical experience in Python development, working on small projects, learning best practices in coding, and collaborating within a development environment to enhance my programming skills.</p>
                     </div>
                 </div>
              </div>
@@ -182,7 +182,7 @@
             <h2 class="text-4xl font-bold text-center mb-12">Education</h2>
             <div class="max-w-3xl mx-auto relative pl-12 md:pl-0">
                 <!-- Vertical Line -->
-                <div class="absolute left-4 md:left-1/2 top-0 h-full w-0.5 bg-slate-300"></div>
+                <div class="absolute left-4 md:left-1/2 top-0 h-full w-0.5 bg-slate-700"></div>
                 
                 <!-- Timeline Item: B.Tech -->
                 <div class="mb-12 relative flex items-center">
@@ -192,10 +192,10 @@
                             <i data-lucide="graduation-cap" class="h-4 w-4 text-white"></i>
                         </div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md w-full md:w-1/2 p-6">
-                        <p class="text-sm font-medium text-sky-500">2024 - Present</p>
-                        <h3 class="text-xl font-bold mb-1">B.Tech in Computer Science</h3>
-                        <p class="text-gray-600">Deccan Education Society Pune University (DESPU)</p>
+                    <div class="bg-slate-800 rounded-lg shadow-md w-full md:w-1/2 p-6 border border-slate-700">
+                        <p class="text-sm font-medium text-sky-400">2024 - Present</p>
+                        <h3 class="text-xl font-bold mb-1 text-white">B.Tech in Computer Science</h3>
+                        <p class="text-gray-400">Deccan Education Society Pune University (DESPU)</p>
                     </div>
                 </div>
 
@@ -207,10 +207,10 @@
                             <i data-lucide="award" class="h-4 w-4 text-white"></i>
                         </div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md w-full md:w-1/2 p-6">
-                        <p class="text-sm font-medium text-sky-500">2021 - 2023</p>
-                        <h3 class="text-xl font-bold mb-1">Diploma in Computer Science</h3>
-                        <p class="text-gray-600">Bhivarabai Sawant College of Engineering and Research</p>
+                    <div class="bg-slate-800 rounded-lg shadow-md w-full md:w-1/2 p-6 border border-slate-700">
+                        <p class="text-sm font-medium text-sky-400">2021 - 2023</p>
+                        <h3 class="text-xl font-bold mb-1 text-white">Diploma in Computer Science</h3>
+                        <p class="text-gray-400">Bhivarabai Sawant College of Engineering and Research</p>
                     </div>
                 </div>
                 
@@ -222,10 +222,10 @@
                            <i data-lucide="book-marked" class="h-4 w-4 text-white"></i>
                         </div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md w-full md:w-1/2 p-6">
-                        <p class="text-sm font-medium text-sky-500">2020</p>
-                        <h3 class="text-xl font-bold mb-1">Secondary School Certificate</h3>
-                        <p class="text-gray-600">M.E.S. Boys High School, Pune</p>
+                    <div class="bg-slate-800 rounded-lg shadow-md w-full md:w-1/2 p-6 border border-slate-700">
+                        <p class="text-sm font-medium text-sky-400">2020</p>
+                        <h3 class="text-xl font-bold mb-1 text-white">Secondary School Certificate</h3>
+                        <p class="text-gray-400">M.E.S. Boys High School, Pune</p>
                     </div>
                 </div>
             </div>
@@ -234,29 +234,29 @@
     </main>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-slate-100 py-12">
+    <footer id="contact" class="bg-gray-900 py-12">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
-            <p class="max-w-2xl mx-auto mb-8 text-gray-600">
+            <h2 class="text-3xl font-bold mb-4 text-white">Get In Touch</h2>
+            <p class="max-w-2xl mx-auto mb-8 text-gray-400">
                 I'm currently seeking new opportunities. Feel free to reach out if you have any questions or just want to connect!
             </p>
-            <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-4 text-gray-700">
-                <a href="mailto:lokeshaslekar@gmail.com" class="flex items-center space-x-2 hover:text-sky-500 transition-colors">
+            <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-4 text-gray-300">
+                <a href="mailto:lokeshaslekar@gmail.com" class="flex items-center space-x-2 hover:text-sky-400 transition-colors">
                     <i data-lucide="mail" class="h-6 w-6"></i>
                     <span>lokeshaslekar@gmail.com</span>
                 </a>
-                <span class="hidden md:inline text-slate-400">|</span>
-                <a href="tel:+919404361842" class="flex items-center space-x-2 hover:text-sky-500 transition-colors">
+                <span class="hidden md:inline text-slate-600">|</span>
+                <a href="tel:+919404361842" class="flex items-center space-x-2 hover:text-sky-400 transition-colors">
                     <i data-lucide="phone" class="h-6 w-6"></i>
                     <span>+91 9404361842</span>
                 </a>
-                <span class="hidden md:inline text-slate-400">|</span>
-                 <a href="https://github.com/lokesh2910" target="_blank" class="flex items-center space-x-2 hover:text-sky-500 transition-colors">
+                <span class="hidden md:inline text-slate-600">|</span>
+                 <a href="https://github.com/lokesh2910" target="_blank" class="flex items-center space-x-2 hover:text-sky-400 transition-colors">
                     <i data-lucide="github" class="h-6 w-6"></i>
                     <span>lokesh2910</span>
                 </a>
-                <span class="hidden md:inline text-slate-400">|</span>
-                <a href="https://www.linkedin.com/in/lokesh-aslekar-b22726242/" target="_blank" class="flex items-center space-x-2 hover:text-sky-500 transition-colors">
+                <span class="hidden md:inline text-slate-600">|</span>
+                <a href="https://www.linkedin.com/in/lokesh-aslekar-b22726242/" target="_blank" class="flex items-center space-x-2 hover:text-sky-400 transition-colors">
                     <i data-lucide="linkedin" class="h-6 w-6"></i>
                     <span>LinkedIn</span>
                 </a>
