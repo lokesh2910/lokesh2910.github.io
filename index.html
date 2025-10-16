@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lokesh Aslekar | Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon_ico/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -369,7 +369,7 @@
                     <div id="appointment-success" class="mt-4 p-4 bg-green-900/50 text-green-300 rounded-lg hidden">
                         <div class="flex items-center">
                             <i data-lucide="check-circle" class="h-5 w-5 mr-2"></i>
-                            <span>Your appointment has been scheduled successfully! Google Sheets updated.</span>
+                            <span>Your appointment has been scheduled successfully! You can download all appointments below.</span>
                         </div>
                     </div>
                     <div id="appointment-error" class="mt-4 p-4 bg-red-900/50 text-red-300 rounded-lg hidden">
@@ -377,6 +377,16 @@
                             <i data-lucide="alert-circle" class="h-5 w-5 mr-2"></i>
                             <span id="error-message">There was an error scheduling your appointment.</span>
                         </div>
+                    </div>
+                    
+                    <!-- Download Appointments Button -->
+                    <div id="download-section" class="mt-6 p-4 bg-slate-700/50 rounded-lg hidden">
+                        <h4 class="text-lg font-semibold mb-2 text-white">Download Appointments</h4>
+                        <p class="text-gray-400 text-sm mb-3">Download all appointments as JSON file</p>
+                        <a id="download-appointments-btn" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition-colors inline-flex items-center justify-center gap-2">
+                            <i data-lucide="download" class="h-4 w-4"></i>
+                            Download Appointments JSON
+                        </a>
                     </div>
                 </div>
             </div>
@@ -554,8 +564,6 @@
             '2025-12-25'  // Christmas
         ];
 
-        // Google Apps Script URL - REPLACE WITH YOUR ACTUAL URL
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/home/projects/1gGSIvp2Vao71opl2O2l9z4Qp8yV2mpLSyz1ZiqPOcHTtxG94F98ALqsi/edit';
         // Load booked appointments from localStorage
         function getBookedSlots() {
             const appointments = JSON.parse(localStorage.getItem('appointments') || '[]');
@@ -728,40 +736,49 @@
             updateAvailableTimeSlots(this.value);
         });
 
-        // Google Apps Script Integration
-        async function submitToGoogleSheets(appointmentData) {
-            try {
-                // Format date to dd-mm-yyyy
-                const [year, month, day] = appointmentData.date.split('-');
-                const formattedDate = `${day}-${month}-${year}`;
+        // JSON Storage Functions
+        function saveAppointment(appointmentData) {
+            let appointments = JSON.parse(localStorage.getItem('appointments') || '[]');
+            
+            // Format date to dd-mm-yyyy
+            const [year, month, day] = appointmentData.date.split('-');
+            const formattedDate = `${day}-${month}-${year}`;
+            
+            const appointment = {
+                id: Date.now(),
+                name: appointmentData.name,
+                email: appointmentData.email,
+                date: formattedDate,
+                time: appointmentData.time,
+                message: appointmentData.message,
+                timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+                status: 'booked'
+            };
+            
+            appointments.push(appointment);
+            localStorage.setItem('appointments', JSON.stringify(appointments));
+            
+            console.log('Appointment saved:', appointment);
+            return appointment;
+        }
+
+        function getAppointments() {
+            return JSON.parse(localStorage.getItem('appointments') || '[]');
+        }
+
+        function createDownloadLink() {
+            const appointments = getAppointments();
+            if (appointments.length > 0) {
+                const dataStr = JSON.stringify(appointments, null, 2);
+                const dataBlob = new Blob([dataStr], { type: 'application/json' });
+                const url = URL.createObjectURL(dataBlob);
                 
-                // Prepare data for Google Sheets
-                const formData = new FormData();
-                formData.append('name', appointmentData.name);
-                formData.append('email', appointmentData.email);
-                formData.append('date', formattedDate);
-                formData.append('time', appointmentData.time);
-                formData.append('message', appointmentData.message);
-                formData.append('timestamp', new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }));
+                const downloadBtn = document.getElementById('download-appointments-btn');
+                downloadBtn.href = url;
+                downloadBtn.download = `appointments-${new Date().toISOString().split('T')[0]}.json`;
                 
-                // Submit to Google Apps Script
-                const response = await fetch(GOOGLE_SCRIPT_URL, {
-                    method: 'POST',
-                    body: formData
-                });
-                
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                
-                const result = await response.text();
-                console.log('Google Sheets response:', result);
-                
-                return true;
-                
-            } catch (error) {
-                console.error('Error submitting to Google Sheets:', error);
-                throw error;
+                // Show download section
+                document.getElementById('download-section').classList.remove('hidden');
             }
         }
 
@@ -782,8 +799,7 @@
                 email: document.getElementById('email').value,
                 date: document.getElementById('date').value,
                 time: document.getElementById('time').value,
-                message: document.getElementById('message').value,
-                timestamp: new Date().toISOString()
+                message: document.getElementById('message').value
             };
 
             // Check if time slot is already booked
@@ -798,15 +814,18 @@
             submitSpinner.classList.remove('hidden');
             
             try {
-                // Save appointment locally
-                saveAppointment(formData);
+                // Simulate API call delay
+                await new Promise(resolve => setTimeout(resolve, 1000));
                 
-                // Submit to Google Sheets
-                await submitToGoogleSheets(formData);
+                // Save appointment to JSON storage
+                saveAppointment(formData);
                 
                 // Show success message
                 appointmentSuccess.classList.remove('hidden');
                 appointmentError.classList.add('hidden');
+                
+                // Update download link
+                createDownloadLink();
                 
                 // Reset form
                 appointmentForm.reset();
@@ -820,7 +839,7 @@
                 }, 5000);
                 
             } catch (error) {
-                showError('Appointment saved locally but failed to update Google Sheets. We will contact you soon.');
+                showError('There was an error scheduling your appointment. Please try again.');
                 console.error('Appointment error:', error);
             } finally {
                 // Reset button state
@@ -836,24 +855,12 @@
             appointmentSuccess.classList.add('hidden');
         }
 
-        // Simple Database Simulation using localStorage
-        function saveAppointment(appointmentData) {
-            let appointments = JSON.parse(localStorage.getItem('appointments') || '[]');
-            appointments.push(appointmentData);
-            localStorage.setItem('appointments', JSON.stringify(appointments));
-            console.log('Appointment saved locally:', appointmentData);
-        }
-
-        // Function to load appointments (for demonstration)
-        function loadAppointments() {
-            const appointments = JSON.parse(localStorage.getItem('appointments') || '[]');
-            console.log('Loaded appointments:', appointments);
-            return appointments;
-        }
-
-        // Load appointments on page load
-        window.addEventListener('load', () => {
-            loadAppointments();
+        // Initialize download section if appointments exist
+        window.addEventListener('load', function() {
+            const appointments = getAppointments();
+            if (appointments.length > 0) {
+                createDownloadLink();
+            }
         });
     </script>
 </body>
