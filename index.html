@@ -12,7 +12,7 @@
             font-family: 'Inter', sans-serif;
         }
         .glass-effect {
-            background: rgba(17, 24, 39, 0.6); /* Dark glass effect */
+            background: rgba(17, 24, 39, 0.6);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(55, 65, 81, 0.5);
@@ -26,9 +26,57 @@
             opacity: 1;
             transform: translateY(0);
         }
+        .calendar-day {
+            transition: all 0.2s ease;
+        }
+        .calendar-day:hover {
+            transform: scale(1.05);
+        }
+        .modal-overlay {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .availability-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .available {
+            background-color: #10B981; /* Green */
+        }
+        .busy {
+            background-color: #EF4444; /* Red */
+        }
+        .partial {
+            background-color: #F59E0B; /* Amber */
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 text-gray-200">
+
+    <!-- LinkedIn Popup Modal -->
+    <div id="linkedin-modal" class="fixed inset-0 z-50 flex items-center justify-center modal-overlay hidden">
+        <div class="bg-slate-800 rounded-2xl p-8 max-w-md w-full mx-4 border border-slate-700">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-white">Let's Connect!</h3>
+                <button id="close-linkedin-modal" class="text-gray-400 hover:text-white">
+                    <i data-lucide="x" class="h-6 w-6"></i>
+                </button>
+            </div>
+            <p class="text-gray-300 mb-6">Connect with me on LinkedIn to stay updated with my professional journey and projects.</p>
+            <div class="flex justify-center">
+                <a href="https://www.linkedin.com/in/lokesh-aslekar-b22726242/" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors inline-flex items-center gap-2">
+                    <i data-lucide="linkedin" class="h-5 w-5"></i>
+                    Connect on LinkedIn
+                </a>
+            </div>
+            <div class="mt-6 text-center">
+                <button id="dont-show-again" class="text-sm text-gray-400 hover:text-gray-300">Don't show this again</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Header -->
     <header class="fixed top-0 left-0 right-0 z-50 glass-effect">
@@ -40,9 +88,9 @@
                 <a href="#about" class="text-gray-300 hover:text-sky-400 transition-colors">About</a>
                 <a href="#skills" class="text-gray-300 hover:text-sky-400 transition-colors">Skills</a>
                 <a href="#projects" class="text-gray-300 hover:text-sky-400 transition-colors">Projects</a>
+                <a href="#calendar" class="text-gray-300 hover:text-sky-400 transition-colors">Calendar</a>
                 <a href="#education" class="text-gray-300 hover:text-sky-400 transition-colors">Education</a>
                 <a href="#contact" class="text-gray-300 hover:text-sky-400 transition-colors">Contact</a>
-                <!-- new link -->
                 <a href="BirsaVahiniCampaign/donation-landing-page-hindi.html" class="text-gray-300 hover:text-red-400 font-semibold transition-colors">Donate ❤️</a>
             </nav>
         </div>
@@ -164,6 +212,97 @@
                         <div class="mt-4 flex flex-wrap gap-2">
                             <span class="tech-tag bg-slate-700 text-gray-300 text-sm font-medium py-1 px-3 rounded-full">Python</span>
                             <span class="tech-tag bg-slate-700 text-gray-300 text-sm font-medium py-1 px-3 rounded-full">AI/ML</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calendar & Appointment Section -->
+        <section id="calendar" class="py-20 scroll-reveal">
+            <h2 class="text-4xl font-bold text-center mb-12">Schedule & Availability</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Calendar -->
+                <div class="bg-slate-800/80 rounded-2xl p-6 shadow-lg border border-slate-700">
+                    <h3 class="text-2xl font-bold mb-6 text-center">My Availability Calendar</h3>
+                    <div class="flex justify-between items-center mb-6">
+                        <button id="prev-month" class="text-gray-400 hover:text-white p-2 rounded-full hover:bg-slate-700">
+                            <i data-lucide="chevron-left" class="h-5 w-5"></i>
+                        </button>
+                        <h4 id="current-month" class="text-xl font-semibold">June 2025</h4>
+                        <button id="next-month" class="text-gray-400 hover:text-white p-2 rounded-full hover:bg-slate-700">
+                            <i data-lucide="chevron-right" class="h-5 w-5"></i>
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-7 gap-2 mb-4">
+                        <div class="text-center text-gray-400 font-medium">Sun</div>
+                        <div class="text-center text-gray-400 font-medium">Mon</div>
+                        <div class="text-center text-gray-400 font-medium">Tue</div>
+                        <div class="text-center text-gray-400 font-medium">Wed</div>
+                        <div class="text-center text-gray-400 font-medium">Thu</div>
+                        <div class="text-center text-gray-400 font-medium">Fri</div>
+                        <div class="text-center text-gray-400 font-medium">Sat</div>
+                    </div>
+                    <div id="calendar-days" class="grid grid-cols-7 gap-2">
+                        <!-- Calendar days will be populated by JavaScript -->
+                    </div>
+                    <div class="mt-6 flex justify-center space-x-4">
+                        <div class="flex items-center">
+                            <div class="availability-badge available mr-2"></div>
+                            <span class="text-sm text-gray-400">Available</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="availability-badge busy mr-2"></div>
+                            <span class="text-sm text-gray-400">Busy</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="availability-badge partial mr-2"></div>
+                            <span class="text-sm text-gray-400">Partially Available</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Appointment Booking -->
+                <div class="bg-slate-800/80 rounded-2xl p-6 shadow-lg border border-slate-700">
+                    <h3 class="text-2xl font-bold mb-6 text-center">Book an Appointment</h3>
+                    <form id="appointment-form" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-gray-300 mb-2">Your Name</label>
+                            <input type="text" id="name" name="name" required class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-300 mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" required class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+                        </div>
+                        <div>
+                            <label for="date" class="block text-gray-300 mb-2">Preferred Date</label>
+                            <input type="date" id="date" name="date" required class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+                        </div>
+                        <div>
+                            <label for="time" class="block text-gray-300 mb-2">Preferred Time</label>
+                            <select id="time" name="time" required class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+                                <option value="">Select a time</option>
+                                <option value="09:00">9:00 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="14:00">2:00 PM</option>
+                                <option value="15:00">3:00 PM</option>
+                                <option value="16:00">4:00 PM</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-300 mb-2">Message (Optional)</label>
+                            <textarea id="message" name="message" rows="3" class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                            Schedule Appointment
+                        </button>
+                    </form>
+                    <div id="appointment-success" class="mt-4 p-4 bg-green-900/50 text-green-300 rounded-lg hidden">
+                        <div class="flex items-center">
+                            <i data-lucide="check-circle" class="h-5 w-5 mr-2"></i>
+                            <span>Your appointment request has been submitted successfully!</span>
                         </div>
                     </div>
                 </div>
@@ -312,7 +451,145 @@
         // Initial check on page load
         handleScrollAnimation();
 
+        // LinkedIn Modal Logic
+        const linkedinModal = document.getElementById('linkedin-modal');
+        const closeLinkedinModal = document.getElementById('close-linkedin-modal');
+        const dontShowAgain = document.getElementById('dont-show-again');
+        
+        // Show LinkedIn modal after a short delay on page load
+        setTimeout(() => {
+            // Check if user has previously dismissed the modal
+            if (!localStorage.getItem('linkedinModalDismissed')) {
+                linkedinModal.classList.remove('hidden');
+            }
+        }, 1500);
+        
+        // Close modal when X is clicked
+        closeLinkedinModal.addEventListener('click', () => {
+            linkedinModal.classList.add('hidden');
+        });
+        
+        // Close modal and don't show again
+        dontShowAgain.addEventListener('click', () => {
+            linkedinModal.classList.add('hidden');
+            localStorage.setItem('linkedinModalDismissed', 'true');
+        });
+        
+        // Close modal when clicking outside
+        linkedinModal.addEventListener('click', (e) => {
+            if (e.target === linkedinModal) {
+                linkedinModal.classList.add('hidden');
+            }
+        });
+
+        // Calendar Logic
+        let currentDate = new Date();
+        const calendarDays = document.getElementById('calendar-days');
+        const currentMonthElement = document.getElementById('current-month');
+        const prevMonthButton = document.getElementById('prev-month');
+        const nextMonthButton = document.getElementById('next-month');
+        
+        // Sample availability data (in a real app, this would come from a backend)
+        const availabilityData = {
+            '2025-06-15': 'available',
+            '2025-06-16': 'available',
+            '2025-06-17': 'partial',
+            '2025-06-18': 'busy',
+            '2025-06-19': 'busy',
+            '2025-06-20': 'available',
+            '2025-06-21': 'available',
+            '2025-06-25': 'partial',
+            '2025-06-26': 'available',
+            '2025-06-27': 'available',
+        };
+        
+        function renderCalendar() {
+            // Clear previous calendar
+            calendarDays.innerHTML = '';
+            
+            // Set current month text
+            const monthNames = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
+            currentMonthElement.textContent = `${monthNames[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
+            
+            // Get first day of month and number of days in month
+            const firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+            const lastDay = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
+            const daysInMonth = lastDay.getDate();
+            const startingDay = firstDay.getDay(); // 0 = Sunday, 1 = Monday, etc.
+            
+            // Add empty cells for days before the first day of the month
+            for (let i = 0; i < startingDay; i++) {
+                const emptyCell = document.createElement('div');
+                emptyCell.classList.add('h-12', 'bg-slate-700/50', 'rounded-lg');
+                calendarDays.appendChild(emptyCell);
+            }
+            
+            // Add cells for each day of the month
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayCell = document.createElement('div');
+                dayCell.classList.add('h-12', 'bg-slate-700', 'rounded-lg', 'flex', 'items-center', 'justify-center', 'relative', 'calendar-day');
+                
+                // Format date for comparison with availability data
+                const dateString = `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                
+                // Add availability indicator if data exists for this date
+                if (availabilityData[dateString]) {
+                    const availabilityBadge = document.createElement('div');
+                    availabilityBadge.classList.add('availability-badge', availabilityData[dateString]);
+                    dayCell.appendChild(availabilityBadge);
+                }
+                
+                // Add day number
+                const dayNumber = document.createElement('span');
+                dayNumber.textContent = day;
+                dayNumber.classList.add('text-white', 'font-medium');
+                dayCell.appendChild(dayNumber);
+                
+                // Add click event to select date in appointment form
+                dayCell.addEventListener('click', () => {
+                    document.getElementById('date').value = dateString;
+                });
+                
+                calendarDays.appendChild(dayCell);
+            }
+        }
+        
+        // Initialize calendar
+        renderCalendar();
+        
+        // Previous month button
+        prevMonthButton.addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            renderCalendar();
+        });
+        
+        // Next month button
+        nextMonthButton.addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            renderCalendar();
+        });
+
+        // Appointment Form Logic
+        const appointmentForm = document.getElementById('appointment-form');
+        const appointmentSuccess = document.getElementById('appointment-success');
+        
+        appointmentForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // In a real application, you would send this data to a backend
+            // For now, we'll just show a success message
+            appointmentSuccess.classList.remove('hidden');
+            
+            // Reset form
+            appointmentForm.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                appointmentSuccess.classList.add('hidden');
+            }, 5000);
+        });
     </script>
 </body>
 </html>
-
