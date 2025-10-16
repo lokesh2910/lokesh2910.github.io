@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lokesh Aslekar | Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -52,6 +53,25 @@
         .partial {
             background-color: #F59E0B; /* Amber */
         }
+        .past-date {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .booked-slot {
+            background-color: #7C3AED; /* Purple */
+        }
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #ffffff;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s ease-in-out infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 text-gray-200">
@@ -91,7 +111,6 @@
                 <a href="#calendar" class="text-gray-300 hover:text-sky-400 transition-colors">Calendar</a>
                 <a href="#education" class="text-gray-300 hover:text-sky-400 transition-colors">Education</a>
                 <a href="#contact" class="text-gray-300 hover:text-sky-400 transition-colors">Contact</a>
-                <a href="BirsaVahiniCampaign/donation-landing-page-hindi.html" class="text-gray-300 hover:text-red-400 font-semibold transition-colors">Donate ❤️</a>
             </nav>
         </div>
     </header>
@@ -218,6 +237,46 @@
             </div>
         </section>
 
+        <!-- Internship Section -->
+        <section id="internship" class="py-20 scroll-reveal">
+             <h2 class="text-4xl font-bold text-center mb-12">Internship Experience</h2>
+             
+             <!-- Current Internship -->
+             <div class="max-w-2xl mx-auto bg-slate-800/80 rounded-2xl p-8 shadow-lg border border-slate-700 mb-8">
+                <div class="flex items-start">
+                    <i data-lucide="briefcase" class="h-10 w-10 text-sky-400 mr-6 mt-1 flex-shrink-0"></i>
+                    <div>
+                        <div class="flex justify-between items-center mb-1">
+                             <h3 class="text-2xl font-bold text-white">Data Science Intern</h3>
+                             <span class="text-sm font-medium bg-green-900/50 text-green-300 py-1 px-3 rounded-full">Current</span>
+                        </div>
+                        <p class="text-gray-400 mb-3">KP Solutions</p>
+                        <p class="text-gray-400">Working on data analysis, machine learning models, and data visualization projects. Gaining hands-on experience in the complete data science pipeline from data collection to model deployment.</p>
+                        <div class="mt-4">
+                            <a href="https://www.linkedin.com/company/knowledge-power-solution/posts/?feedView=all" target="_blank" class="text-sky-400 hover:text-sky-300 inline-flex items-center gap-2">
+                                <i data-lucide="external-link" class="h-4 w-4"></i>
+                                View Company Posts
+                            </a>
+                        </div>
+                    </div>
+                </div>
+             </div>
+
+             <!-- Previous Internship -->
+             <div class="max-w-2xl mx-auto bg-slate-800/80 rounded-2xl p-8 shadow-lg border border-slate-700">
+                <div class="flex items-start">
+                    <i data-lucide="briefcase" class="h-10 w-10 text-sky-400 mr-6 mt-1 flex-shrink-0"></i>
+                    <div>
+                        <div class="flex justify-between items-center mb-1">
+                             <h3 class="text-2xl font-bold text-white">Python Internship</h3>
+                             <span class="text-sm font-medium text-gray-400">2022</span>
+                        </div>
+                        <p class="text-gray-400">Gained practical experience in Python development, working on small projects, learning best practices in coding, and collaborating within a development environment to enhance my programming skills.</p>
+                    </div>
+                </div>
+             </div>
+        </section>
+
         <!-- Calendar & Appointment Section -->
         <section id="calendar" class="py-20 scroll-reveal">
             <h2 class="text-4xl font-bold text-center mb-12">Schedule & Availability</h2>
@@ -249,16 +308,20 @@
                     </div>
                     <div class="mt-6 flex justify-center space-x-4">
                         <div class="flex items-center">
-                            <div class="availability-badge available mr-2"></div>
+                            <div class="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
                             <span class="text-sm text-gray-400">Available</span>
                         </div>
                         <div class="flex items-center">
-                            <div class="availability-badge busy mr-2"></div>
+                            <div class="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
                             <span class="text-sm text-gray-400">Busy</span>
                         </div>
                         <div class="flex items-center">
-                            <div class="availability-badge partial mr-2"></div>
+                            <div class="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
                             <span class="text-sm text-gray-400">Partially Available</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-purple-500 rounded-full mr-2"></div>
+                            <span class="text-sm text-gray-400">Booked</span>
                         </div>
                     </div>
                 </div>
@@ -266,64 +329,57 @@
                 <!-- Appointment Booking -->
                 <div class="bg-slate-800/80 rounded-2xl p-6 shadow-lg border border-slate-700">
                     <h3 class="text-2xl font-bold mb-6 text-center">Book an Appointment</h3>
+                    <p class="text-gray-400 text-center mb-4 text-sm">All times are in IST (Indian Standard Time)</p>
                     <form id="appointment-form" class="space-y-4">
                         <div>
-                            <label for="name" class="block text-gray-300 mb-2">Your Name</label>
+                            <label for="name" class="block text-gray-300 mb-2">Your Name *</label>
                             <input type="text" id="name" name="name" required class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
                         </div>
                         <div>
-                            <label for="email" class="block text-gray-300 mb-2">Email Address</label>
+                            <label for="email" class="block text-gray-300 mb-2">Email Address *</label>
                             <input type="email" id="email" name="email" required class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
                         </div>
                         <div>
-                            <label for="date" class="block text-gray-300 mb-2">Preferred Date</label>
-                            <input type="date" id="date" name="date" required class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+                            <label for="date" class="block text-gray-300 mb-2">Preferred Date *</label>
+                            <input type="date" id="date" name="date" required class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500" min="">
                         </div>
                         <div>
-                            <label for="time" class="block text-gray-300 mb-2">Preferred Time</label>
+                            <label for="time" class="block text-gray-300 mb-2">Preferred Time (IST) *</label>
                             <select id="time" name="time" required class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
                                 <option value="">Select a time</option>
-                                <option value="09:00">9:00 AM</option>
-                                <option value="10:00">10:00 AM</option>
-                                <option value="11:00">11:00 AM</option>
-                                <option value="14:00">2:00 PM</option>
-                                <option value="15:00">3:00 PM</option>
-                                <option value="16:00">4:00 PM</option>
+                                <option value="09:00">9:00 AM IST</option>
+                                <option value="10:00">10:00 AM IST</option>
+                                <option value="11:00">11:00 AM IST</option>
+                                <option value="14:00">2:00 PM IST</option>
+                                <option value="15:00">3:00 PM IST</option>
+                                <option value="16:00">4:00 PM IST</option>
+                                <option value="17:00">5:00 PM IST</option>
+                                <option value="18:00">6:00 PM IST</option>
                             </select>
                         </div>
                         <div>
-                            <label for="message" class="block text-gray-300 mb-2">Message (Optional)</label>
-                            <textarea id="message" name="message" rows="3" class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500"></textarea>
+                            <label for="message" class="block text-gray-300 mb-2">Message *</label>
+                            <textarea id="message" name="message" rows="3" required class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500" placeholder="Please describe the purpose of the meeting..."></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
-                            Schedule Appointment
+                        <button type="submit" id="submit-btn" class="w-full bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2">
+                            <span id="submit-text">Schedule Appointment</span>
+                            <div id="submit-spinner" class="loading-spinner hidden"></div>
                         </button>
                     </form>
                     <div id="appointment-success" class="mt-4 p-4 bg-green-900/50 text-green-300 rounded-lg hidden">
                         <div class="flex items-center">
                             <i data-lucide="check-circle" class="h-5 w-5 mr-2"></i>
-                            <span>Your appointment request has been submitted successfully!</span>
+                            <span>Your appointment has been scheduled successfully! Google Sheets updated.</span>
+                        </div>
+                    </div>
+                    <div id="appointment-error" class="mt-4 p-4 bg-red-900/50 text-red-300 rounded-lg hidden">
+                        <div class="flex items-center">
+                            <i data-lucide="alert-circle" class="h-5 w-5 mr-2"></i>
+                            <span id="error-message">There was an error scheduling your appointment.</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Internship Section -->
-        <section id="internship" class="py-20 scroll-reveal">
-             <h2 class="text-4xl font-bold text-center mb-12">Internship Experience</h2>
-             <div class="max-w-2xl mx-auto bg-slate-800/80 rounded-2xl p-8 shadow-lg border border-slate-700">
-                <div class="flex items-start">
-                    <i data-lucide="briefcase" class="h-10 w-10 text-sky-400 mr-6 mt-1 flex-shrink-0"></i>
-                    <div>
-                        <div class="flex justify-between items-center mb-1">
-                             <h3 class="text-2xl font-bold text-white">Python Internship</h3>
-                             <span class="text-sm font-medium text-gray-400">2022</span>
-                        </div>
-                        <p class="text-gray-400">Gained practical experience in Python development, working on small projects, learning best practices in coding, and collaborating within a development environment to enhance my programming skills.</p>
-                    </div>
-                </div>
-             </div>
         </section>
 
         <!-- Education Section -->
@@ -489,19 +545,67 @@
         const prevMonthButton = document.getElementById('prev-month');
         const nextMonthButton = document.getElementById('next-month');
         
-        // Sample availability data (in a real app, this would come from a backend)
-        const availabilityData = {
-            '2025-06-15': 'available',
-            '2025-06-16': 'available',
-            '2025-06-17': 'partial',
-            '2025-06-18': 'busy',
-            '2025-06-19': 'busy',
-            '2025-06-20': 'available',
-            '2025-06-21': 'available',
-            '2025-06-25': 'partial',
-            '2025-06-26': 'available',
-            '2025-06-27': 'available',
-        };
+        // Holidays (you can add more dates here)
+        const holidays = [
+            '2025-01-01', // New Year
+            '2025-01-26', // Republic Day
+            '2025-08-15', // Independence Day
+            '2025-10-02', // Gandhi Jayanti
+            '2025-12-25'  // Christmas
+        ];
+
+        // Google Apps Script URL - REPLACE WITH YOUR ACTUAL URL
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/home/projects/1gGSIvp2Vao71opl2O2l9z4Qp8yV2mpLSyz1ZiqPOcHTtxG94F98ALqsi/edit';
+        // Load booked appointments from localStorage
+        function getBookedSlots() {
+            const appointments = JSON.parse(localStorage.getItem('appointments') || '[]');
+            const bookedSlots = {};
+            
+            appointments.forEach(appointment => {
+                const key = `${appointment.date}_${appointment.time}`;
+                bookedSlots[key] = true;
+            });
+            
+            return bookedSlots;
+        }
+        
+        // Function to check if a date is a weekend
+        function isWeekend(date) {
+            const day = date.getDay();
+            return day === 0 || day === 6; // 0 = Sunday, 6 = Saturday
+        }
+        
+        // Function to check if a date is a holiday
+        function isHoliday(dateString) {
+            return holidays.includes(dateString);
+        }
+
+        // Function to check if a time slot is booked
+        function isTimeSlotBooked(dateString, time) {
+            const bookedSlots = getBookedSlots();
+            const key = `${dateString}_${time}`;
+            return bookedSlots[key] || false;
+        }
+        
+        // Function to get availability status for a date
+        function getAvailabilityStatus(date) {
+            const dateString = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+            
+            // Check if date is in the past
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            if (date < today) {
+                return 'past';
+            }
+            
+            // Check if it's a weekend or holiday
+            if (isWeekend(date) || isHoliday(dateString)) {
+                return 'available';
+            }
+            
+            // Monday to Friday, 11 AM to 7 PM are busy
+            return 'busy';
+        }
         
         function renderCalendar() {
             // Clear previous calendar
@@ -529,15 +633,35 @@
             // Add cells for each day of the month
             for (let day = 1; day <= daysInMonth; day++) {
                 const dayCell = document.createElement('div');
-                dayCell.classList.add('h-12', 'bg-slate-700', 'rounded-lg', 'flex', 'items-center', 'justify-center', 'relative', 'calendar-day');
-                
-                // Format date for comparison with availability data
+                const date = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
+                const status = getAvailabilityStatus(date);
                 const dateString = `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
                 
-                // Add availability indicator if data exists for this date
-                if (availabilityData[dateString]) {
+                dayCell.classList.add('h-12', 'bg-slate-700', 'rounded-lg', 'flex', 'items-center', 'justify-center', 'relative', 'calendar-day');
+                
+                if (status === 'past') {
+                    dayCell.classList.add('past-date');
+                }
+                
+                // Add availability indicator
+                if (status !== 'past') {
                     const availabilityBadge = document.createElement('div');
-                    availabilityBadge.classList.add('availability-badge', availabilityData[dateString]);
+                    availabilityBadge.classList.add('availability-badge');
+                    
+                    // Check if any time slot is booked for this date
+                    const timeSlots = ['09:00', '10:00', '11:00', '14:00', '15:00', '16:00', '17:00', '18:00'];
+                    const hasBookedSlot = timeSlots.some(time => isTimeSlotBooked(dateString, time));
+                    
+                    if (hasBookedSlot) {
+                        availabilityBadge.classList.add('booked-slot');
+                    } else if (status === 'available') {
+                        availabilityBadge.classList.add('available');
+                    } else if (status === 'busy') {
+                        availabilityBadge.classList.add('busy');
+                    } else if (status === 'partial') {
+                        availabilityBadge.classList.add('partial');
+                    }
+                    
                     dayCell.appendChild(availabilityBadge);
                 }
                 
@@ -548,11 +672,34 @@
                 dayCell.appendChild(dayNumber);
                 
                 // Add click event to select date in appointment form
-                dayCell.addEventListener('click', () => {
-                    document.getElementById('date').value = dateString;
-                });
+                if (status !== 'past') {
+                    dayCell.addEventListener('click', () => {
+                        document.getElementById('date').value = dateString;
+                        updateAvailableTimeSlots(dateString);
+                    });
+                }
                 
                 calendarDays.appendChild(dayCell);
+            }
+        }
+
+        // Update available time slots based on selected date
+        function updateAvailableTimeSlots(dateString) {
+            const timeSelect = document.getElementById('time');
+            const timeSlots = timeSelect.options;
+            const bookedSlots = getBookedSlots();
+            
+            for (let i = 1; i < timeSlots.length; i++) {
+                const time = timeSlots[i].value;
+                const key = `${dateString}_${time}`;
+                
+                if (bookedSlots[key]) {
+                    timeSlots[i].disabled = true;
+                    timeSlots[i].textContent = `${time} IST - Booked`;
+                } else {
+                    timeSlots[i].disabled = false;
+                    timeSlots[i].textContent = `${time} IST`;
+                }
             }
         }
         
@@ -571,24 +718,142 @@
             renderCalendar();
         });
 
+        // Set minimum date for appointment form (today)
+        const today = new Date();
+        const todayFormatted = today.toISOString().split('T')[0];
+        document.getElementById('date').min = todayFormatted;
+
+        // Update time slots when date changes
+        document.getElementById('date').addEventListener('change', function() {
+            updateAvailableTimeSlots(this.value);
+        });
+
+        // Google Apps Script Integration
+        async function submitToGoogleSheets(appointmentData) {
+            try {
+                // Format date to dd-mm-yyyy
+                const [year, month, day] = appointmentData.date.split('-');
+                const formattedDate = `${day}-${month}-${year}`;
+                
+                // Prepare data for Google Sheets
+                const formData = new FormData();
+                formData.append('name', appointmentData.name);
+                formData.append('email', appointmentData.email);
+                formData.append('date', formattedDate);
+                formData.append('time', appointmentData.time);
+                formData.append('message', appointmentData.message);
+                formData.append('timestamp', new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }));
+                
+                // Submit to Google Apps Script
+                const response = await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const result = await response.text();
+                console.log('Google Sheets response:', result);
+                
+                return true;
+                
+            } catch (error) {
+                console.error('Error submitting to Google Sheets:', error);
+                throw error;
+            }
+        }
+
         // Appointment Form Logic
         const appointmentForm = document.getElementById('appointment-form');
         const appointmentSuccess = document.getElementById('appointment-success');
+        const appointmentError = document.getElementById('appointment-error');
+        const submitBtn = document.getElementById('submit-btn');
+        const submitText = document.getElementById('submit-text');
+        const submitSpinner = document.getElementById('submit-spinner');
         
-        appointmentForm.addEventListener('submit', (e) => {
+        appointmentForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
-            // In a real application, you would send this data to a backend
-            // For now, we'll just show a success message
-            appointmentSuccess.classList.remove('hidden');
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                date: document.getElementById('date').value,
+                time: document.getElementById('time').value,
+                message: document.getElementById('message').value,
+                timestamp: new Date().toISOString()
+            };
+
+            // Check if time slot is already booked
+            if (isTimeSlotBooked(formData.date, formData.time)) {
+                showError('This time slot is already booked. Please select another time.');
+                return;
+            }
             
-            // Reset form
-            appointmentForm.reset();
+            // Show loading state
+            submitBtn.disabled = true;
+            submitText.textContent = 'Scheduling...';
+            submitSpinner.classList.remove('hidden');
             
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                appointmentSuccess.classList.add('hidden');
-            }, 5000);
+            try {
+                // Save appointment locally
+                saveAppointment(formData);
+                
+                // Submit to Google Sheets
+                await submitToGoogleSheets(formData);
+                
+                // Show success message
+                appointmentSuccess.classList.remove('hidden');
+                appointmentError.classList.add('hidden');
+                
+                // Reset form
+                appointmentForm.reset();
+                
+                // Refresh calendar to show booked slot
+                renderCalendar();
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    appointmentSuccess.classList.add('hidden');
+                }, 5000);
+                
+            } catch (error) {
+                showError('Appointment saved locally but failed to update Google Sheets. We will contact you soon.');
+                console.error('Appointment error:', error);
+            } finally {
+                // Reset button state
+                submitBtn.disabled = false;
+                submitText.textContent = 'Schedule Appointment';
+                submitSpinner.classList.add('hidden');
+            }
+        });
+
+        function showError(message) {
+            document.getElementById('error-message').textContent = message;
+            appointmentError.classList.remove('hidden');
+            appointmentSuccess.classList.add('hidden');
+        }
+
+        // Simple Database Simulation using localStorage
+        function saveAppointment(appointmentData) {
+            let appointments = JSON.parse(localStorage.getItem('appointments') || '[]');
+            appointments.push(appointmentData);
+            localStorage.setItem('appointments', JSON.stringify(appointments));
+            console.log('Appointment saved locally:', appointmentData);
+        }
+
+        // Function to load appointments (for demonstration)
+        function loadAppointments() {
+            const appointments = JSON.parse(localStorage.getItem('appointments') || '[]');
+            console.log('Loaded appointments:', appointments);
+            return appointments;
+        }
+
+        // Load appointments on page load
+        window.addEventListener('load', () => {
+            loadAppointments();
         });
     </script>
 </body>
