@@ -1,938 +1,1340 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lokesh Aslekar | Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
 
-    <!-- For Apple devices -->
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <!-- Google AdSense -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5251977408086114"
+      crossorigin="anonymous"
+    ></script>
 
-    <!-- For Android devices -->
-    <link rel="manifest" href="favicon_io/site.webmanifest">
-    <!-- Google AdSense - ADD THIS LINE -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5251977408086114"
-     crossorigin="anonymous"></script>
+    <!-- ========== FAVICON & ICONS - ADD THIS SECTION ========== -->
+    <!-- Favicon for Browsers -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+    <!-- Apple Touch Icon (iOS Safari) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+
+    <!-- Android Chrome Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png" />
+
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileImage" content="icon-144.png" />
+    <meta name="msapplication-TileColor" content="#0ea5e9" />
+    <meta name="theme-color" content="#0ea5e9" />
+
+    <!-- Open Graph Tags (for Social Media Sharing) -->
+    <meta property="og:image" content="icon-512.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:image" content="icon-512.png" />
+    <!-- ========== END ICONS SECTION ========== -->
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .glass-effect {
+        background: rgba(17, 24, 39, 0.6);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(55, 65, 81, 0.5);
+      }
+      .scroll-reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .scroll-reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .calendar-day {
+        transition: all 0.2s ease;
+      }
+      .calendar-day:hover {
+        transform: scale(1.05);
+      }
+      .modal-overlay {
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+      .availability-badge {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+      .available {
+        background-color: #10b981; /* Green */
+      }
+      .busy {
+        background-color: #ef4444; /* Red */
+      }
+      .partial {
+        background-color: #f59e0b; /* Amber */
+      }
+      .past-date {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+      .booked-slot {
+        background-color: #7c3aed; /* Purple */
+      }
+      .loading-spinner {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 3px solid #ffffff;
+        border-radius: 50%;
+        border-top-color: transparent;
+        animation: spin 1s ease-in-out infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
         }
-        .glass-effect {
-            background: rgba(17, 24, 39, 0.6);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(55, 65, 81, 0.5);
-        }
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .scroll-reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .calendar-day {
-            transition: all 0.2s ease;
-        }
-        .calendar-day:hover {
-            transform: scale(1.05);
-        }
-        .modal-overlay {
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-        .availability-badge {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-        .available {
-            background-color: #10B981; /* Green */
-        }
-        .busy {
-            background-color: #EF4444; /* Red */
-        }
-        .partial {
-            background-color: #F59E0B; /* Amber */
-        }
-        .past-date {
-            opacity: 0.5;
-            pointer-events: none;
-        }
-        .booked-slot {
-            background-color: #7C3AED; /* Purple */
-        }
-        .loading-spinner {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid #ffffff;
-            border-radius: 50%;
-            border-top-color: transparent;
-            animation: spin 1s ease-in-out infinite;
-        }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
+      }
     </style>
-    <!-- Favicon for browser tabs -->
-<link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
-<link rel="icon" type="image/png" href="favicon_io/favicon.png">
+  </head>
 
-<!-- For Apple devices -->
-<link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
-
-<!-- For Android devices -->
-<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
-
-<!-- Web app manifest -->
-<link rel="manifest" href="site.webmanifest">
-</head>
-<body class="bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 text-gray-200">
-
+  <body
+    class="bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 text-gray-200"
+  >
     <!-- LinkedIn Popup Modal -->
-    <div id="linkedin-modal" class="fixed inset-0 z-50 flex items-center justify-center modal-overlay hidden">
-        <div class="bg-slate-800 rounded-2xl p-8 max-w-md w-full mx-4 border border-slate-700">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="text-2xl font-bold text-white">Let's Connect!</h3>
-                <button id="close-linkedin-modal" class="text-gray-400 hover:text-white">
-                    <i data-lucide="x" class="h-6 w-6"></i>
-                </button>
-            </div>
-            <p class="text-gray-300 mb-6">Connect with me on LinkedIn to stay updated with my professional journey and projects.</p>
-            <div class="flex justify-center">
-                <a href="https://www.linkedin.com/in/lokesh-aslekar-b22726242/" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors inline-flex items-center gap-2">
-                    <i data-lucide="linkedin" class="h-5 w-5"></i>
-                    Connect on LinkedIn
-                </a>
-            </div>
-            <div class="mt-6 text-center">
-                <button id="dont-show-again" class="text-sm text-gray-400 hover:text-gray-300">Don't show this again</button>
-            </div>
+    <div
+      id="linkedin-modal"
+      class="fixed inset-0 z-50 flex items-center justify-center modal-overlay hidden"
+    >
+      <div
+        class="bg-slate-800 rounded-2xl p-8 max-w-md w-full mx-4 border border-slate-700"
+      >
+        <div class="flex justify-between items-center mb-6">
+          <h3 class="text-2xl font-bold text-white">Let's Connect!</h3>
+          <button
+            id="close-linkedin-modal"
+            class="text-gray-400 hover:text-white"
+          >
+            <i data-lucide="x" class="h-6 w-6"></i>
+          </button>
         </div>
+        <p class="text-gray-300 mb-6">
+          Connect with me on LinkedIn to stay updated with my professional
+          journey and projects.
+        </p>
+        <div class="flex justify-center">
+          <a
+            href="https://www.linkedin.com/in/lokesh-aslekar-b22726242/"
+            target="_blank"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors inline-flex items-center gap-2"
+          >
+            <i data-lucide="linkedin" class="h-5 w-5"></i>
+            Connect on LinkedIn
+          </a>
+        </div>
+        <div class="mt-6 text-center">
+          <button
+            id="dont-show-again"
+            class="text-sm text-gray-400 hover:text-gray-300"
+          >
+            Don't show this again
+          </button>
+        </div>
+      </div>
     </div>
 
     <!-- Header -->
-<header class="fixed top-0 left-0 right-0 z-50 glass-effect">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <header class="fixed top-0 left-0 right-0 z-50 glass-effect">
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
         <a href="index.html">
-            <img src="logo.png" alt="Lokesh Aslekar Logo" class="h-8 w-auto">
+          <img src="logo.png" alt="Lokesh Aslekar Logo" class="h-8 w-auto" />
         </a>
         <nav class="hidden md:flex items-center space-x-8">
-            <a href="#about" class="text-gray-300 hover:text-sky-400 transition-colors">About</a>
-            <a href="#skills" class="text-gray-300 hover:text-sky-400 transition-colors">Skills</a>
-            <a href="#projects" class="text-gray-300 hover:text-sky-400 transition-colors">Projects</a>
-            <a href="#calendar" class="text-gray-300 hover:text-sky-400 transition-colors">Calendar</a>
-            <a href="#education" class="text-gray-300 hover:text-sky-400 transition-colors">Education</a>
-            <!-- ADD THIS LINE FOR RESOURCES PAGE -->
-            <a href="ads.html" class="text-gray-300 hover:text-sky-400 transition-colors">Resources</a>
-            <a href="#contact" class="text-gray-300 hover:text-sky-400 transition-colors">Contact</a>
+          <a
+            href="#about"
+            class="text-gray-300 hover:text-sky-400 transition-colors"
+            >About</a
+          >
+          <a
+            href="#skills"
+            class="text-gray-300 hover:text-sky-400 transition-colors"
+            >Skills</a
+          >
+          <a
+            href="#projects"
+            class="text-gray-300 hover:text-sky-400 transition-colors"
+            >Projects</a
+          >
+          <a
+            href="#calendar"
+            class="text-gray-300 hover:text-sky-400 transition-colors"
+            >Calendar</a
+          >
+          <a
+            href="#education"
+            class="text-gray-300 hover:text-sky-400 transition-colors"
+            >Education</a
+          >
+          <!-- ADD THIS LINE FOR RESOURCES PAGE -->
+          <a
+            href="ads.html"
+            class="text-gray-300 hover:text-sky-400 transition-colors"
+            >Resources</a
+          >
+          <a
+            href="#contact"
+            class="text-gray-300 hover:text-sky-400 transition-colors"
+            >Contact</a
+          >
         </nav>
-    </div>
-</header>
+      </div>
+    </header>
 
     <main class="container mx-auto px-6 pt-24 md:pt-32">
+      <!-- Hero Section -->
+      <section
+        id="about"
+        class="min-h-[80vh] flex flex-col md:flex-row items-center justify-center text-center md:text-left scroll-reveal"
+      >
+        <div class="md:w-1/2 mb-10 md:mb-0">
+          <span class="text-sky-400 font-semibold">Hello, I'm</span>
+          <h1
+            class="text-4xl md:text-6xl font-extrabold my-2 bg-gradient-to-r from-sky-400 to-indigo-500 bg-clip-text text-transparent"
+          >
+            Lokesh Sandeep Aslekar
+          </h1>
+          <h2 class="text-2xl md:text-3xl font-semibold text-gray-400">
+            Computer Science Student
+          </h2>
+          <p
+            class="mt-6 max-w-xl mx-auto md:mx-0 text-lg leading-relaxed text-gray-300"
+          >
+            Dedicated and detail-oriented Computer Science Engineering student
+            with a strong foundation in programming and problem-solving. Seeking
+            to apply my technical knowledge and contribute to innovative
+            projects.
+          </p>
+          <div
+            class="mt-8 flex flex-wrap justify-center md:justify-start gap-4"
+          >
+            <a
+              href="mailto:lokeshaslekar@gmail.com"
+              class="bg-sky-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-sky-600 transition-transform transform hover:scale-105 shadow-lg shadow-sky-500/20 inline-flex items-center gap-2"
+            >
+              <i data-lucide="mail" class="h-5 w-5"></i>
+              Contact Me
+            </a>
+            <a
+              href="resume.pdf.pdf"
+              download
+              class="border-2 border-sky-400 text-sky-400 font-bold py-3 px-6 rounded-lg hover:bg-sky-400 hover:text-gray-900 transition-colors transform hover:scale-105 shadow-lg inline-flex items-center gap-2"
+            >
+              <i data-lucide="download" class="h-5 w-5"></i>
+              Download Resume
+            </a>
+          </div>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <img
+            src="my-photo.jpg"
+            alt="Lokesh Aslekar"
+            class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-2xl border-4 border-sky-500/50"
+          />
+        </div>
+      </section>
 
-        <!-- Hero Section -->
-        <section id="about" class="min-h-[80vh] flex flex-col md:flex-row items-center justify-center text-center md:text-left scroll-reveal">
-            <div class="md:w-1/2 mb-10 md:mb-0">
-                <span class="text-sky-400 font-semibold">Hello, I'm</span>
-                <h1 class="text-4xl md:text-6xl font-extrabold my-2 bg-gradient-to-r from-sky-400 to-indigo-500 bg-clip-text text-transparent">Lokesh Sandeep Aslekar</h1>
-                <h2 class="text-2xl md:text-3xl font-semibold text-gray-400">Computer Science Student</h2>
-                <p class="mt-6 max-w-xl mx-auto md:mx-0 text-lg leading-relaxed text-gray-300">
-                    Dedicated and detail-oriented Computer Science Engineering student with a strong foundation in programming and problem-solving. Seeking to apply my technical knowledge and contribute to innovative projects.
-                </p>
-                <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
-                    <a href="mailto:lokeshaslekar@gmail.com" class="bg-sky-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-sky-600 transition-transform transform hover:scale-105 shadow-lg shadow-sky-500/20 inline-flex items-center gap-2">
-                        <i data-lucide="mail" class="h-5 w-5"></i>
-                        Contact Me
-                    </a>
-                    <a href="resume.pdf.pdf" download class="border-2 border-sky-400 text-sky-400 font-bold py-3 px-6 rounded-lg hover:bg-sky-400 hover:text-gray-900 transition-colors transform hover:scale-105 shadow-lg inline-flex items-center gap-2">
-                        <i data-lucide="download" class="h-5 w-5"></i>
-                        Download Resume
-                    </a>
-                </div>
+      <!-- Skills Section -->
+      <section id="skills" class="py-20 scroll-reveal">
+        <h2 class="text-4xl font-bold text-center mb-12">Technical Skills</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="skill-card text-center p-6 bg-slate-800/80 rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 border border-slate-700"
+          >
+            <i
+              data-lucide="code-2"
+              class="mx-auto h-12 w-12 text-sky-400 mb-4"
+            ></i>
+            <h3 class="text-xl font-semibold mb-2">Programming Languages</h3>
+            <p class="text-gray-400">Python</p>
+            <p class="text-gray-400">Java</p>
+            <p class="text-gray-400">R</p>
+          </div>
+          <div
+            class="skill-card text-center p-6 bg-slate-800/80 rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 border border-slate-700"
+          >
+            <i
+              data-lucide="database"
+              class="mx-auto h-12 w-12 text-sky-400 mb-4"
+            ></i>
+            <h3 class="text-xl font-semibold mb-2">Databases</h3>
+            <p class="text-gray-400">MySQL</p>
+            <p class="text-gray-400">SQL</p>
+          </div>
+          <div
+            class="skill-card text-center p-6 bg-slate-800/80 rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 border border-slate-700"
+          >
+            <i
+              data-lucide="bar-chart-3"
+              class="mx-auto h-12 w-12 text-sky-400 mb-4"
+            ></i>
+            <h3 class="text-xl font-semibold mb-2">Data Visualization & BI</h3>
+            <p class="text-gray-400">Tableau</p>
+            <p class="text-gray-400">Power BI</p>
+          </div>
+          <div
+            class="skill-card text-center p-6 bg-slate-800/80 rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 border border-slate-700"
+          >
+            <i
+              data-lucide="terminal-square"
+              class="mx-auto h-12 w-12 text-sky-400 mb-4"
+            ></i>
+            <h3 class="text-xl font-semibold mb-2">Dev & Project Management</h3>
+            <p class="text-gray-400">VS Code</p>
+            <p class="text-gray-400">Jira</p>
+            <p class="text-gray-400">Brevo</p>
+          </div>
+          <div
+            class="skill-card text-center p-6 bg-slate-800/80 rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 border border-slate-700"
+          >
+            <i
+              data-lucide="cloud-cog"
+              class="mx-auto h-12 w-12 text-sky-400 mb-4"
+            ></i>
+            <h3 class="text-xl font-semibold mb-2">Cloud & Web</h3>
+            <p class="text-gray-400">Cloud Technologies</p>
+            <p class="text-gray-400">HTML & CSS</p>
+          </div>
+          <div
+            class="skill-card text-center p-6 bg-slate-800/80 rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 border border-slate-700"
+          >
+            <i
+              data-lucide="brain-circuit"
+              class="mx-auto h-12 w-12 text-sky-400 mb-4"
+            ></i>
+            <h3 class="text-xl font-semibold mb-2">Core Concepts</h3>
+            <p class="text-gray-400">Data Structures</p>
+            <p class="text-gray-400">Algorithms</p>
+            <p class="text-gray-400">Digital Image Processing</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="py-20 scroll-reveal">
+        <h2 class="text-4xl font-bold text-center mb-12">My Projects</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project Card 1 -->
+          <div
+            class="project-card bg-slate-800 rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 border border-slate-700"
+          >
+            <div class="p-6">
+              <div class="flex justify-between items-start">
+                <h3 class="text-2xl font-bold mb-2 text-white">
+                  Library Management System
+                </h3>
+                <span
+                  class="text-sm font-medium bg-sky-900/50 text-sky-300 py-1 px-3 rounded-full"
+                  >2024</span
+                >
+              </div>
+              <p class="text-gray-400 mt-2">
+                A comprehensive system to manage library operations, including
+                book tracking, member management, and borrowing records. Built
+                to streamline library processes.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span
+                  class="tech-tag bg-slate-700 text-gray-300 text-sm font-medium py-1 px-3 rounded-full"
+                  >Java</span
+                >
+                <span
+                  class="tech-tag bg-slate-700 text-gray-300 text-sm font-medium py-1 px-3 rounded-full"
+                  >MySQL</span
+                >
+              </div>
             </div>
-            <div class="md:w-1/2 flex justify-center">
-                 <img src="my-photo.jpg" alt="Lokesh Aslekar" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-2xl border-4 border-sky-500/50">
+          </div>
+          <!-- Project Card 2 -->
+          <div
+            class="project-card bg-slate-800 rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 border border-slate-700"
+          >
+            <div class="p-6">
+              <div class="flex justify-between items-start">
+                <h3 class="text-2xl font-bold mb-2 text-white">
+                  Image Stitching (DIP)
+                </h3>
+                <span
+                  class="text-sm font-medium bg-sky-900/50 text-sky-300 py-1 px-3 rounded-full"
+                  >2024</span
+                >
+              </div>
+              <p class="text-gray-400 mt-2">
+                A project focusing on Digital Image Processing techniques to
+                stitch multiple images together, creating a seamless panoramic
+                view from overlapping photos.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span
+                  class="tech-tag bg-slate-700 text-gray-300 text-sm font-medium py-1 px-3 rounded-full"
+                  >Python</span
+                >
+                <span
+                  class="tech-tag bg-slate-700 text-gray-300 text-sm font-medium py-1 px-3 rounded-full"
+                  >OpenCV</span
+                >
+              </div>
             </div>
-        </section>
-        
-        <!-- Skills Section -->
-        <section id="skills" class="py-20 scroll-reveal">
-            <h2 class="text-4xl font-bold text-center mb-12">Technical Skills</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="skill-card text-center p-6 bg-slate-800/80 rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 border border-slate-700">
-                    <i data-lucide="code-2" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Programming Languages</h3>
-                    <p class="text-gray-400">Python</p>
-                    <p class="text-gray-400">Java</p>
-                    <p class="text-gray-400">R</p>
-                </div>
-                <div class="skill-card text-center p-6 bg-slate-800/80 rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 border border-slate-700">
-                    <i data-lucide="database" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Databases</h3>
-                    <p class="text-gray-400">MySQL</p>
-                    <p class="text-gray-400">SQL</p>
-                </div>
-                <div class="skill-card text-center p-6 bg-slate-800/80 rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 border border-slate-700">
-                    <i data-lucide="bar-chart-3" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Data Visualization & BI</h3>
-                    <p class="text-gray-400">Tableau</p>
-                    <p class="text-gray-400">Power BI</p>
-                </div>
-                <div class="skill-card text-center p-6 bg-slate-800/80 rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 border border-slate-700">
-                    <i data-lucide="terminal-square" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Dev & Project Management</h3>
-                    <p class="text-gray-400">VS Code</p>
-                    <p class="text-gray-400">Jira</p>
-                    <p class="text-gray-400">Brevo</p>
-                </div>
-                <div class="skill-card text-center p-6 bg-slate-800/80 rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 border border-slate-700">
-                    <i data-lucide="cloud-cog" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Cloud & Web</h3>
-                    <p class="text-gray-400">Cloud Technologies</p>
-                    <p class="text-gray-400">HTML & CSS</p>
-                </div>
-                <div class="skill-card text-center p-6 bg-slate-800/80 rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 border border-slate-700">
-                    <i data-lucide="brain-circuit" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Core Concepts</h3>
-                    <p class="text-gray-400">Data Structures</p>
-                    <p class="text-gray-400">Algorithms</p>
-                    <p class="text-gray-400">Digital Image Processing</p>
-                </div>
+          </div>
+          <!-- Project Card 3 -->
+          <div
+            class="project-card bg-slate-800 rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 border border-slate-700"
+          >
+            <div class="p-6">
+              <div class="flex justify-between items-start">
+                <h3 class="text-2xl font-bold mb-2 text-white">
+                  Waste Detection System
+                </h3>
+                <span
+                  class="text-sm font-medium bg-indigo-900/50 text-indigo-300 py-1 px-3 rounded-full"
+                  >In Progress</span
+                >
+              </div>
+              <p class="text-gray-400 mt-2">
+                An ongoing project to develop a system that uses computer vision
+                to detect and classify different types of waste, aiming to aid
+                in automated recycling processes.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span
+                  class="tech-tag bg-slate-700 text-gray-300 text-sm font-medium py-1 px-3 rounded-full"
+                  >Python</span
+                >
+                <span
+                  class="tech-tag bg-slate-700 text-gray-300 text-sm font-medium py-1 px-3 rounded-full"
+                  >AI/ML</span
+                >
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="py-20 scroll-reveal">
-            <h2 class="text-4xl font-bold text-center mb-12">My Projects</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project Card 1 -->
-                <div class="project-card bg-slate-800 rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 border border-slate-700">
-                    <div class="p-6">
-                        <div class="flex justify-between items-start">
-                           <h3 class="text-2xl font-bold mb-2 text-white">Library Management System</h3>
-                           <span class="text-sm font-medium bg-sky-900/50 text-sky-300 py-1 px-3 rounded-full">2024</span>
-                        </div>
-                        <p class="text-gray-400 mt-2">A comprehensive system to manage library operations, including book tracking, member management, and borrowing records. Built to streamline library processes.</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="tech-tag bg-slate-700 text-gray-300 text-sm font-medium py-1 px-3 rounded-full">Java</span>
-                            <span class="tech-tag bg-slate-700 text-gray-300 text-sm font-medium py-1 px-3 rounded-full">MySQL</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project Card 2 -->
-                <div class="project-card bg-slate-800 rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 border border-slate-700">
-                    <div class="p-6">
-                        <div class="flex justify-between items-start">
-                           <h3 class="text-2xl font-bold mb-2 text-white">Image Stitching (DIP)</h3>
-                           <span class="text-sm font-medium bg-sky-900/50 text-sky-300 py-1 px-3 rounded-full">2024</span>
-                        </div>
-                        <p class="text-gray-400 mt-2">A project focusing on Digital Image Processing techniques to stitch multiple images together, creating a seamless panoramic view from overlapping photos.</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="tech-tag bg-slate-700 text-gray-300 text-sm font-medium py-1 px-3 rounded-full">Python</span>
-                            <span class="tech-tag bg-slate-700 text-gray-300 text-sm font-medium py-1 px-3 rounded-full">OpenCV</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project Card 3 -->
-                <div class="project-card bg-slate-800 rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 border border-slate-700">
-                    <div class="p-6">
-                         <div class="flex justify-between items-start">
-                           <h3 class="text-2xl font-bold mb-2 text-white">Waste Detection System</h3>
-                           <span class="text-sm font-medium bg-indigo-900/50 text-indigo-300 py-1 px-3 rounded-full">In Progress</span>
-                        </div>
-                        <p class="text-gray-400 mt-2">An ongoing project to develop a system that uses computer vision to detect and classify different types of waste, aiming to aid in automated recycling processes.</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="tech-tag bg-slate-700 text-gray-300 text-sm font-medium py-1 px-3 rounded-full">Python</span>
-                            <span class="tech-tag bg-slate-700 text-gray-300 text-sm font-medium py-1 px-3 rounded-full">AI/ML</span>
-                        </div>
-                    </div>
-                </div>
+      <!-- Internship Section -->
+      <section id="internship" class="py-20 scroll-reveal">
+        <h2 class="text-4xl font-bold text-center mb-12">
+          Internship Experience
+        </h2>
+
+        <!-- Current Internship -->
+        <div
+          class="max-w-2xl mx-auto bg-slate-800/80 rounded-2xl p-8 shadow-lg border border-slate-700 mb-8"
+        >
+          <div class="flex items-start">
+            <i
+              data-lucide="briefcase"
+              class="h-10 w-10 text-sky-400 mr-6 mt-1 flex-shrink-0"
+            ></i>
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <h3 class="text-2xl font-bold text-white">
+                  Data Science Intern
+                </h3>
+                <span
+                  class="text-sm font-medium bg-green-900/50 text-green-300 py-1 px-3 rounded-full"
+                  >Current</span
+                >
+              </div>
+              <p class="text-gray-400 mb-3">KP Solutions</p>
+              <p class="text-gray-400">
+                Working on data analysis, machine learning models, and data
+                visualization projects. Gaining hands-on experience in the
+                complete data science pipeline from data collection to model
+                deployment.
+              </p>
+              <div class="mt-4">
+                <a
+                  href="https://www.linkedin.com/company/knowledge-power-solution/posts/?feedView=all"
+                  target="_blank"
+                  class="text-sky-400 hover:text-sky-300 inline-flex items-center gap-2"
+                >
+                  <i data-lucide="external-link" class="h-4 w-4"></i>
+                  View Company Posts
+                </a>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
 
-        <!-- Internship Section -->
-        <section id="internship" class="py-20 scroll-reveal">
-             <h2 class="text-4xl font-bold text-center mb-12">Internship Experience</h2>
-             
-             <!-- Current Internship -->
-             <div class="max-w-2xl mx-auto bg-slate-800/80 rounded-2xl p-8 shadow-lg border border-slate-700 mb-8">
-                <div class="flex items-start">
-                    <i data-lucide="briefcase" class="h-10 w-10 text-sky-400 mr-6 mt-1 flex-shrink-0"></i>
-                    <div>
-                        <div class="flex justify-between items-center mb-1">
-                             <h3 class="text-2xl font-bold text-white">Data Science Intern</h3>
-                             <span class="text-sm font-medium bg-green-900/50 text-green-300 py-1 px-3 rounded-full">Current</span>
-                        </div>
-                        <p class="text-gray-400 mb-3">KP Solutions</p>
-                        <p class="text-gray-400">Working on data analysis, machine learning models, and data visualization projects. Gaining hands-on experience in the complete data science pipeline from data collection to model deployment.</p>
-                        <div class="mt-4">
-                            <a href="https://www.linkedin.com/company/knowledge-power-solution/posts/?feedView=all" target="_blank" class="text-sky-400 hover:text-sky-300 inline-flex items-center gap-2">
-                                <i data-lucide="external-link" class="h-4 w-4"></i>
-                                View Company Posts
-                            </a>
-                        </div>
-                    </div>
-                </div>
-             </div>
-
-             <!-- Previous Internship -->
-             <div class="max-w-2xl mx-auto bg-slate-800/80 rounded-2xl p-8 shadow-lg border border-slate-700">
-                <div class="flex items-start">
-                    <i data-lucide="briefcase" class="h-10 w-10 text-sky-400 mr-6 mt-1 flex-shrink-0"></i>
-                    <div>
-                        <div class="flex justify-between items-center mb-1">
-                             <h3 class="text-2xl font-bold text-white">Python Internship</h3>
-                             <span class="text-sm font-medium text-gray-400">2022</span>
-                        </div>
-                        <p class="text-gray-400">Gained practical experience in Python development, working on small projects, learning best practices in coding, and collaborating within a development environment to enhance my programming skills.</p>
-                    </div>
-                </div>
-             </div>
-        </section>
-
-        <!-- Calendar & Appointment Section -->
-        <section id="calendar" class="py-20 scroll-reveal">
-            <h2 class="text-4xl font-bold text-center mb-12">Schedule & Availability</h2>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Calendar -->
-                <div class="bg-slate-800/80 rounded-2xl p-6 shadow-lg border border-slate-700">
-                    <h3 class="text-2xl font-bold mb-6 text-center">My Availability Calendar</h3>
-                    <div class="flex justify-between items-center mb-6">
-                        <button id="prev-month" class="text-gray-400 hover:text-white p-2 rounded-full hover:bg-slate-700">
-                            <i data-lucide="chevron-left" class="h-5 w-5"></i>
-                        </button>
-                        <h4 id="current-month" class="text-xl font-semibold">June 2025</h4>
-                        <button id="next-month" class="text-gray-400 hover:text-white p-2 rounded-full hover:bg-slate-700">
-                            <i data-lucide="chevron-right" class="h-5 w-5"></i>
-                        </button>
-                    </div>
-                    <div class="grid grid-cols-7 gap-2 mb-4">
-                        <div class="text-center text-gray-400 font-medium">Sun</div>
-                        <div class="text-center text-gray-400 font-medium">Mon</div>
-                        <div class="text-center text-gray-400 font-medium">Tue</div>
-                        <div class="text-center text-gray-400 font-medium">Wed</div>
-                        <div class="text-center text-gray-400 font-medium">Thu</div>
-                        <div class="text-center text-gray-400 font-medium">Fri</div>
-                        <div class="text-center text-gray-400 font-medium">Sat</div>
-                    </div>
-                    <div id="calendar-days" class="grid grid-cols-7 gap-2">
-                        <!-- Calendar days will be populated by JavaScript -->
-                    </div>
-                    <div class="mt-6 flex justify-center space-x-4">
-                        <div class="flex items-center">
-                            <div class="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
-                            <span class="text-sm text-gray-400">Available</span>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
-                            <span class="text-sm text-gray-400">Busy</span>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
-                            <span class="text-sm text-gray-400">Partially Available</span>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-3 h-3 bg-purple-500 rounded-full mr-2"></div>
-                            <span class="text-sm text-gray-400">Booked</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Appointment Booking -->
-                <div class="bg-slate-800/80 rounded-2xl p-6 shadow-lg border border-slate-700">
-                    <h3 class="text-2xl font-bold mb-6 text-center">Book an Appointment</h3>
-                    <p class="text-gray-400 text-center mb-4 text-sm">All times are in IST (Indian Standard Time)</p>
-                    
-                    <form id="appointment-form" action="https://formspree.io/f/mblzwdkz" method="POST" class="space-y-4">
-                        <input type="hidden" name="_subject" value="New Appointment Booking - Lokesh Aslekar Portfolio">
-                        <input type="hidden" name="_replyto" id="reply-email">
-                        <input type="hidden" name="_format" value="plain">
-                        
-                        <div>
-                            <label for="name" class="block text-gray-300 mb-2">Your Name *</label>
-                            <input type="text" id="name" name="name" required 
-                                   class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-gray-300 mb-2">Email Address *</label>
-                            <input type="email" id="email" name="email" required 
-                                   class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
-                        </div>
-                        <div>
-                            <label for="date" class="block text-gray-300 mb-2">Preferred Date *</label>
-                            <input type="date" id="date" name="date" required 
-                                   class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500" min="">
-                        </div>
-                        <div>
-                            <label for="time" class="block text-gray-300 mb-2">Preferred Time (IST) *</label>
-                            <select id="time" name="time" required 
-                                    class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
-                                <option value="">Select a time</option>
-                                <option value="09:00">9:00 AM IST</option>
-                                <option value="10:00">10:00 AM IST</option>
-                                <option value="11:00">11:00 AM IST</option>
-                                <option value="14:00">2:00 PM IST</option>
-                                <option value="15:00">3:00 PM IST</option>
-                                <option value="16:00">4:00 PM IST</option>
-                                <option value="17:00">5:00 PM IST</option>
-                                <option value="18:00">6:00 PM IST</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="message" class="block text-gray-300 mb-2">Message *</label>
-                            <textarea id="message" name="message" rows="3" required 
-                                      class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500"
-                                      placeholder="Please describe the purpose of the meeting..."></textarea>
-                        </div>
-                        <button type="submit" id="submit-btn" 
-                                class="w-full bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2">
-                            <span id="submit-text">Schedule Appointment</span>
-                            <div id="submit-spinner" class="loading-spinner hidden"></div>
-                        </button>
-                    </form>
-                    
-                    <div id="appointment-success" class="mt-4 p-4 bg-green-900/50 text-green-300 rounded-lg hidden">
-                        <div class="flex items-center">
-                            <i data-lucide="check-circle" class="h-5 w-5 mr-2"></i>
-                            <span>Your appointment has been scheduled successfully! We'll contact you soon to confirm.</span>
-                        </div>
-                    </div>
-                    <div id="appointment-error" class="mt-4 p-4 bg-red-900/50 text-red-300 rounded-lg hidden">
-                        <div class="flex items-center">
-                            <i data-lucide="alert-circle" class="h-5 w-5 mr-2"></i>
-                            <span id="error-message">There was an error scheduling your appointment.</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Download Appointments Button -->
-                    <div id="download-section" class="mt-6 p-4 bg-slate-700/50 rounded-lg hidden">
-                        <h4 class="text-lg font-semibold mb-2 text-white">Local Appointments</h4>
-                        <p class="text-gray-400 text-sm mb-3">Download appointments stored in this browser</p>
-                        <a id="download-appointments-btn" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition-colors inline-flex items-center justify-center gap-2">
-                            <i data-lucide="download" class="h-4 w-4"></i>
-                            Download Local Appointments
-                        </a>
-                    </div>
-                </div>
+        <!-- Previous Internship -->
+        <div
+          class="max-w-2xl mx-auto bg-slate-800/80 rounded-2xl p-8 shadow-lg border border-slate-700"
+        >
+          <div class="flex items-start">
+            <i
+              data-lucide="briefcase"
+              class="h-10 w-10 text-sky-400 mr-6 mt-1 flex-shrink-0"
+            ></i>
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <h3 class="text-2xl font-bold text-white">Python Internship</h3>
+                <span class="text-sm font-medium text-gray-400">2022</span>
+              </div>
+              <p class="text-gray-400">
+                Gained practical experience in Python development, working on
+                small projects, learning best practices in coding, and
+                collaborating within a development environment to enhance my
+                programming skills.
+              </p>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- Education Section -->
-        <section id="education" class="py-20 scroll-reveal">
-            <h2 class="text-4xl font-bold text-center mb-12">Education</h2>
-            <div class="max-w-3xl mx-auto relative pl-12 md:pl-0">
-                <!-- Vertical Line -->
-                <div class="absolute left-4 md:left-1/2 top-0 h-full w-0.5 bg-slate-700"></div>
-                
-                <!-- Timeline Item: B.Tech -->
-                <div class="mb-12 relative flex items-center">
-                    <div class="hidden md:block md:w-1/2"></div>
-                    <div class="absolute md:relative left-[-30px] md:left-auto z-20">
-                        <div class="bg-sky-500 shadow-xl w-8 h-8 rounded-full flex items-center justify-center">
-                            <i data-lucide="graduation-cap" class="h-4 w-4 text-white"></i>
-                        </div>
-                    </div>
-                    <div class="bg-slate-800 rounded-lg shadow-md w-full md:w-1/2 p-6 border border-slate-700">
-                        <p class="text-sm font-medium text-sky-400">2024 - Present</p>
-                        <h3 class="text-xl font-bold mb-1 text-white">B.Tech in Computer Science</h3>
-                        <p class="text-gray-400">Deccan Education Society Pune University (DESPU)</p>
-                    </div>
-                </div>
+      <!-- Calendar & Appointment Section -->
+      <section id="calendar" class="py-20 scroll-reveal">
+        <h2 class="text-4xl font-bold text-center mb-12">
+          Schedule & Availability
+        </h2>
 
-                <!-- Timeline Item: Diploma -->
-                <div class="mb-12 relative flex items-center">
-                    <div class="hidden md:block md:w-1/2"></div>
-                    <div class="absolute md:relative left-[-30px] md:left-auto z-20">
-                        <div class="bg-sky-500 shadow-xl w-8 h-8 rounded-full flex items-center justify-center">
-                            <i data-lucide="award" class="h-4 w-4 text-white"></i>
-                        </div>
-                    </div>
-                    <div class="bg-slate-800 rounded-lg shadow-md w-full md:w-1/2 p-6 border border-slate-700">
-                        <p class="text-sm font-medium text-sky-400">2021 - 2023</p>
-                        <h3 class="text-xl font-bold mb-1 text-white">Diploma in Computer Science</h3>
-                        <p class="text-gray-400">Bhivarabai Sawant College of Engineering and Research</p>
-                    </div>
-                </div>
-                
-                <!-- Timeline Item: SSC -->
-                <div class="mb-12 relative flex items-center">
-                    <div class="hidden md:block md:w-1/2"></div>
-                    <div class="absolute md:relative left-[-30px] md:left-auto z-20">
-                        <div class="bg-sky-500 shadow-xl w-8 h-8 rounded-full flex items-center justify-center">
-                           <i data-lucide="book-marked" class="h-4 w-4 text-white"></i>
-                        </div>
-                    </div>
-                    <div class="bg-slate-800 rounded-lg shadow-md w-full md:w-1/2 p-6 border border-slate-700">
-                        <p class="text-sm font-medium text-sky-400">2020</p>
-                        <h3 class="text-xl font-bold mb-1 text-white">Secondary School Certificate</h3>
-                        <p class="text-gray-400">M.E.S. Boys High School, Pune</p>
-                    </div>
-                </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Calendar -->
+          <div
+            class="bg-slate-800/80 rounded-2xl p-6 shadow-lg border border-slate-700"
+          >
+            <h3 class="text-2xl font-bold mb-6 text-center">
+              My Availability Calendar
+            </h3>
+            <div class="flex justify-between items-center mb-6">
+              <button
+                id="prev-month"
+                class="text-gray-400 hover:text-white p-2 rounded-full hover:bg-slate-700"
+              >
+                <i data-lucide="chevron-left" class="h-5 w-5"></i>
+              </button>
+              <h4 id="current-month" class="text-xl font-semibold">
+                June 2025
+              </h4>
+              <button
+                id="next-month"
+                class="text-gray-400 hover:text-white p-2 rounded-full hover:bg-slate-700"
+              >
+                <i data-lucide="chevron-right" class="h-5 w-5"></i>
+              </button>
             </div>
-        </section>
+            <div class="grid grid-cols-7 gap-2 mb-4">
+              <div class="text-center text-gray-400 font-medium">Sun</div>
+              <div class="text-center text-gray-400 font-medium">Mon</div>
+              <div class="text-center text-gray-400 font-medium">Tue</div>
+              <div class="text-center text-gray-400 font-medium">Wed</div>
+              <div class="text-center text-gray-400 font-medium">Thu</div>
+              <div class="text-center text-gray-400 font-medium">Fri</div>
+              <div class="text-center text-gray-400 font-medium">Sat</div>
+            </div>
+            <div id="calendar-days" class="grid grid-cols-7 gap-2">
+              <!-- Calendar days will be populated by JavaScript -->
+            </div>
+            <div class="mt-6 flex justify-center space-x-4">
+              <div class="flex items-center">
+                <div class="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
+                <span class="text-sm text-gray-400">Available</span>
+              </div>
+              <div class="flex items-center">
+                <div class="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
+                <span class="text-sm text-gray-400">Busy</span>
+              </div>
+              <div class="flex items-center">
+                <div class="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
+                <span class="text-sm text-gray-400">Partially Available</span>
+              </div>
+              <div class="flex items-center">
+                <div class="w-3 h-3 bg-purple-500 rounded-full mr-2"></div>
+                <span class="text-sm text-gray-400">Booked</span>
+              </div>
+            </div>
+          </div>
 
+          <!-- Appointment Booking -->
+          <div
+            class="bg-slate-800/80 rounded-2xl p-6 shadow-lg border border-slate-700"
+          >
+            <h3 class="text-2xl font-bold mb-6 text-center">
+              Book an Appointment
+            </h3>
+            <p class="text-gray-400 text-center mb-4 text-sm">
+              All times are in IST (Indian Standard Time)
+            </p>
+
+            <form
+              id="appointment-form"
+              action="https://formspree.io/f/mblzwdkz"
+              method="POST"
+              class="space-y-4"
+            >
+              <input
+                type="hidden"
+                name="_subject"
+                value="New Appointment Booking - Lokesh Aslekar Portfolio"
+              />
+              <input type="hidden" name="_replyto" id="reply-email" />
+              <input type="hidden" name="_format" value="plain" />
+
+              <div>
+                <label for="name" class="block text-gray-300 mb-2"
+                  >Your Name *</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500"
+                />
+              </div>
+              <div>
+                <label for="email" class="block text-gray-300 mb-2"
+                  >Email Address *</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500"
+                />
+              </div>
+              <div>
+                <label for="date" class="block text-gray-300 mb-2"
+                  >Preferred Date *</label
+                >
+                <input
+                  type="date"
+                  id="date"
+                  name="date"
+                  required
+                  class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500"
+                  min=""
+                />
+              </div>
+              <div>
+                <label for="time" class="block text-gray-300 mb-2"
+                  >Preferred Time (IST) *</label
+                >
+                <select
+                  id="time"
+                  name="time"
+                  required
+                  class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500"
+                >
+                  <option value="">Select a time</option>
+                  <option value="09:00">9:00 AM IST</option>
+                  <option value="10:00">10:00 AM IST</option>
+                  <option value="11:00">11:00 AM IST</option>
+                  <option value="14:00">2:00 PM IST</option>
+                  <option value="15:00">3:00 PM IST</option>
+                  <option value="16:00">4:00 PM IST</option>
+                  <option value="17:00">5:00 PM IST</option>
+                  <option value="18:00">6:00 PM IST</option>
+                </select>
+              </div>
+              <div>
+                <label for="message" class="block text-gray-300 mb-2"
+                  >Message *</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="3"
+                  required
+                  class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500"
+                  placeholder="Please describe the purpose of the meeting..."
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                id="submit-btn"
+                class="w-full bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2"
+              >
+                <span id="submit-text">Schedule Appointment</span>
+                <div id="submit-spinner" class="loading-spinner hidden"></div>
+              </button>
+            </form>
+
+            <div
+              id="appointment-success"
+              class="mt-4 p-4 bg-green-900/50 text-green-300 rounded-lg hidden"
+            >
+              <div class="flex items-center">
+                <i data-lucide="check-circle" class="h-5 w-5 mr-2"></i>
+                <span
+                  >Your appointment has been scheduled successfully! We'll
+                  contact you soon to confirm.</span
+                >
+              </div>
+            </div>
+            <div
+              id="appointment-error"
+              class="mt-4 p-4 bg-red-900/50 text-red-300 rounded-lg hidden"
+            >
+              <div class="flex items-center">
+                <i data-lucide="alert-circle" class="h-5 w-5 mr-2"></i>
+                <span id="error-message"
+                  >There was an error scheduling your appointment.</span
+                >
+              </div>
+            </div>
+
+            <!-- Download Appointments Button -->
+            <div
+              id="download-section"
+              class="mt-6 p-4 bg-slate-700/50 rounded-lg hidden"
+            >
+              <h4 class="text-lg font-semibold mb-2 text-white">
+                Local Appointments
+              </h4>
+              <p class="text-gray-400 text-sm mb-3">
+                Download appointments stored in this browser
+              </p>
+              <a
+                id="download-appointments-btn"
+                class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition-colors inline-flex items-center justify-center gap-2"
+              >
+                <i data-lucide="download" class="h-4 w-4"></i>
+                Download Local Appointments
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section id="education" class="py-20 scroll-reveal">
+        <h2 class="text-4xl font-bold text-center mb-12">Education</h2>
+        <div class="max-w-3xl mx-auto relative pl-12 md:pl-0">
+          <!-- Vertical Line -->
+          <div
+            class="absolute left-4 md:left-1/2 top-0 h-full w-0.5 bg-slate-700"
+          ></div>
+
+          <!-- Timeline Item: B.Tech -->
+          <div class="mb-12 relative flex items-center">
+            <div class="hidden md:block md:w-1/2"></div>
+            <div class="absolute md:relative left-[-30px] md:left-auto z-20">
+              <div
+                class="bg-sky-500 shadow-xl w-8 h-8 rounded-full flex items-center justify-center"
+              >
+                <i data-lucide="graduation-cap" class="h-4 w-4 text-white"></i>
+              </div>
+            </div>
+            <div
+              class="bg-slate-800 rounded-lg shadow-md w-full md:w-1/2 p-6 border border-slate-700"
+            >
+              <p class="text-sm font-medium text-sky-400">2024 - Present</p>
+              <h3 class="text-xl font-bold mb-1 text-white">
+                B.Tech in Computer Science
+              </h3>
+              <p class="text-gray-400">
+                Deccan Education Society Pune University (DESPU)
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Item: Diploma -->
+          <div class="mb-12 relative flex items-center">
+            <div class="hidden md:block md:w-1/2"></div>
+            <div class="absolute md:relative left-[-30px] md:left-auto z-20">
+              <div
+                class="bg-sky-500 shadow-xl w-8 h-8 rounded-full flex items-center justify-center"
+              >
+                <i data-lucide="award" class="h-4 w-4 text-white"></i>
+              </div>
+            </div>
+            <div
+              class="bg-slate-800 rounded-lg shadow-md w-full md:w-1/2 p-6 border border-slate-700"
+            >
+              <p class="text-sm font-medium text-sky-400">2021 - 2023</p>
+              <h3 class="text-xl font-bold mb-1 text-white">
+                Diploma in Computer Science
+              </h3>
+              <p class="text-gray-400">
+                Bhivarabai Sawant College of Engineering and Research
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Item: SSC -->
+          <div class="mb-12 relative flex items-center">
+            <div class="hidden md:block md:w-1/2"></div>
+            <div class="absolute md:relative left-[-30px] md:left-auto z-20">
+              <div
+                class="bg-sky-500 shadow-xl w-8 h-8 rounded-full flex items-center justify-center"
+              >
+                <i data-lucide="book-marked" class="h-4 w-4 text-white"></i>
+              </div>
+            </div>
+            <div
+              class="bg-slate-800 rounded-lg shadow-md w-full md:w-1/2 p-6 border border-slate-700"
+            >
+              <p class="text-sm font-medium text-sky-400">2020</p>
+              <h3 class="text-xl font-bold mb-1 text-white">
+                Secondary School Certificate
+              </h3>
+              <p class="text-gray-400">M.E.S. Boys High School, Pune</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
     <footer id="contact" class="bg-gray-900/70 py-12">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-4 text-white">Get In Touch</h2>
-            <p class="max-w-2xl mx-auto mb-8 text-gray-400">
-                I'm currently seeking new opportunities. Feel free to reach out if you have any questions or just want to connect!
-            </p>
-            <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-4 text-gray-300">
-                <a href="mailto:lokeshaslekar@gmail.com" class="flex items-center space-x-2 hover:text-sky-400 transition-colors">
-                    <i data-lucide="mail" class="h-6 w-6"></i>
-                    <span>lokeshaslekar@gmail.com</span>
-                </a>
-                <span class="hidden md:inline text-slate-600">|</span>
-                <a href="tel:+919404361842" class="flex items-center space-x-2 hover:text-sky-400 transition-colors">
-                    <i data-lucide="phone" class="h-6 w-6"></i>
-                    <span>+91 9404361842</span>
-                </a>
-                <span class="hidden md:inline text-slate-600">|</span>
-                 <a href="https://github.com/lokesh2_910" target="_blank" class="flex items-center space-x-2 hover:text-sky-400 transition-colors">
-                    <i data-lucide="github" class="h-6 w-6"></i>
-                    <span>lokesh2910</span>
-                </a>
-                <span class="hidden md:inline text-slate-600">|</span>
-                <a href="https://www.linkedin.com/in/lokesh-aslekar-b22726242/" target="_blank" class="flex items-center space-x-2 hover:text-sky-400 transition-colors">
-                    <i data-lucide="linkedin" class="h-6 w-6"></i>
-                    <span>LinkedIn</span>
-                </a>
-            </div>
-            <p class="mt-8 text-sm text-gray-500">&copy; 2025 Lokesh Sandeep Aslekar. All Rights Reserved.</p>
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-4 text-white">Get In Touch</h2>
+        <p class="max-w-2xl mx-auto mb-8 text-gray-400">
+          I'm currently seeking new opportunities. Feel free to reach out if you
+          have any questions or just want to connect!
+        </p>
+        <div
+          class="flex flex-wrap justify-center items-center gap-x-6 gap-y-4 text-gray-300"
+        >
+          <a
+            href="mailto:lokeshaslekar@gmail.com"
+            class="flex items-center space-x-2 hover:text-sky-400 transition-colors"
+          >
+            <i data-lucide="mail" class="h-6 w-6"></i>
+            <span>lokeshaslekar@gmail.com</span>
+          </a>
+          <span class="hidden md:inline text-slate-600">|</span>
+          <a
+            href="tel:+919404361842"
+            class="flex items-center space-x-2 hover:text-sky-400 transition-colors"
+          >
+            <i data-lucide="phone" class="h-6 w-6"></i>
+            <span>+91 9404361842</span>
+          </a>
+          <span class="hidden md:inline text-slate-600">|</span>
+          <a
+            href="https://github.com/lokesh2_910"
+            target="_blank"
+            class="flex items-center space-x-2 hover:text-sky-400 transition-colors"
+          >
+            <i data-lucide="github" class="h-6 w-6"></i>
+            <span>lokesh2910</span>
+          </a>
+          <span class="hidden md:inline text-slate-600">|</span>
+          <a
+            href="https://www.linkedin.com/in/lokesh-aslekar-b22726242/"
+            target="_blank"
+            class="flex items-center space-x-2 hover:text-sky-400 transition-colors"
+          >
+            <i data-lucide="linkedin" class="h-6 w-6"></i>
+            <span>LinkedIn</span>
+          </a>
         </div>
+        <p class="mt-8 text-sm text-gray-500">
+          &copy; 2025 Lokesh Sandeep Aslekar. All Rights Reserved.
+        </p>
+      </div>
     </footer>
 
     <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-        
-        // Scroll reveal animation
-        const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+      // Initialize Lucide icons
+      lucide.createIcons();
 
-        const elementInView = (el, dividend = 1) => {
-            const elementTop = el.getBoundingClientRect().top;
-            return (
-                elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
-            );
-        };
+      // Scroll reveal animation
+      const scrollRevealElements = document.querySelectorAll(".scroll-reveal");
 
-        const displayScrollElement = (element) => {
-            element.classList.add('visible');
-        };
+      const elementInView = (el, dividend = 1) => {
+        const elementTop = el.getBoundingClientRect().top;
+        return (
+          elementTop <=
+          (window.innerHeight || document.documentElement.clientHeight) /
+            dividend
+        );
+      };
 
-        const hideScrollElement = (element) => {
-             element.classList.remove('visible');
-        }
+      const displayScrollElement = (element) => {
+        element.classList.add("visible");
+      };
 
-        const handleScrollAnimation = () => {
-            scrollRevealElements.forEach((el) => {
-                if (elementInView(el, 1.25)) {
-                    displayScrollElement(el);
-                } 
-            })
-        }
+      const hideScrollElement = (element) => {
+        element.classList.remove("visible");
+      };
 
-        window.addEventListener('scroll', () => {
-            handleScrollAnimation();
+      const handleScrollAnimation = () => {
+        scrollRevealElements.forEach((el) => {
+          if (elementInView(el, 1.25)) {
+            displayScrollElement(el);
+          }
         });
-        
-        // Initial check on page load
+      };
+
+      window.addEventListener("scroll", () => {
         handleScrollAnimation();
+      });
 
-        // LinkedIn Modal Logic
-        const linkedinModal = document.getElementById('linkedin-modal');
-        const closeLinkedinModal = document.getElementById('close-linkedin-modal');
-        const dontShowAgain = document.getElementById('dont-show-again');
-        
-        // Show LinkedIn modal after a short delay on page load
-        setTimeout(() => {
-            // Check if user has previously dismissed the modal
-            if (!localStorage.getItem('linkedinModalDismissed')) {
-                linkedinModal.classList.remove('hidden');
-            }
-        }, 1500);
-        
-        // Close modal when X is clicked
-        closeLinkedinModal.addEventListener('click', () => {
-            linkedinModal.classList.add('hidden');
-        });
-        
-        // Close modal and don't show again
-        dontShowAgain.addEventListener('click', () => {
-            linkedinModal.classList.add('hidden');
-            localStorage.setItem('linkedinModalDismissed', 'true');
-        });
-        
-        // Close modal when clicking outside
-        linkedinModal.addEventListener('click', (e) => {
-            if (e.target === linkedinModal) {
-                linkedinModal.classList.add('hidden');
-            }
-        });
+      // Initial check on page load
+      handleScrollAnimation();
 
-        // Calendar Logic
-        let currentDate = new Date();
-        const calendarDays = document.getElementById('calendar-days');
-        const currentMonthElement = document.getElementById('current-month');
-        const prevMonthButton = document.getElementById('prev-month');
-        const nextMonthButton = document.getElementById('next-month');
-        
-        // Holidays (you can add more dates here)
-        const holidays = [
-            '2025-01-01', // New Year
-            '2025-01-26', // Republic Day
-            '2025-08-15', // Independence Day
-            '2025-10-02', // Gandhi Jayanti
-            '2025-12-25'  // Christmas
-        ];
+      // LinkedIn Modal Logic
+      const linkedinModal = document.getElementById("linkedin-modal");
+      const closeLinkedinModal = document.getElementById(
+        "close-linkedin-modal"
+      );
+      const dontShowAgain = document.getElementById("dont-show-again");
 
-        // Load booked appointments from localStorage
-        function getBookedSlots() {
-            const appointments = JSON.parse(localStorage.getItem('appointments') || '[]');
-            const bookedSlots = {};
-            
-            appointments.forEach(appointment => {
-                const key = `${appointment.date}_${appointment.time}`;
-                bookedSlots[key] = true;
-            });
-            
-            return bookedSlots;
+      // Show LinkedIn modal after a short delay on page load
+      setTimeout(() => {
+        // Check if user has previously dismissed the modal
+        if (!localStorage.getItem("linkedinModalDismissed")) {
+          linkedinModal.classList.remove("hidden");
         }
-        
-        // Function to check if a date is a weekend
-        function isWeekend(date) {
-            const day = date.getDay();
-            return day === 0 || day === 6; // 0 = Sunday, 6 = Saturday
-        }
-        
-        // Function to check if a date is a holiday
-        function isHoliday(dateString) {
-            return holidays.includes(dateString);
-        }
+      }, 1500);
 
-        // Function to check if a time slot is booked
-        function isTimeSlotBooked(dateString, time) {
-            const bookedSlots = getBookedSlots();
-            const key = `${dateString}_${time}`;
-            return bookedSlots[key] || false;
-        }
-        
-        // Function to get availability status for a date
-        function getAvailabilityStatus(date) {
-            const dateString = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
-            
-            // Check if date is in the past
-            const today = new Date();
-            today.setHours(0, 0, 0, 0);
-            if (date < today) {
-                return 'past';
-            }
-            
-            // Check if it's a weekend or holiday
-            if (isWeekend(date) || isHoliday(dateString)) {
-                return 'available';
-            }
-            
-            // Monday to Friday, 11 AM to 7 PM are busy
-            return 'busy';
-        }
-        
-        function renderCalendar() {
-            // Clear previous calendar
-            calendarDays.innerHTML = '';
-            
-            // Set current month text
-            const monthNames = ["January", "February", "March", "April", "May", "June",
-                "July", "August", "September", "October", "November", "December"
-            ];
-            currentMonthElement.textContent = `${monthNames[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
-            
-            // Get first day of month and number of days in month
-            const firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
-            const lastDay = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
-            const daysInMonth = lastDay.getDate();
-            const startingDay = firstDay.getDay(); // 0 = Sunday, 1 = Monday, etc.
-            
-            // Add empty cells for days before the first day of the month
-            for (let i = 0; i < startingDay; i++) {
-                const emptyCell = document.createElement('div');
-                emptyCell.classList.add('h-12', 'bg-slate-700/50', 'rounded-lg');
-                calendarDays.appendChild(emptyCell);
-            }
-            
-            // Add cells for each day of the month
-            for (let day = 1; day <= daysInMonth; day++) {
-                const dayCell = document.createElement('div');
-                const date = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
-                const status = getAvailabilityStatus(date);
-                const dateString = `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-                
-                dayCell.classList.add('h-12', 'bg-slate-700', 'rounded-lg', 'flex', 'items-center', 'justify-center', 'relative', 'calendar-day');
-                
-                if (status === 'past') {
-                    dayCell.classList.add('past-date');
-                }
-                
-                // Add availability indicator
-                if (status !== 'past') {
-                    const availabilityBadge = document.createElement('div');
-                    availabilityBadge.classList.add('availability-badge');
-                    
-                    // Check if any time slot is booked for this date
-                    const timeSlots = ['09:00', '10:00', '11:00', '14:00', '15:00', '16:00', '17:00', '18:00'];
-                    const hasBookedSlot = timeSlots.some(time => isTimeSlotBooked(dateString, time));
-                    
-                    if (hasBookedSlot) {
-                        availabilityBadge.classList.add('booked-slot');
-                    } else if (status === 'available') {
-                        availabilityBadge.classList.add('available');
-                    } else if (status === 'busy') {
-                        availabilityBadge.classList.add('busy');
-                    } else if (status === 'partial') {
-                        availabilityBadge.classList.add('partial');
-                    }
-                    
-                    dayCell.appendChild(availabilityBadge);
-                }
-                
-                // Add day number
-                const dayNumber = document.createElement('span');
-                dayNumber.textContent = day;
-                dayNumber.classList.add('text-white', 'font-medium');
-                dayCell.appendChild(dayNumber);
-                
-                // Add click event to select date in appointment form
-                if (status !== 'past') {
-                    dayCell.addEventListener('click', () => {
-                        document.getElementById('date').value = dateString;
-                        updateAvailableTimeSlots(dateString);
-                    });
-                }
-                
-                calendarDays.appendChild(dayCell);
-            }
-        }
+      // Close modal when X is clicked
+      closeLinkedinModal.addEventListener("click", () => {
+        linkedinModal.classList.add("hidden");
+      });
 
-        // Update available time slots based on selected date
-        function updateAvailableTimeSlots(dateString) {
-            const timeSelect = document.getElementById('time');
-            const timeSlots = timeSelect.options;
-            const bookedSlots = getBookedSlots();
-            
-            for (let i = 1; i < timeSlots.length; i++) {
-                const time = timeSlots[i].value;
-                const key = `${dateString}_${time}`;
-                
-                if (bookedSlots[key]) {
-                    timeSlots[i].disabled = true;
-                    timeSlots[i].textContent = `${time} IST - Booked`;
-                } else {
-                    timeSlots[i].disabled = false;
-                    timeSlots[i].textContent = `${time} IST`;
-                }
-            }
+      // Close modal and don't show again
+      dontShowAgain.addEventListener("click", () => {
+        linkedinModal.classList.add("hidden");
+        localStorage.setItem("linkedinModalDismissed", "true");
+      });
+
+      // Close modal when clicking outside
+      linkedinModal.addEventListener("click", (e) => {
+        if (e.target === linkedinModal) {
+          linkedinModal.classList.add("hidden");
         }
-        
-        // Initialize calendar
-        renderCalendar();
-        
-        // Previous month button
-        prevMonthButton.addEventListener('click', () => {
-            currentDate.setMonth(currentDate.getMonth() - 1);
-            renderCalendar();
-        });
-        
-        // Next month button
-        nextMonthButton.addEventListener('click', () => {
-            currentDate.setMonth(currentDate.getMonth() + 1);
-            renderCalendar();
+      });
+
+      // Calendar Logic
+      let currentDate = new Date();
+      const calendarDays = document.getElementById("calendar-days");
+      const currentMonthElement = document.getElementById("current-month");
+      const prevMonthButton = document.getElementById("prev-month");
+      const nextMonthButton = document.getElementById("next-month");
+
+      // Holidays (you can add more dates here)
+      const holidays = [
+        "2025-01-01", // New Year
+        "2025-01-26", // Republic Day
+        "2025-08-15", // Independence Day
+        "2025-10-02", // Gandhi Jayanti
+        "2025-12-25", // Christmas
+      ];
+
+      // Load booked appointments from localStorage
+      function getBookedSlots() {
+        const appointments = JSON.parse(
+          localStorage.getItem("appointments") || "[]"
+        );
+        const bookedSlots = {};
+
+        appointments.forEach((appointment) => {
+          const key = `${appointment.date}_${appointment.time}`;
+          bookedSlots[key] = true;
         });
 
-        // Set minimum date for appointment form (today)
+        return bookedSlots;
+      }
+
+      // Function to check if a date is a weekend
+      function isWeekend(date) {
+        const day = date.getDay();
+        return day === 0 || day === 6; // 0 = Sunday, 6 = Saturday
+      }
+
+      // Function to check if a date is a holiday
+      function isHoliday(dateString) {
+        return holidays.includes(dateString);
+      }
+
+      // Function to check if a time slot is booked
+      function isTimeSlotBooked(dateString, time) {
+        const bookedSlots = getBookedSlots();
+        const key = `${dateString}_${time}`;
+        return bookedSlots[key] || false;
+      }
+
+      // Function to get availability status for a date
+      function getAvailabilityStatus(date) {
+        const dateString = `${date.getFullYear()}-${String(
+          date.getMonth() + 1
+        ).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+
+        // Check if date is in the past
         const today = new Date();
-        const todayFormatted = today.toISOString().split('T')[0];
-        document.getElementById('date').min = todayFormatted;
-
-        // Update time slots when date changes
-        document.getElementById('date').addEventListener('change', function() {
-            updateAvailableTimeSlots(this.value);
-        });
-
-        // JSON Storage Functions
-        function saveAppointment(appointmentData) {
-            let appointments = JSON.parse(localStorage.getItem('appointments') || '[]');
-            
-            // Format date to dd-mm-yyyy
-            const [year, month, day] = appointmentData.date.split('-');
-            const formattedDate = `${day}-${month}-${year}`;
-            
-            const appointment = {
-                id: Date.now(),
-                name: appointmentData.name,
-                email: appointmentData.email,
-                date: formattedDate,
-                time: appointmentData.time,
-                message: appointmentData.message,
-                timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
-                status: 'booked'
-            };
-            
-            appointments.push(appointment);
-            localStorage.setItem('appointments', JSON.stringify(appointments));
-            
-            console.log('Appointment saved locally:', appointment);
-            return appointment;
+        today.setHours(0, 0, 0, 0);
+        if (date < today) {
+          return "past";
         }
 
-        function getAppointments() {
-            return JSON.parse(localStorage.getItem('appointments') || '[]');
+        // Check if it's a weekend or holiday
+        if (isWeekend(date) || isHoliday(dateString)) {
+          return "available";
         }
 
-        function createDownloadLink() {
-            const appointments = getAppointments();
-            if (appointments.length > 0) {
-                const dataStr = JSON.stringify(appointments, null, 2);
-                const dataBlob = new Blob([dataStr], { type: 'application/json' });
-                const url = URL.createObjectURL(dataBlob);
-                
-                const downloadBtn = document.getElementById('download-appointments-btn');
-                downloadBtn.href = url;
-                downloadBtn.download = `appointments-${new Date().toISOString().split('T')[0]}.json`;
-                
-                // Show download section
-                document.getElementById('download-section').classList.remove('hidden');
+        // Monday to Friday, 11 AM to 7 PM are busy
+        return "busy";
+      }
+
+      function renderCalendar() {
+        // Clear previous calendar
+        calendarDays.innerHTML = "";
+
+        // Set current month text
+        const monthNames = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+        currentMonthElement.textContent = `${
+          monthNames[currentDate.getMonth()]
+        } ${currentDate.getFullYear()}`;
+
+        // Get first day of month and number of days in month
+        const firstDay = new Date(
+          currentDate.getFullYear(),
+          currentDate.getMonth(),
+          1
+        );
+        const lastDay = new Date(
+          currentDate.getFullYear(),
+          currentDate.getMonth() + 1,
+          0
+        );
+        const daysInMonth = lastDay.getDate();
+        const startingDay = firstDay.getDay(); // 0 = Sunday, 1 = Monday, etc.
+
+        // Add empty cells for days before the first day of the month
+        for (let i = 0; i < startingDay; i++) {
+          const emptyCell = document.createElement("div");
+          emptyCell.classList.add("h-12", "bg-slate-700/50", "rounded-lg");
+          calendarDays.appendChild(emptyCell);
+        }
+
+        // Add cells for each day of the month
+        for (let day = 1; day <= daysInMonth; day++) {
+          const dayCell = document.createElement("div");
+          const date = new Date(
+            currentDate.getFullYear(),
+            currentDate.getMonth(),
+            day
+          );
+          const status = getAvailabilityStatus(date);
+          const dateString = `${currentDate.getFullYear()}-${String(
+            currentDate.getMonth() + 1
+          ).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+
+          dayCell.classList.add(
+            "h-12",
+            "bg-slate-700",
+            "rounded-lg",
+            "flex",
+            "items-center",
+            "justify-center",
+            "relative",
+            "calendar-day"
+          );
+
+          if (status === "past") {
+            dayCell.classList.add("past-date");
+          }
+
+          // Add availability indicator
+          if (status !== "past") {
+            const availabilityBadge = document.createElement("div");
+            availabilityBadge.classList.add("availability-badge");
+
+            // Check if any time slot is booked for this date
+            const timeSlots = [
+              "09:00",
+              "10:00",
+              "11:00",
+              "14:00",
+              "15:00",
+              "16:00",
+              "17:00",
+              "18:00",
+            ];
+            const hasBookedSlot = timeSlots.some((time) =>
+              isTimeSlotBooked(dateString, time)
+            );
+
+            if (hasBookedSlot) {
+              availabilityBadge.classList.add("booked-slot");
+            } else if (status === "available") {
+              availabilityBadge.classList.add("available");
+            } else if (status === "busy") {
+              availabilityBadge.classList.add("busy");
+            } else if (status === "partial") {
+              availabilityBadge.classList.add("partial");
             }
+
+            dayCell.appendChild(availabilityBadge);
+          }
+
+          // Add day number
+          const dayNumber = document.createElement("span");
+          dayNumber.textContent = day;
+          dayNumber.classList.add("text-white", "font-medium");
+          dayCell.appendChild(dayNumber);
+
+          // Add click event to select date in appointment form
+          if (status !== "past") {
+            dayCell.addEventListener("click", () => {
+              document.getElementById("date").value = dateString;
+              updateAvailableTimeSlots(dateString);
+            });
+          }
+
+          calendarDays.appendChild(dayCell);
+        }
+      }
+
+      // Update available time slots based on selected date
+      function updateAvailableTimeSlots(dateString) {
+        const timeSelect = document.getElementById("time");
+        const timeSlots = timeSelect.options;
+        const bookedSlots = getBookedSlots();
+
+        for (let i = 1; i < timeSlots.length; i++) {
+          const time = timeSlots[i].value;
+          const key = `${dateString}_${time}`;
+
+          if (bookedSlots[key]) {
+            timeSlots[i].disabled = true;
+            timeSlots[i].textContent = `${time} IST - Booked`;
+          } else {
+            timeSlots[i].disabled = false;
+            timeSlots[i].textContent = `${time} IST`;
+          }
+        }
+      }
+
+      // Initialize calendar
+      renderCalendar();
+
+      // Previous month button
+      prevMonthButton.addEventListener("click", () => {
+        currentDate.setMonth(currentDate.getMonth() - 1);
+        renderCalendar();
+      });
+
+      // Next month button
+      nextMonthButton.addEventListener("click", () => {
+        currentDate.setMonth(currentDate.getMonth() + 1);
+        renderCalendar();
+      });
+
+      // Set minimum date for appointment form (today)
+      const today = new Date();
+      const todayFormatted = today.toISOString().split("T")[0];
+      document.getElementById("date").min = todayFormatted;
+
+      // Update time slots when date changes
+      document.getElementById("date").addEventListener("change", function () {
+        updateAvailableTimeSlots(this.value);
+      });
+
+      // JSON Storage Functions
+      function saveAppointment(appointmentData) {
+        let appointments = JSON.parse(
+          localStorage.getItem("appointments") || "[]"
+        );
+
+        // Format date to dd-mm-yyyy
+        const [year, month, day] = appointmentData.date.split("-");
+        const formattedDate = `${day}-${month}-${year}`;
+
+        const appointment = {
+          id: Date.now(),
+          name: appointmentData.name,
+          email: appointmentData.email,
+          date: formattedDate,
+          time: appointmentData.time,
+          message: appointmentData.message,
+          timestamp: new Date().toLocaleString("en-IN", {
+            timeZone: "Asia/Kolkata",
+          }),
+          status: "booked",
+        };
+
+        appointments.push(appointment);
+        localStorage.setItem("appointments", JSON.stringify(appointments));
+
+        console.log("Appointment saved locally:", appointment);
+        return appointment;
+      }
+
+      function getAppointments() {
+        return JSON.parse(localStorage.getItem("appointments") || "[]");
+      }
+
+      function createDownloadLink() {
+        const appointments = getAppointments();
+        if (appointments.length > 0) {
+          const dataStr = JSON.stringify(appointments, null, 2);
+          const dataBlob = new Blob([dataStr], { type: "application/json" });
+          const url = URL.createObjectURL(dataBlob);
+
+          const downloadBtn = document.getElementById(
+            "download-appointments-btn"
+          );
+          downloadBtn.href = url;
+          downloadBtn.download = `appointments-${
+            new Date().toISOString().split("T")[0]
+          }.json`;
+
+          // Show download section
+          document
+            .getElementById("download-section")
+            .classList.remove("hidden");
+        }
+      }
+
+      // Formspree Form Handling - Fixed Version
+      const appointmentForm = document.getElementById("appointment-form");
+      const appointmentSuccess = document.getElementById("appointment-success");
+      const appointmentError = document.getElementById("appointment-error");
+      const submitBtn = document.getElementById("submit-btn");
+      const submitText = document.getElementById("submit-text");
+      const submitSpinner = document.getElementById("submit-spinner");
+
+      appointmentForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        // Get form data
+        const formData = {
+          name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          date: document.getElementById("date").value,
+          time: document.getElementById("time").value,
+          message: document.getElementById("message").value,
+        };
+
+        // Check if time slot is already booked locally
+        if (isTimeSlotBooked(formData.date, formData.time)) {
+          showError(
+            "This time slot is already booked. Please select another time."
+          );
+          return;
         }
 
-// Formspree Form Handling - Fixed Version
-const appointmentForm = document.getElementById('appointment-form');
-const appointmentSuccess = document.getElementById('appointment-success');
-const appointmentError = document.getElementById('appointment-error');
-const submitBtn = document.getElementById('submit-btn');
-const submitText = document.getElementById('submit-text');
-const submitSpinner = document.getElementById('submit-spinner');
+        // Show loading state
+        submitBtn.disabled = true;
+        submitText.textContent = "Scheduling...";
+        submitSpinner.classList.remove("hidden");
 
-appointmentForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        date: document.getElementById('date').value,
-        time: document.getElementById('time').value,
-        message: document.getElementById('message').value
-    };
+        try {
+          // Save locally first
+          saveAppointment(formData);
 
-    // Check if time slot is already booked locally
-    if (isTimeSlotBooked(formData.date, formData.time)) {
-        showError('This time slot is already booked. Please select another time.');
-        return;
-    }
-    
-    // Show loading state
-    submitBtn.disabled = true;
-    submitText.textContent = 'Scheduling...';
-    submitSpinner.classList.remove('hidden');
-    
-    try {
-        // Save locally first
-        saveAppointment(formData);
-        
-        // Prepare Formspree submission with simpler approach
-        const formDataObj = new URLSearchParams();
-        formDataObj.append('name', formData.name);
-        formDataObj.append('email', formData.email);
-        formDataObj.append('date', formData.date);
-        formDataObj.append('time', formData.time);
-        formDataObj.append('message', formData.message);
-        formDataObj.append('_subject', 'New Appointment Booking - Lokesh Aslekar Portfolio');
-        formDataObj.append('_replyto', formData.email);
-        
-        // Submit to Formspree with simpler fetch
-        const response = await fetch('https://formspree.io/f/mblzwdkz', {
-            method: 'POST',
+          // Prepare Formspree submission with simpler approach
+          const formDataObj = new URLSearchParams();
+          formDataObj.append("name", formData.name);
+          formDataObj.append("email", formData.email);
+          formDataObj.append("date", formData.date);
+          formDataObj.append("time", formData.time);
+          formDataObj.append("message", formData.message);
+          formDataObj.append(
+            "_subject",
+            "New Appointment Booking - Lokesh Aslekar Portfolio"
+          );
+          formDataObj.append("_replyto", formData.email);
+
+          // Submit to Formspree with simpler fetch
+          const response = await fetch("https://formspree.io/f/mblzwdkz", {
+            method: "POST",
             body: formDataObj,
             headers: {
-                'Accept': 'application/json'
-            }
-        });
-        
-        const result = await response.json();
-        
-        if (response.ok && result.ok) {
+              Accept: "application/json",
+            },
+          });
+
+          const result = await response.json();
+
+          if (response.ok && result.ok) {
             // Show success message
-            appointmentSuccess.classList.remove('hidden');
-            appointmentError.classList.add('hidden');
-            
+            appointmentSuccess.classList.remove("hidden");
+            appointmentError.classList.add("hidden");
+
             // Update download link
             createDownloadLink();
-            
+
             // Reset form
             appointmentForm.reset();
-            
+
             // Refresh calendar to show booked slot
             renderCalendar();
-            
-            console.log('Formspree submission successful:', result);
-            
-        } else {
-            throw new Error(result.error || 'Form submission failed');
-        }
-        
-    } catch (error) {
-        // Even if Formspree fails, show success since it's saved locally
-        appointmentSuccess.classList.remove('hidden');
-        appointmentError.classList.add('hidden');
-        
-        // Update download link
-        createDownloadLink();
-        
-        // Reset form
-        appointmentForm.reset();
-        
-        // Refresh calendar to show booked slot
-        renderCalendar();
-        
-        console.log('Appointment saved locally. Formspree error:', error);
-        
-    } finally {
-        // Reset button state
-        submitBtn.disabled = false;
-        submitText.textContent = 'Schedule Appointment';
-        submitSpinner.classList.add('hidden');
-    }
-});
 
-function showError(message) {
-    document.getElementById('error-message').textContent = message;
-    appointmentError.classList.remove('hidden');
-    appointmentSuccess.classList.add('hidden');
-}
-        // Initialize download section if appointments exist
-        window.addEventListener('load', function() {
-            const appointments = getAppointments();
-            if (appointments.length > 0) {
-                createDownloadLink();
-            }
-        });
+            console.log("Formspree submission successful:", result);
+          } else {
+            throw new Error(result.error || "Form submission failed");
+          }
+        } catch (error) {
+          // Even if Formspree fails, show success since it's saved locally
+          appointmentSuccess.classList.remove("hidden");
+          appointmentError.classList.add("hidden");
+
+          // Update download link
+          createDownloadLink();
+
+          // Reset form
+          appointmentForm.reset();
+
+          // Refresh calendar to show booked slot
+          renderCalendar();
+
+          console.log("Appointment saved locally. Formspree error:", error);
+        } finally {
+          // Reset button state
+          submitBtn.disabled = false;
+          submitText.textContent = "Schedule Appointment";
+          submitSpinner.classList.add("hidden");
+        }
+      });
+
+      function showError(message) {
+        document.getElementById("error-message").textContent = message;
+        appointmentError.classList.remove("hidden");
+        appointmentSuccess.classList.add("hidden");
+      }
+      // Initialize download section if appointments exist
+      window.addEventListener("load", function () {
+        const appointments = getAppointments();
+        if (appointments.length > 0) {
+          createDownloadLink();
+        }
+      });
     </script>
-</body>
+  </body>
 </html>
