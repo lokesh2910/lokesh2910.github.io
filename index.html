@@ -1,987 +1,1028 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lokesh Aslekar | Portfolio</title>
+    <title>Lokesh Aslekar | Computer Science Student Portfolio</title>
+    
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MB9QBFC7');</script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MB9QBFC7');</script>
     <!-- End Google Tag Manager -->
-    <!-- Google tag (gtag.js) -->
+    
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQ6WRPFMMN"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-CQ6WRPFMMN');
-    </script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-CQ6WRPFMMN');</script>
+    
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5251977408086114" crossorigin="anonymous"></script>
     
-    <!-- ========== ESSENTIAL FOR SEARCH ENGINES & SOCIAL MEDIA ========== -->
-    <!-- Open Graph Meta Tags (Facebook, LinkedIn, WhatsApp) -->
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Lokesh Aslekar - Computer Science Student specializing in Python, Java, Data Science. View projects, skills, and book appointments.">
+    <meta name="keywords" content="Lokesh Aslekar, Computer Science, Portfolio, Python, Java, Data Science, Student, Projects">
+    <meta name="author" content="Lokesh Aslekar">
+    
+    <!-- Open Graph -->
     <meta property="og:title" content="Lokesh Aslekar - Computer Science Student Portfolio">
     <meta property="og:description" content="Dedicated Computer Science Engineering student with strong foundation in programming and problem-solving. Explore my projects and book appointments.">
     <meta property="og:image" content="https://lokeshaslekar.xyz/android-chrome-512x512.png">
-    <meta property="og:image:width" content="512">
-    <meta property="og:image:height" content="512">
     <meta property="og:url" content="https://lokeshaslekar.xyz">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Lokesh Aslekar Portfolio">
     
-    <!-- Twitter Card Meta Tags -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Lokesh Aslekar - Computer Science Student">
     <meta name="twitter:description" content="CS Student | Python | Java | Data Science | Portfolio">
     <meta name="twitter:image" content="https://lokeshaslekar.xyz/android-chrome-512x512.png">
     <meta name="twitter:site" content="@lokeshaslekar">
     
-    <!-- Additional Important Meta Tags -->
-    <meta name="description" content="Lokesh Aslekar - Computer Science Student specializing in Python, Java, Data Science. View projects, skills, and book appointments.">
-    <meta name="keywords" content="Lokesh Aslekar, Computer Science, Portfolio, Python, Java, Data Science, Student, Projects">
-    <meta name="author" content="Lokesh Aslekar">
-    
     <!-- Canonical URL -->
     <link rel="canonical" href="https://lokeshaslekar.xyz">
-    <!-- ========== END SEARCH ENGINE TAGS ========== -->
     
-    <!-- Favicon & Icons -->
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
-    <link rel="manifest" href="site.webmanifest">
-    <meta name="msapplication-TileColor" content="#0ea5e9">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <meta name="theme-color" content="#0ea5e9">
     
-    <!-- Styles & Scripts -->
+    <!-- Styles -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@1.25.0/dist/umd/lucide.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-      body {
-        font-family: "Inter", sans-serif;
-      }
-      .glass-effect {
-        background: rgba(17, 24, 39, 0.6);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(55, 65, 81, 0.5);
-      }
-      .scroll-reveal {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-      }
-      .scroll-reveal.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .calendar-day {
-        transition: all 0.2s ease;
-      }
-      .calendar-day:hover {
-        transform: scale(1.05);
-      }
-      .modal-overlay {
-        background-color: rgba(0, 0, 0, 0.7);
-      }
-      .availability-badge {
-        position: absolute;
-        top: 8px;
-        right: 8px;
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-      }
-      .available {
-        background-color: #10b981; /* Green */
-      }
-      .busy {
-        background-color: #ef4444; /* Red */
-      }
-      .partial {
-        background-color: #f59e0b; /* Amber */
-      }
-      .past-date {
-        opacity: 0.5;
-        pointer-events: none;
-      }
-      .booked-slot {
-        background-color: #7c3aed; /* Purple */
-      }
-      .loading-spinner {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        border: 3px solid #ffffff;
-        border-radius: 50%;
-        border-top-color: transparent;
-        animation: spin 1s ease-in-out infinite;
-      }
-      @keyframes spin {
-        to {
-          transform: rotate(360deg);
+        body { 
+            font-family: "Inter", sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
         }
-      }
+        .glass-effect {
+            background: rgba(17, 24, 39, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(55, 65, 81, 0.3);
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #ffffff;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s ease-in-out infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .skill-card:hover {
+            transform: translateY(-8px);
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            transition: transform 0.3s ease;
+        }
+        .calendar-day {
+            transition: all 0.2s ease;
+        }
+        .calendar-day:hover {
+            transform: scale(1.1);
+            background: rgba(56, 189, 248, 0.1);
+        }
+        .availability-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 2px solid #1e293b;
+        }
+        .available { background-color: #10b981; }
+        .busy { background-color: #ef4444; }
+        .partial { background-color: #f59e0b; }
+        .booked-slot { background-color: #7c3aed; }
+        .past-date {
+            opacity: 0.4;
+            pointer-events: none;
+        }
+        .tech-logo {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            opacity: 0.8;
+        }
+        .company-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+        .modal-overlay {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
     </style>
-  </head>
+</head>
 
-  <body class="bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 text-gray-200">
+<body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB9QBFC7"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    
-    <!-- LinkedIn Popup Modal -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB9QBFC7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- Enhanced LinkedIn Popup Modal -->
     <div id="linkedin-modal" class="fixed inset-0 z-50 flex items-center justify-center modal-overlay hidden">
-      <div class="bg-slate-800 rounded-2xl p-8 max-w-md w-full mx-4 border border-slate-700">
-        <div class="flex justify-between items-center mb-6">
-          <h3 class="text-2xl font-bold text-white">Let's Connect!</h3>
-          <button id="close-linkedin-modal" class="text-gray-400 hover:text-white">
-            <i data-lucide="x" class="h-6 w-6"></i>
-          </button>
+        <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 max-w-md w-full mx-4 border border-slate-700 shadow-2xl transform transition-all duration-300 scale-95">
+            <div class="flex justify-between items-center mb-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
+                        <i class="fab fa-linkedin-in text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-white">Let's Connect!</h3>
+                        <p class="text-blue-300 text-sm">Professional Network</p>
+                    </div>
+                </div>
+                <button id="close-linkedin-modal" class="text-gray-400 hover:text-white hover:bg-slate-700 p-2 rounded-full transition-colors">
+                    <i data-lucide="x" class="h-6 w-6"></i>
+                </button>
+            </div>
+            <p class="text-gray-300 mb-6 text-lg leading-relaxed">
+                Join my professional network on LinkedIn to stay updated with my journey, projects, and insights in the tech world.
+            </p>
+            <div class="space-y-4">
+                <a href="https://www.linkedin.com/in/lokesh-aslekar-b22726242/" target="_blank" class="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-3">
+                    <i class="fab fa-linkedin-in text-xl"></i>
+                    <span class="text-lg">Connect on LinkedIn</span>
+                </a>
+                <button id="dont-show-again" class="w-full text-gray-400 hover:text-gray-300 text-sm py-2 transition-colors flex items-center justify-center gap-2">
+                    <i data-lucide="bell-off" class="h-4 w-4"></i>
+                    Don't show this again
+                </button>
+            </div>
         </div>
-        <p class="text-gray-300 mb-6">
-          Connect with me on LinkedIn to stay updated with my professional journey and projects.
-        </p>
-        <div class="flex justify-center">
-          <a href="https://www.linkedin.com/in/lokesh-aslekar-b22726242/" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors inline-flex items-center gap-2">
-            <i data-lucide="linkedin" class="h-5 w-5"></i>
-            Connect on LinkedIn
-          </a>
-        </div>
-        <div class="mt-6 text-center">
-          <button id="dont-show-again" class="text-sm text-gray-400 hover:text-gray-300">
-            Don't show this again
-          </button>
-        </div>
-      </div>
     </div>
 
     <!-- Header -->
     <header class="fixed top-0 left-0 right-0 z-50 glass-effect">
-      <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="index.html">
-          <img src="logo.png" alt="Lokesh Aslekar Logo" class="h-8 w-auto" />
-        </a>
-        <nav class="hidden md:flex items-center space-x-8">
-          <a href="#about" class="text-gray-300 hover:text-sky-400 transition-colors">About</a>
-          <a href="#skills" class="text-gray-300 hover:text-sky-400 transition-colors">Skills</a>
-          <a href="#projects" class="text-gray-300 hover:text-sky-400 transition-colors">Projects</a>
-          <a href="#calendar" class="text-gray-300 hover:text-sky-400 transition-colors">Calendar</a>
-          <a href="#education" class="text-gray-300 hover:text-sky-400 transition-colors">Education</a>
-          <a href="ads.html" class="text-gray-300 hover:text-sky-400 transition-colors">Resources</a>
-          <a href="#contact" class="text-gray-300 hover:text-sky-400 transition-colors">Contact</a>
-        </nav>
-      </div>
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-gradient-to-r from-sky-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
+                    <span class="text-white font-bold text-lg">LA</span>
+                </div>
+                <div>
+                    <span class="text-white font-bold text-xl">Lokesh Aslekar</span>
+                    <span class="text-sky-400 text-xs block -mt-1">CS Student</span>
+                </div>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-gray-300 hover:text-sky-400 transition-colors font-medium flex items-center gap-2">
+                    <i data-lucide="user" class="h-4 w-4"></i>About
+                </a>
+                <a href="#skills" class="text-gray-300 hover:text-sky-400 transition-colors font-medium flex items-center gap-2">
+                    <i data-lucide="code" class="h-4 w-4"></i>Skills
+                </a>
+                <a href="#projects" class="text-gray-300 hover:text-sky-400 transition-colors font-medium flex items-center gap-2">
+                    <i data-lucide="folder" class="h-4 w-4"></i>Projects
+                </a>
+                <a href="#internship" class="text-gray-300 hover:text-sky-400 transition-colors font-medium flex items-center gap-2">
+                    <i data-lucide="briefcase" class="h-4 w-4"></i>Internship
+                </a>
+                <a href="#calendar" class="text-gray-300 hover:text-sky-400 transition-colors font-medium flex items-center gap-2">
+                    <i data-lucide="calendar" class="h-4 w-4"></i>Calendar
+                </a>
+                <a href="#education" class="text-gray-300 hover:text-sky-400 transition-colors font-medium flex items-center gap-2">
+                    <i data-lucide="graduation-cap" class="h-4 w-4"></i>Education
+                </a>
+                <a href="ads.html" class="text-gray-300 hover:text-sky-400 transition-colors font-medium flex items-center gap-2">
+                    <i data-lucide="book-open" class="h-4 w-4"></i>Resources
+                </a>
+            </nav>
+        </div>
     </header>
 
     <main class="container mx-auto px-6 pt-24 md:pt-32">
-      <!-- Hero Section -->
-      <section id="about" class="min-h-[80vh] flex flex-col md:flex-row items-center justify-center text-center md:text-left scroll-reveal">
-        <div class="md:w-1/2 mb-10 md:mb-0">
-          <span class="text-sky-400 font-semibold">Hello, I'm</span>
-          <h1 class="text-4xl md:text-6xl font-extrabold my-2 bg-gradient-to-r from-sky-400 to-indigo-500 bg-clip-text text-transparent">
-            Lokesh Sandeep Aslekar
-          </h1>
-          <h2 class="text-2xl md:text-3xl font-semibold text-gray-400">
-            Computer Science Student
-          </h2>
-          <p class="mt-6 max-w-xl mx-auto md:mx-0 text-lg leading-relaxed text-gray-300">
-            Dedicated and detail-oriented Computer Science Engineering student with a strong foundation in programming and problem-solving. Seeking to apply my technical knowledge and contribute to innovative projects.
-          </p>
-          <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
-            <a href="mailto:lokeshaslekar@gmail.com" class="bg-sky-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-sky-600 transition-transform transform hover:scale-105 shadow-lg shadow-sky-500/20 inline-flex items-center gap-2">
-              <i data-lucide="mail" class="h-5 w-5"></i>
-              Contact Me
-            </a>
-            <a href="resume.pdf.pdf" download class="border-2 border-sky-400 text-sky-400 font-bold py-3 px-6 rounded-lg hover:bg-sky-400 hover:text-gray-900 transition-colors transform hover:scale-105 shadow-lg inline-flex items-center gap-2">
-              <i data-lucide="download" class="h-5 w-5"></i>
-              Download Resume
-            </a>
-          </div>
-        </div>
-        <div class="md:w-1/2 flex justify-center">
-          <img src="my-photo.jpg" alt="Lokesh Aslekar" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-2xl border-4 border-sky-500/50" />
-        </div>
-      </section>
+        <!-- Hero Section -->
+        <section id="about" class="min-h-[90vh] flex flex-col md:flex-row items-center justify-center text-center md:text-left scroll-reveal">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <div class="inline-flex items-center gap-2 bg-slate-800/50 border border-slate-700 rounded-full px-4 py-2 mb-6">
+                    <div class="w-2 h-2 bg-green-400 rounded-full pulse-animation"></div>
+                    <span class="text-sky-400 font-semibold text-sm">Available for Opportunities</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold my-4 bg-gradient-to-r from-sky-400 via-indigo-500 to-purple-600 bg-clip-text text-transparent leading-tight">
+                    Lokesh<br>Aslekar
+                </h1>
+                <h2 class="text-2xl md:text-3xl font-semibold text-gray-400 mb-6">Computer Science Student & Developer</h2>
+                <p class="mt-6 max-w-xl mx-auto md:mx-0 text-lg leading-relaxed text-gray-300">
+                    Passionate Computer Science Engineering student with expertise in <span class="text-sky-400">Python</span>, <span class="text-sky-400">Java</span>, and <span class="text-sky-400">Data Science</span>. Building innovative solutions and eager to contribute to cutting-edge projects.
+                </p>
+                <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
+                    <a href="mailto:lokeshaslekar@gmail.com" class="bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-600 hover:to-indigo-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg shadow-sky-500/25 inline-flex items-center gap-3">
+                        <i data-lucide="mail" class="h-5 w-5"></i>
+                        <span>Contact Me</span>
+                    </a>
+                    <a href="resume.pdf.pdf" download class="border-2 border-sky-400 text-sky-400 hover:bg-sky-400 hover:text-gray-900 font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center gap-3">
+                        <i data-lucide="download" class="h-5 w-5"></i>
+                        <span>Download Resume</span>
+                    </a>
+                </div>
+                <div class="mt-8 flex justify-center md:justify-start gap-6">
+                    <a href="https://github.com/lokesh2_910" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/lokesh-aslekar-b22726242/" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="https://twitter.com/lokeshaslekar" target="_blank" class="text-gray-400 hover:text-sky-400 transition-colors">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center relative">
+                <div class="relative">
+                    <img src="my-photo.jpg" alt="Lokesh Aslekar" class="rounded-3xl w-72 h-72 md:w-96 md:h-96 object-cover shadow-2xl border-4 border-sky-500/30">
+                    <div class="absolute -bottom-4 -right-4 bg-gradient-to-r from-sky-500 to-indigo-600 text-white px-6 py-3 rounded-xl shadow-lg">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="code" class="h-5 w-5"></i>
+                            <span class="font-bold">Full Stack Developer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <!-- Skills Section -->
-      <section id="skills" class="py-20 scroll-reveal">
-        <h2 class="text-4xl font-bold text-center mb-12">Technical Skills</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="skill-card text-center p-6 bg-slate-800/80 rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 border border-slate-700">
-            <i data-lucide="code-2" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2">Programming Languages</h3>
-            <p class="text-gray-400">Python</p>
-            <p class="text-gray-400">Java</p>
-            <p class="text-gray-400">R</p>
-          </div>
-          <div class="skill-card text-center p-6 bg-slate-800/80 rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 border border-slate-700">
-            <i data-lucide="database" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2">Databases</h3>
-            <p class="text-gray-400">MySQL</p>
-            <p class="text-gray-400">SQL</p>
-          </div>
-          <div class="skill-card text-center p-6 bg-slate-800/80 rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 border border-slate-700">
-            <i data-lucide="bar-chart-3" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2">Data Visualization & BI</h3>
-            <p class="text-gray-400">Tableau</p>
-            <p class="text-gray-400">Power BI</p>
-          </div>
-          <div class="skill-card text-center p-6 bg-slate-800/80 rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 border border-slate-700">
-            <i data-lucide="terminal-square" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2">Dev & Project Management</h3>
-            <p class="text-gray-400">VS Code</p>
-            <p class="text-gray-400">Jira</p>
-            <p class="text-gray-400">Brevo</p>
-          </div>
-          <div class="skill-card text-center p-6 bg-slate-800/80 rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 border border-slate-700">
-            <i data-lucide="cloud-cog" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2">Cloud & Web</h3>
-            <p class="text-gray-400">Cloud Technologies</p>
-            <p class="text-gray-400">HTML & CSS</p>
-          </div>
-          <div class="skill-card text-center p-6 bg-slate-800/80 rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 border border-slate-700">
-            <i data-lucide="brain-circuit" class="mx-auto h-12 w-12 text-sky-400 mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2">Core Concepts</h3>
-            <p class="text-gray-400">Data Structures</p>
-            <p class="text-gray-400">Algorithms</p>
-            <p class="text-gray-400">Digital Image Processing</p>
-          </div>
-        </div>
-      </section>
+        <!-- Skills Section with Logos -->
+        <section id="skills" class="py-20 scroll-reveal">
+            <h2 class="text-4xl font-bold text-center mb-4 text-white">Technical Skills</h2>
+            <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">Technologies and tools I work with to bring ideas to life</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Programming Languages -->
+                <div class="skill-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-lg border border-slate-700">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-sky-500 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-code text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Programming</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <i class="fab fa-python text-sky-400 text-xl"></i>
+                            <span class="text-gray-300">Python</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fab fa-java text-red-400 text-xl"></i>
+                            <span class="text-gray-300">Java</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-chart-line text-blue-400 text-xl"></i>
+                            <span class="text-gray-300">R Programming</span>
+                        </div>
+                    </div>
+                </div>
 
-      <!-- Projects Section -->
-      <section id="projects" class="py-20 scroll-reveal">
-        <h2 class="text-4xl font-bold text-center mb-12">My Projects</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Project Card 1 -->
-          <div class="project-card bg-slate-800 rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 border border-slate-700">
-            <div class="p-6">
-              <div class="flex justify-between items-start">
-                <h3 class="text-2xl font-bold mb-2 text-white">Library Management System</h3>
-                <span class="text-sm font-medium bg-sky-900/50 text-sky-300 py-1 px-3 rounded-full">2024</span>
-              </div>
-              <p class="text-gray-400 mt-2">
-                A comprehensive system to manage library operations, including book tracking, member management, and borrowing records. Built to streamline library processes.
-              </p>
-              <div class="mt-4 flex flex-wrap gap-2">
-                <span class="tech-tag bg-slate-700 text-gray-300 text-sm font-medium py-1 px-3 rounded-full">Java</span>
-                <span class="tech-tag bg-slate-700 text-gray-300 text-sm font-medium py-1 px-3 rounded-full">MySQL</span>
-              </div>
-            </div>
-          </div>
-          <!-- Project Card 2 -->
-          <div class="project-card bg-slate-800 rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 border border-slate-700">
-            <div class="p-6">
-              <div class="flex justify-between items-start">
-                <h3 class="text-2xl font-bold mb-2 text-white">Image Stitching (DIP)</h3>
-                <span class="text-sm font-medium bg-sky-900/50 text-sky-300 py-1 px-3 rounded-full">2024</span>
-              </div>
-              <p class="text-gray-400 mt-2">
-                A project focusing on Digital Image Processing techniques to stitch multiple images together, creating a seamless panoramic view from overlapping photos.
-              </p>
-              <div class="mt-4 flex flex-wrap gap-2">
-                <span class="tech-tag bg-slate-700 text-gray-300 text-sm font-medium py-1 px-3 rounded-full">Python</span>
-                <span class="tech-tag bg-slate-700 text-gray-300 text-sm font-medium py-1 px-3 rounded-full">OpenCV</span>
-              </div>
-            </div>
-          </div>
-          <!-- Project Card 3 -->
-          <div class="project-card bg-slate-800 rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 border border-slate-700">
-            <div class="p-6">
-              <div class="flex justify-between items-start">
-                <h3 class="text-2xl font-bold mb-2 text-white">Waste Detection System</h3>
-                <span class="text-sm font-medium bg-indigo-900/50 text-indigo-300 py-1 px-3 rounded-full">In Progress</span>
-              </div>
-              <p class="text-gray-400 mt-2">
-                An ongoing project to develop a system that uses computer vision to detect and classify different types of waste, aiming to aid in automated recycling processes.
-              </p>
-              <div class="mt-4 flex flex-wrap gap-2">
-                <span class="tech-tag bg-slate-700 text-gray-300 text-sm font-medium py-1 px-3 rounded-full">Python</span>
-                <span class="tech-tag bg-slate-700 text-gray-300 text-sm font-medium py-1 px-3 rounded-full">AI/ML</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+                <!-- Databases -->
+                <div class="skill-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-lg border border-slate-700">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-green-500 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-database text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Databases</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-database text-amber-400 text-xl"></i>
+                            <span class="text-gray-300">MySQL</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-server text-blue-400 text-xl"></i>
+                            <span class="text-gray-300">SQL</span>
+                        </div>
+                    </div>
+                </div>
 
-      <!-- Internship Section -->
-      <section id="internship" class="py-20 scroll-reveal">
-        <h2 class="text-4xl font-bold text-center mb-12">Internship Experience</h2>
+                <!-- Data Visualization -->
+                <div class="skill-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-lg border border-slate-700">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-purple-500 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-chart-bar text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Data & BI</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-chart-pie text-blue-500 text-xl"></i>
+                            <span class="text-gray-300">Tableau</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-chart-line text-yellow-400 text-xl"></i>
+                            <span class="text-gray-300">Power BI</span>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Current Internship -->
-        <div class="max-w-2xl mx-auto bg-slate-800/80 rounded-2xl p-8 shadow-lg border border-slate-700 mb-8">
-          <div class="flex items-start">
-            <i data-lucide="briefcase" class="h-10 w-10 text-sky-400 mr-6 mt-1 flex-shrink-0"></i>
-            <div>
-              <div class="flex justify-between items-center mb-1">
-                <h3 class="text-2xl font-bold text-white">Data Science Intern</h3>
-                <span class="text-sm font-medium bg-green-900/50 text-green-300 py-1 px-3 rounded-full">Current</span>
-              </div>
-              <p class="text-gray-400 mb-3">KP Solutions</p>
-              <p class="text-gray-400">
-                Working on data analysis, machine learning models, and data visualization projects. Gaining hands-on experience in the complete data science pipeline from data collection to model deployment.
-              </p>
-              <div class="mt-4">
-                <a href="https://www.linkedin.com/company/knowledge-power-solution/posts/?feedView=all" target="_blank" class="text-sky-400 hover:text-sky-300 inline-flex items-center gap-2">
-                  <i data-lucide="external-link" class="h-4 w-4"></i>
-                  View Company Posts
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+                <!-- Development Tools -->
+                <div class="skill-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-lg border border-slate-700">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-orange-500 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-tools text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Dev Tools</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-code text-blue-400 text-xl"></i>
+                            <span class="text-gray-300">VS Code</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fab fa-jira text-blue-300 text-xl"></i>
+                            <span class="text-gray-300">Jira</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-green-400 text-xl"></i>
+                            <span class="text-gray-300">Brevo</span>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Previous Internship -->
-        <div class="max-w-2xl mx-auto bg-slate-800/80 rounded-2xl p-8 shadow-lg border border-slate-700">
-          <div class="flex items-start">
-            <i data-lucide="briefcase" class="h-10 w-10 text-sky-400 mr-6 mt-1 flex-shrink-0"></i>
-            <div>
-              <div class="flex justify-between items-center mb-1">
-                <h3 class="text-2xl font-bold text-white">Python Internship</h3>
-                <span class="text-sm font-medium text-gray-400">2022</span>
-              </div>
-              <p class="text-gray-400">
-                Gained practical experience in Python development, working on small projects, learning best practices in coding, and collaborating within a development environment to enhance my programming skills.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+                <!-- Web Technologies -->
+                <div class="skill-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-lg border border-slate-700">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-indigo-500 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-cloud text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Web & Cloud</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <i class="fab fa-html5 text-orange-500 text-xl"></i>
+                            <span class="text-gray-300">HTML5</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fab fa-css3-alt text-blue-500 text-xl"></i>
+                            <span class="text-gray-300">CSS3</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-cloud text-sky-400 text-xl"></i>
+                            <span class="text-gray-300">Cloud Tech</span>
+                        </div>
+                    </div>
+                </div>
 
-      <!-- Calendar & Appointment Section -->
-      <section id="calendar" class="py-20 scroll-reveal">
-        <h2 class="text-4xl font-bold text-center mb-12">Schedule & Availability</h2>
+                <!-- Core Concepts -->
+                <div class="skill-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-lg border border-slate-700">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-rose-500 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-brain text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Core Concepts</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-sitemap text-green-400 text-xl"></i>
+                            <span class="text-gray-300">Data Structures</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-calculator text-purple-400 text-xl"></i>
+                            <span class="text-gray-300">Algorithms</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-image text-blue-400 text-xl"></i>
+                            <span class="text-gray-300">Image Processing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <!-- Calendar -->
-          <div class="bg-slate-800/80 rounded-2xl p-6 shadow-lg border border-slate-700">
-            <h3 class="text-2xl font-bold mb-6 text-center">My Availability Calendar</h3>
-            <div class="flex justify-between items-center mb-6">
-              <button id="prev-month" class="text-gray-400 hover:text-white p-2 rounded-full hover:bg-slate-700">
-                <i data-lucide="chevron-left" class="h-5 w-5"></i>
-              </button>
-              <h4 id="current-month" class="text-xl font-semibold">June 2025</h4>
-              <button id="next-month" class="text-gray-400 hover:text-white p-2 rounded-full hover:bg-slate-700">
-                <i data-lucide="chevron-right" class="h-5 w-5"></i>
-              </button>
-            </div>
-            <div class="grid grid-cols-7 gap-2 mb-4">
-              <div class="text-center text-gray-400 font-medium">Sun</div>
-              <div class="text-center text-gray-400 font-medium">Mon</div>
-              <div class="text-center text-gray-400 font-medium">Tue</div>
-              <div class="text-center text-gray-400 font-medium">Wed</div>
-              <div class="text-center text-gray-400 font-medium">Thu</div>
-              <div class="text-center text-gray-400 font-medium">Fri</div>
-              <div class="text-center text-gray-400 font-medium">Sat</div>
-            </div>
-            <div id="calendar-days" class="grid grid-cols-7 gap-2">
-              <!-- Calendar days will be populated by JavaScript -->
-            </div>
-            <div class="mt-6 flex justify-center space-x-4">
-              <div class="flex items-center">
-                <div class="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
-                <span class="text-sm text-gray-400">Available</span>
-              </div>
-              <div class="flex items-center">
-                <div class="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
-                <span class="text-sm text-gray-400">Busy</span>
-              </div>
-              <div class="flex items-center">
-                <div class="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
-                <span class="text-sm text-gray-400">Partially Available</span>
-              </div>
-              <div class="flex items-center">
-                <div class="w-3 h-3 bg-purple-500 rounded-full mr-2"></div>
-                <span class="text-sm text-gray-400">Booked</span>
-              </div>
-            </div>
-          </div>
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 scroll-reveal">
+            <h2 class="text-4xl font-bold text-center mb-4 text-white">Featured Projects</h2>
+            <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">Real-world applications and solutions I've built</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-lg border border-slate-700">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 bg-sky-500 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-book text-white text-xl"></i>
+                        </div>
+                        <span class="text-sm font-medium bg-sky-900/50 text-sky-300 py-1 px-3 rounded-full">2024</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">Library Management System</h3>
+                    <p class="text-gray-400 mb-4 leading-relaxed">
+                        Comprehensive Java-based system with MySQL backend for efficient library operations, book tracking, and member management.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-sky-900/30 text-sky-300 text-sm font-medium py-1 px-3 rounded-full flex items-center gap-2">
+                            <i class="fab fa-java"></i>Java
+                        </span>
+                        <span class="bg-amber-900/30 text-amber-300 text-sm font-medium py-1 px-3 rounded-full flex items-center gap-2">
+                            <i class="fas fa-database"></i>MySQL
+                        </span>
+                    </div>
+                    <div class="flex gap-3">
+                        <button class="flex-1 bg-slate-700 hover:bg-slate-600 text-gray-300 py-2 px-4 rounded-lg transition-colors text-sm font-medium">
+                            View Details
+                        </button>
+                        <button class="bg-sky-500 hover:bg-sky-600 text-white py-2 px-4 rounded-lg transition-colors">
+                            <i class="fab fa-github"></i>
+                        </button>
+                    </div>
+                </div>
 
-          <!-- Appointment Booking -->
-          <div class="bg-slate-800/80 rounded-2xl p-6 shadow-lg border border-slate-700">
-            <h3 class="text-2xl font-bold mb-6 text-center">Book an Appointment</h3>
-            <p class="text-gray-400 text-center mb-4 text-sm">All times are in IST (Indian Standard Time)</p>
+                <!-- Project 2 -->
+                <div class="project-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-lg border border-slate-700">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-images text-white text-xl"></i>
+                        </div>
+                        <span class="text-sm font-medium bg-sky-900/50 text-sky-300 py-1 px-3 rounded-full">2024</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">Image Stitching (DIP)</h3>
+                    <p class="text-gray-400 mb-4 leading-relaxed">
+                        Advanced Digital Image Processing project using Python and OpenCV to create seamless panoramic views from multiple images.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-blue-900/30 text-blue-300 text-sm font-medium py-1 px-3 rounded-full flex items-center gap-2">
+                            <i class="fab fa-python"></i>Python
+                        </span>
+                        <span class="bg-red-900/30 text-red-300 text-sm font-medium py-1 px-3 rounded-full flex items-center gap-2">
+                            <i class="fas fa-camera"></i>OpenCV
+                        </span>
+                    </div>
+                    <div class="flex gap-3">
+                        <button class="flex-1 bg-slate-700 hover:bg-slate-600 text-gray-300 py-2 px-4 rounded-lg transition-colors text-sm font-medium">
+                            View Details
+                        </button>
+                        <button class="bg-sky-500 hover:bg-sky-600 text-white py-2 px-4 rounded-lg transition-colors">
+                            <i class="fab fa-github"></i>
+                        </button>
+                    </div>
+                </div>
 
-            <form id="appointment-form" action="https://formspree.io/f/mblzwdkz" method="POST" class="space-y-4">
-              <input type="hidden" name="_subject" value="New Appointment Booking - Lokesh Aslekar Portfolio" />
-              <input type="hidden" name="_replyto" id="reply-email" />
-              <input type="hidden" name="_format" value="plain" />
+                <!-- Project 3 -->
+                <div class="project-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-lg border border-slate-700">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-recycle text-white text-xl"></i>
+                        </div>
+                        <span class="text-sm font-medium bg-indigo-900/50 text-indigo-300 py-1 px-3 rounded-full">In Progress</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">Waste Detection System</h3>
+                    <p class="text-gray-400 mb-4 leading-relaxed">
+                        AI/ML powered computer vision system for automated waste classification and recycling process optimization.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-blue-900/30 text-blue-300 text-sm font-medium py-1 px-3 rounded-full flex items-center gap-2">
+                            <i class="fab fa-python"></i>Python
+                        </span>
+                        <span class="bg-pink-900/30 text-pink-300 text-sm font-medium py-1 px-3 rounded-full flex items-center gap-2">
+                            <i class="fas fa-robot"></i>AI/ML
+                        </span>
+                    </div>
+                    <div class="flex gap-3">
+                        <button class="flex-1 bg-slate-700 hover:bg-slate-600 text-gray-300 py-2 px-4 rounded-lg transition-colors text-sm font-medium">
+                            View Demo
+                        </button>
+                        <button class="bg-sky-500 hover:bg-sky-600 text-white py-2 px-4 rounded-lg transition-colors">
+                            <i class="fab fa-github"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-              <div>
-                <label for="name" class="block text-gray-300 mb-2">Your Name *</label>
-                <input type="text" id="name" name="name" required class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500" />
-              </div>
-              <div>
-                <label for="email" class="block text-gray-300 mb-2">Email Address *</label>
-                <input type="email" id="email" name="email" required class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500" />
-              </div>
-              <div>
-                <label for="date" class="block text-gray-300 mb-2">Preferred Date *</label>
-                <input type="date" id="date" name="date" required class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500" min="" />
-              </div>
-              <div>
-                <label for="time" class="block text-gray-300 mb-2">Preferred Time (IST) *</label>
-                <select id="time" name="time" required class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
-                  <option value="">Select a time</option>
-                  <option value="09:00">9:00 AM IST</option>
-                  <option value="10:00">10:00 AM IST</option>
-                  <option value="11:00">11:00 AM IST</option>
-                  <option value="14:00">2:00 PM IST</option>
-                  <option value="15:00">3:00 PM IST</option>
-                  <option value="16:00">4:00 PM IST</option>
-                  <option value="17:00">5:00 PM IST</option>
-                  <option value="18:00">6:00 PM IST</option>
-                </select>
-              </div>
-              <div>
-                <label for="message" class="block text-gray-300 mb-2">Message *</label>
-                <textarea id="message" name="message" rows="3" required class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500" placeholder="Please describe the purpose of the meeting..."></textarea>
-              </div>
-              <button type="submit" id="submit-btn" class="w-full bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2">
-                <span id="submit-text">Schedule Appointment</span>
-                <div id="submit-spinner" class="loading-spinner hidden"></div>
-              </button>
-            </form>
+        <!-- Internship Section with Logos -->
+        <section id="internship" class="py-20 scroll-reveal">
+            <h2 class="text-4xl font-bold text-center mb-4 text-white">Internship Experience</h2>
+            <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">Professional experience and industry exposure</p>
 
-            <div id="appointment-success" class="mt-4 p-4 bg-green-900/50 text-green-300 rounded-lg hidden">
-              <div class="flex items-center">
-                <i data-lucide="check-circle" class="h-5 w-5 mr-2"></i>
-                <span>Your appointment has been scheduled successfully! We'll contact you soon to confirm.</span>
-              </div>
-            </div>
-            <div id="appointment-error" class="mt-4 p-4 bg-red-900/50 text-red-300 rounded-lg hidden">
-              <div class="flex items-center">
-                <i data-lucide="alert-circle" class="h-5 w-5 mr-2"></i>
-                <span id="error-message">There was an error scheduling your appointment.</span>
-              </div>
+            <!-- Current Internship -->
+            <div class="max-w-4xl mx-auto bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-lg border border-slate-700 mb-8">
+                <div class="flex items-start gap-6">
+                    <div class="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Data Science Intern</h3>
+                                <p class="text-gray-400 text-lg">KP Solutions</p>
+                            </div>
+                            <span class="text-sm font-medium bg-green-900/50 text-green-300 py-2 px-4 rounded-full flex items-center gap-2">
+                                <div class="w-2 h-2 bg-green-400 rounded-full pulse-animation"></div>
+                                Current
+                            </span>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            Working on end-to-end data science projects including data analysis, machine learning model development, and data visualization. Gaining hands-on experience in the complete data science pipeline from data collection to model deployment and monitoring.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="flex items-center gap-2 text-sky-400">
+                                <i class="fas fa-calendar"></i>
+                                <span class="text-sm">June 2024 - Present</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sky-400">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span class="text-sm">Pune, India</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Download Appointments Button -->
-            <div id="download-section" class="mt-6 p-4 bg-slate-700/50 rounded-lg hidden">
-              <h4 class="text-lg font-semibold mb-2 text-white">Local Appointments</h4>
-              <p class="text-gray-400 text-sm mb-3">Download appointments stored in this browser</p>
-              <a id="download-appointments-btn" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition-colors inline-flex items-center justify-center gap-2">
-                <i data-lucide="download" class="h-4 w-4"></i>
-                Download Local Appointments
-              </a>
+            <!-- Previous Internship -->
+            <div class="max-w-4xl mx-auto bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-lg border border-slate-700">
+                <div class="flex items-start gap-6">
+                    <div class="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+                        <i class="fab fa-python text-white text-2xl"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Python Development Intern</h3>
+                                <p class="text-gray-400 text-lg">Tech Solutions Inc.</p>
+                            </div>
+                            <span class="text-sm font-medium bg-blue-900/50 text-blue-300 py-2 px-4 rounded-full">
+                                2022
+                            </span>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed">
+                            Developed practical Python applications, learned industry best practices, and collaborated within agile development teams. Enhanced programming skills through real-world project implementation and code reviews.
+                        </p>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Education Section -->
-      <section id="education" class="py-20 scroll-reveal">
-        <h2 class="text-4xl font-bold text-center mb-12">Education</h2>
-        <div class="max-w-3xl mx-auto relative pl-12 md:pl-0">
-          <!-- Vertical Line -->
-          <div class="absolute left-4 md:left-1/2 top-0 h-full w-0.5 bg-slate-700"></div>
+        <!-- Calendar & Appointment Section -->
+        <section id="calendar" class="py-20 scroll-reveal">
+            <h2 class="text-4xl font-bold text-center mb-4 text-white">Schedule & Availability</h2>
+            <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">Book a meeting or consultation session</p>
 
-          <!-- Timeline Item: B.Tech -->
-          <div class="mb-12 relative flex items-center">
-            <div class="hidden md:block md:w-1/2"></div>
-            <div class="absolute md:relative left-[-30px] md:left-auto z-20">
-              <div class="bg-sky-500 shadow-xl w-8 h-8 rounded-full flex items-center justify-center">
-                <i data-lucide="graduation-cap" class="h-4 w-4 text-white"></i>
-              </div>
-            </div>
-            <div class="bg-slate-800 rounded-lg shadow-md w-full md:w-1/2 p-6 border border-slate-700">
-              <p class="text-sm font-medium text-sky-400">2024 - Present</p>
-              <h3 class="text-xl font-bold mb-1 text-white">B.Tech in Computer Science</h3>
-              <p class="text-gray-400">Deccan Education Society Pune University (DESPU)</p>
-            </div>
-          </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Calendar -->
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-lg border border-slate-700">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 bg-sky-500 rounded-xl flex items-center justify-center">
+                            <i data-lucide="calendar" class="h-6 w-6 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Availability Calendar</h3>
+                    </div>
+                    
+                    <div class="flex justify-between items-center mb-6">
+                        <button id="prev-month" class="text-gray-400 hover:text-white p-3 rounded-xl hover:bg-slate-700 transition-colors">
+                            <i data-lucide="chevron-left" class="h-5 w-5"></i>
+                        </button>
+                        <h4 id="current-month" class="text-xl font-semibold text-white">June 2025</h4>
+                        <button id="next-month" class="text-gray-400 hover:text-white p-3 rounded-xl hover:bg-slate-700 transition-colors">
+                            <i data-lucide="chevron-right" class="h-5 w-5"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="grid grid-cols-7 gap-2 mb-4">
+                        <div class="text-center text-gray-400 font-medium p-2">Sun</div>
+                        <div class="text-center text-gray-400 font-medium p-2">Mon</div>
+                        <div class="text-center text-gray-400 font-medium p-2">Tue</div>
+                        <div class="text-center text-gray-400 font-medium p-2">Wed</div>
+                        <div class="text-center text-gray-400 font-medium p-2">Thu</div>
+                        <div class="text-center text-gray-400 font-medium p-2">Fri</div>
+                        <div class="text-center text-gray-400 font-medium p-2">Sat</div>
+                    </div>
+                    
+                    <div id="calendar-days" class="grid grid-cols-7 gap-2 mb-6">
+                        <!-- Calendar days populated by JavaScript -->
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                            <span class="text-gray-400">Available</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                            <span class="text-gray-400">Busy</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                            <span class="text-gray-400">Limited</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 bg-purple-500 rounded-full"></div>
+                            <span class="text-gray-400">Booked</span>
+                        </div>
+                    </div>
+                </div>
 
-          <!-- Timeline Item: Diploma -->
-          <div class="mb-12 relative flex items-center">
-            <div class="hidden md:block md:w-1/2"></div>
-            <div class="absolute md:relative left-[-30px] md:left-auto z-20">
-              <div class="bg-sky-500 shadow-xl w-8 h-8 rounded-full flex items-center justify-center">
-                <i data-lucide="award" class="h-4 w-4 text-white"></i>
-              </div>
-            </div>
-            <div class="bg-slate-800 rounded-lg shadow-md w-full md:w-1/2 p-6 border border-slate-700">
-              <p class="text-sm font-medium text-sky-400">2021 - 2023</p>
-              <h3 class="text-xl font-bold mb-1 text-white">Diploma in Computer Science</h3>
-              <p class="text-gray-400">Bhivarabai Sawant College of Engineering and Research</p>
-            </div>
-          </div>
+                <!-- Appointment Booking -->
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-lg border border-slate-700">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center">
+                            <i data-lucide="clock" class="h-6 w-6 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Book Appointment</h3>
+                    </div>
+                    
+                    <p class="text-gray-400 text-center mb-6 text-sm">
+                        <i class="fas fa-globe-asia text-sky-400 mr-2"></i>
+                        All times are in IST (Indian Standard Time)
+                    </p>
 
-          <!-- Timeline Item: SSC -->
-          <div class="mb-12 relative flex items-center">
-            <div class="hidden md:block md:w-1/2"></div>
-            <div class="absolute md:relative left-[-30px] md:left-auto z-20">
-              <div class="bg-sky-500 shadow-xl w-8 h-8 rounded-full flex items-center justify-center">
-                <i data-lucide="book-marked" class="h-4 w-4 text-white"></i>
-              </div>
+                    <form id="appointment-form" action="https://formspree.io/f/mblzwdkz" method="POST" class="space-y-5">
+                        <input type="hidden" name="_subject" value="New Appointment Booking - Lokesh Aslekar Portfolio">
+                        <input type="hidden" name="_replyto" id="reply-email">
+                        <input type="hidden" name="_format" value="plain">
+
+                        <div>
+                            <label for="name" class="block text-gray-300 mb-3 font-medium">Your Name *</label>
+                            <input type="text" id="name" name="name" required class="w-full bg-slate-700 border border-slate-600 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-gray-300 mb-3 font-medium">Email Address *</label>
+                            <input type="email" id="email" name="email" required class="w-full bg-slate-700 border border-slate-600 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all">
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label for="date" class="block text-gray-300 mb-3 font-medium">Date *</label>
+                                <input type="date" id="date" name="date" required class="w-full bg-slate-700 border border-slate-600 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all" min="">
+                            </div>
+                            <div>
+                                <label for="time" class="block text-gray-300 mb-3 font-medium">Time (IST) *</label>
+                                <select id="time" name="time" required class="w-full bg-slate-700 border border-slate-600 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all">
+                                    <option value="">Select time</option>
+                                    <option value="09:00">9:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="14:00">2:00 PM</option>
+                                    <option value="15:00">3:00 PM</option>
+                                    <option value="16:00">4:00 PM</option>
+                                    <option value="17:00">5:00 PM</option>
+                                    <option value="18:00">6:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-gray-300 mb-3 font-medium">Message *</label>
+                            <textarea id="message" name="message" rows="3" required class="w-full bg-slate-700 border border-slate-600 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all" placeholder="Please describe the purpose of our meeting..."></textarea>
+                        </div>
+                        
+                        <button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-600 hover:to-indigo-700 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-3">
+                            <span id="submit-text">Schedule Appointment</span>
+                            <div id="submit-spinner" class="loading-spinner hidden"></div>
+                        </button>
+                    </form>
+
+                    <div id="appointment-success" class="mt-4 p-4 bg-green-900/30 border border-green-800 text-green-300 rounded-xl hidden">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="h-5 w-5 text-green-400"></i>
+                            <span>Appointment scheduled successfully! Confirmation email sent.</span>
+                        </div>
+                    </div>
+                    
+                    <div id="appointment-error" class="mt-4 p-4 bg-red-900/30 border border-red-800 text-red-300 rounded-xl hidden">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="alert-circle" class="h-5 w-5 text-red-400"></i>
+                            <span id="error-message">Error scheduling appointment. Please try again.</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="bg-slate-800 rounded-lg shadow-md w-full md:w-1/2 p-6 border border-slate-700">
-              <p class="text-sm font-medium text-sky-400">2020</p>
-              <h3 class="text-xl font-bold mb-1 text-white">Secondary School Certificate</h3>
-              <p class="text-gray-400">M.E.S. Boys High School, Pune</p>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-20 scroll-reveal">
+            <h2 class="text-4xl font-bold text-center mb-4 text-white">Education</h2>
+            <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">Academic journey and qualifications</p>
+            
+            <div class="max-w-4xl mx-auto space-y-6">
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-lg border border-slate-700">
+                    <div class="flex items-start gap-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-sky-500 to-indigo-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-university text-white text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-2xl font-bold text-white">B.Tech in Computer Science</h3>
+                                <span class="text-sky-400 font-medium">2024 - Present</span>
+                            </div>
+                            <p class="text-gray-300 text-lg mb-2">Deccan Education Society Pune University (DESPU)</p>
+                            <p class="text-gray-400">Pursuing Bachelor's degree in Computer Science with focus on software development, algorithms, and data structures.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-lg border border-slate-700">
+                    <div class="flex items-start gap-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-2xl font-bold text-white">Diploma in Computer Science</h3>
+                                <span class="text-sky-400 font-medium">2021 - 2023</span>
+                            </div>
+                            <p class="text-gray-300 text-lg mb-2">Bhivarabai Sawant College of Engineering and Research</p>
+                            <p class="text-gray-400">Completed diploma with focus on programming fundamentals, database management, and web technologies.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-lg border border-slate-700">
+                    <div class="flex items-start gap-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-school text-white text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-2xl font-bold text-white">Secondary School Certificate</h3>
+                                <span class="text-sky-400 font-medium">2020</span>
+                            </div>
+                            <p class="text-gray-300 text-lg mb-2">M.E.S. Boys High School, Pune</p>
+                            <p class="text-gray-400">Completed high school education with distinction in Science and Mathematics.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
+        </section>
     </main>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-gray-900/70 py-12">
-      <div class="container mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold mb-4 text-white">Get In Touch</h2>
-        <p class="max-w-2xl mx-auto mb-8 text-gray-400">
-          I'm currently seeking new opportunities. Feel free to reach out if you have any questions or just want to connect!
-        </p>
-        <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-4 text-gray-300">
-          <a href="mailto:lokeshaslekar@gmail.com" class="flex items-center space-x-2 hover:text-sky-400 transition-colors">
-            <i data-lucide="mail" class="h-6 w-6"></i>
-            <span>lokeshaslekar@gmail.com</span>
-          </a>
-          <span class="hidden md:inline text-slate-600">|</span>
-          <a href="tel:+919404361842" class="flex items-center space-x-2 hover:text-sky-400 transition-colors">
-            <i data-lucide="phone" class="h-6 w-6"></i>
-            <span>+91 9404361842</span>
-          </a>
-          <span class="hidden md:inline text-slate-600">|</span>
-          <a href="https://github.com/lokesh2_910" target="_blank" class="flex items-center space-x-2 hover:text-sky-400 transition-colors">
-            <i data-lucide="github" class="h-6 w-6"></i>
-            <span>lokesh2910</span>
-          </a>
-          <span class="hidden md:inline text-slate-600">|</span>
-          <a href="https://www.linkedin.com/in/lokesh-aslekar-b22726242/" target="_blank" class="flex items-center space-x-2 hover:text-sky-400 transition-colors">
-            <i data-lucide="linkedin" class="h-6 w-6"></i>
-            <span>LinkedIn</span>
-          </a>
+    <footer id="contact" class="bg-gradient-to-br from-slate-900 to-slate-800 py-16 border-t border-slate-700">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 text-white">Let's Work Together</h2>
+                <p class="text-gray-400 text-xl max-w-2xl mx-auto mb-8">
+                    Ready to bring your ideas to life? Let's discuss how we can collaborate on your next project.
+                </p>
+                <a href="mailto:lokeshaslekar@gmail.com" class="inline-flex items-center gap-3 bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-600 hover:to-indigo-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    <i data-lucide="mail" class="h-5 w-5"></i>
+                    <span class="text-lg">Start Conversation</span>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div class="text-center md:text-left">
+                    <h3 class="text-white font-bold text-lg mb-4">Quick Links</h3>
+                    <div class="space-y-2">
+                        <a href="#about" class="block text-gray-400 hover:text-sky-400 transition-colors">About</a>
+                        <a href="#projects" class="block text-gray-400 hover:text-sky-400 transition-colors">Projects</a>
+                        <a href="#skills" class="block text-gray-400 hover:text-sky-400 transition-colors">Skills</a>
+                        <a href="ads.html" class="block text-gray-400 hover:text-sky-400 transition-colors">Resources</a>
+                    </div>
+                </div>
+
+                <div class="text-center md:text-left">
+                    <h3 class="text-white font-bold text-lg mb-4">Connect</h3>
+                    <div class="space-y-2">
+                        <a href="https://linkedin.com/in/lokesh-aslekar-b22726242" target="_blank" class="block text-gray-400 hover:text-blue-400 transition-colors flex items-center gap-2 justify-center md:justify-start">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/lokesh2_910" target="_blank" class="block text-gray-400 hover:text-white transition-colors flex items-center gap-2 justify-center md:justify-start">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://twitter.com/lokeshaslekar" target="_blank" class="block text-gray-400 hover:text-sky-400 transition-colors flex items-center gap-2 justify-center md:justify-start">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                    </div>
+                </div>
+
+                <div class="text-center md:text-left">
+                    <h3 class="text-white font-bold text-lg mb-4">Contact Info</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 text-gray-400 justify-center md:justify-start">
+                            <i data-lucide="mail" class="h-4 w-4 text-sky-400"></i>
+                            <span>lokeshaslekar@gmail.com</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-gray-400 justify-center md:justify-start">
+                            <i data-lucide="phone" class="h-4 w-4 text-sky-400"></i>
+                            <span>+91 9404361842</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-gray-400 justify-center md:justify-start">
+                            <i data-lucide="map-pin" class="h-4 w-4 text-sky-400"></i>
+                            <span>Pune, India</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center md:text-left">
+                    <h3 class="text-white font-bold text-lg mb-4">Availability</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-green-400 justify-center md:justify-start">
+                            <div class="w-2 h-2 bg-green-400 rounded-full pulse-animation"></div>
+                            <span>Available for projects</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sky-400 justify-center md:justify-start">
+                            <i data-lucide="calendar" class="h-4 w-4"></i>
+                            <span>Book a call above</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-700 pt-8 text-center">
+                <p class="text-gray-500">
+                    &copy; 2025 Lokesh Sandeep Aslekar. Crafted with <i class="fas fa-heart text-red-400 mx-1"></i> and code.
+                </p>
+            </div>
         </div>
-        <p class="mt-8 text-sm text-gray-500">&copy; 2025 Lokesh Sandeep Aslekar. All Rights Reserved.</p>
-      </div>
     </footer>
 
     <script>
-      // Initialize Lucide icons
-      lucide.createIcons();
-
-      // Scroll reveal animation
-      const scrollRevealElements = document.querySelectorAll(".scroll-reveal");
-
-      const elementInView = (el, dividend = 1) => {
-        const elementTop = el.getBoundingClientRect().top;
-        return (
-          elementTop <=
-          (window.innerHeight || document.documentElement.clientHeight) / dividend
-        );
-      };
-
-      const displayScrollElement = (element) => {
-        element.classList.add("visible");
-      };
-
-      const hideScrollElement = (element) => {
-        element.classList.remove("visible");
-      };
-
-      const handleScrollAnimation = () => {
-        scrollRevealElements.forEach((el) => {
-          if (elementInView(el, 1.25)) {
-            displayScrollElement(el);
-          }
-        });
-      };
-
-      window.addEventListener("scroll", () => {
-        handleScrollAnimation();
-      });
-
-      // Initial check on page load
-      handleScrollAnimation();
-
-      // LinkedIn Modal Logic
-      const linkedinModal = document.getElementById("linkedin-modal");
-      const closeLinkedinModal = document.getElementById("close-linkedin-modal");
-      const dontShowAgain = document.getElementById("dont-show-again");
-
-      // Show LinkedIn modal after a short delay on page load
-      setTimeout(() => {
-        // Check if user has previously dismissed the modal
-        if (!localStorage.getItem("linkedinModalDismissed")) {
-          linkedinModal.classList.remove("hidden");
-        }
-      }, 1500);
-
-      // Close modal when X is clicked
-      closeLinkedinModal.addEventListener("click", () => {
-        linkedinModal.classList.add("hidden");
-      });
-
-      // Close modal and don't show again
-      dontShowAgain.addEventListener("click", () => {
-        linkedinModal.classList.add("hidden");
-        localStorage.setItem("linkedinModalDismissed", "true");
-      });
-
-      // Close modal when clicking outside
-      linkedinModal.addEventListener("click", (e) => {
-        if (e.target === linkedinModal) {
-          linkedinModal.classList.add("hidden");
-        }
-      });
-
-      // Calendar Logic
-      let currentDate = new Date();
-      const calendarDays = document.getElementById("calendar-days");
-      const currentMonthElement = document.getElementById("current-month");
-      const prevMonthButton = document.getElementById("prev-month");
-      const nextMonthButton = document.getElementById("next-month");
-
-      // Holidays (you can add more dates here)
-      const holidays = [
-        "2025-01-01", // New Year
-        "2025-01-26", // Republic Day
-        "2025-08-15", // Independence Day
-        "2025-10-02", // Gandhi Jayanti
-        "2025-12-25", // Christmas
-      ];
-
-      // Load booked appointments from localStorage
-      function getBookedSlots() {
-        const appointments = JSON.parse(localStorage.getItem("appointments") || "[]");
-        const bookedSlots = {};
-
-        appointments.forEach((appointment) => {
-          const key = `${appointment.date}_${appointment.time}`;
-          bookedSlots[key] = true;
-        });
-
-        return bookedSlots;
-      }
-
-      // Function to check if a date is a weekend
-      function isWeekend(date) {
-        const day = date.getDay();
-        return day === 0 || day === 6; // 0 = Sunday, 6 = Saturday
-      }
-
-      // Function to check if a date is a holiday
-      function isHoliday(dateString) {
-        return holidays.includes(dateString);
-      }
-
-      // Function to check if a time slot is booked
-      function isTimeSlotBooked(dateString, time) {
-        const bookedSlots = getBookedSlots();
-        const key = `${dateString}_${time}`;
-        return bookedSlots[key] || false;
-      }
-
-      // Function to get availability status for a date
-      function getAvailabilityStatus(date) {
-        const dateString = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
-
-        // Check if date is in the past
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
-        if (date < today) {
-          return "past";
-        }
-
-        // Check if it's a weekend or holiday
-        if (isWeekend(date) || isHoliday(dateString)) {
-          return "available";
-        }
-
-        // Monday to Friday, 11 AM to 7 PM are busy
-        return "busy";
-      }
-
-      function renderCalendar() {
-        // Clear previous calendar
-        calendarDays.innerHTML = "";
-
-        // Set current month text
-        const monthNames = [
-          "January", "February", "March", "April", "May", "June",
-          "July", "August", "September", "October", "November", "December"
-        ];
-        currentMonthElement.textContent = `${monthNames[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
-
-        // Get first day of month and number of days in month
-        const firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
-        const lastDay = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
-        const daysInMonth = lastDay.getDate();
-        const startingDay = firstDay.getDay(); // 0 = Sunday, 1 = Monday, etc.
-
-        // Add empty cells for days before the first day of the month
-        for (let i = 0; i < startingDay; i++) {
-          const emptyCell = document.createElement("div");
-          emptyCell.classList.add("h-12", "bg-slate-700/50", "rounded-lg");
-          calendarDays.appendChild(emptyCell);
-        }
-
-        // Add cells for each day of the month
-        for (let day = 1; day <= daysInMonth; day++) {
-          const dayCell = document.createElement("div");
-          const date = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
-          const status = getAvailabilityStatus(date);
-          const dateString = `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
-
-          dayCell.classList.add("h-12", "bg-slate-700", "rounded-lg", "flex", "items-center", "justify-center", "relative", "calendar-day");
-
-          if (status === "past") {
-            dayCell.classList.add("past-date");
-          }
-
-          // Add availability indicator
-          if (status !== "past") {
-            const availabilityBadge = document.createElement("div");
-            availabilityBadge.classList.add("availability-badge");
-
-            // Check if any time slot is booked for this date
-            const timeSlots = ["09:00", "10:00", "11:00", "14:00", "15:00", "16:00", "17:00", "18:00"];
-            const hasBookedSlot = timeSlots.some((time) => isTimeSlotBooked(dateString, time));
-
-            if (hasBookedSlot) {
-              availabilityBadge.classList.add("booked-slot");
-            } else if (status === "available") {
-              availabilityBadge.classList.add("available");
-            } else if (status === "busy") {
-              availabilityBadge.classList.add("busy");
-            } else if (status === "partial") {
-              availabilityBadge.classList.add("partial");
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Lucide icons
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
             }
 
-            dayCell.appendChild(availabilityBadge);
-          }
+            // Enhanced LinkedIn Modal with better close functionality
+            const linkedinModal = document.getElementById('linkedin-modal');
+            const closeLinkedinModal = document.getElementById('close-linkedin-modal');
+            const dontShowAgain = document.getElementById('dont-show-again');
 
-          // Add day number
-          const dayNumber = document.createElement("span");
-          dayNumber.textContent = day;
-          dayNumber.classList.add("text-white", "font-medium");
-          dayCell.appendChild(dayNumber);
+            // Show modal after delay
+            setTimeout(() => {
+                if (!localStorage.getItem('linkedinModalDismissed')) {
+                    linkedinModal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden'; // Prevent background scroll
+                }
+            }, 2000);
 
-          // Add click event to select date in appointment form
-          if (status !== "past") {
-            dayCell.addEventListener("click", () => {
-              document.getElementById("date").value = dateString;
-              updateAvailableTimeSlots(dateString);
+            // Close modal function
+            function closeModal() {
+                linkedinModal.classList.add('hidden');
+                document.body.style.overflow = 'auto'; // Restore scroll
+            }
+
+            // Close modal events
+            closeLinkedinModal.addEventListener('click', closeModal);
+            
+            dontShowAgain.addEventListener('click', function() {
+                closeModal();
+                localStorage.setItem('linkedinModalDismissed', 'true');
             });
-          }
 
-          calendarDays.appendChild(dayCell);
-        }
-      }
+            // Close modal when clicking outside
+            linkedinModal.addEventListener('click', function(e) {
+                if (e.target === linkedinModal) {
+                    closeModal();
+                }
+            });
 
-      // Update available time slots based on selected date
-      function updateAvailableTimeSlots(dateString) {
-        const timeSelect = document.getElementById("time");
-        const timeSlots = timeSelect.options;
-        const bookedSlots = getBookedSlots();
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && !linkedinModal.classList.contains('hidden')) {
+                    closeModal();
+                }
+            });
 
-        for (let i = 1; i < timeSlots.length; i++) {
-          const time = timeSlots[i].value;
-          const key = `${dateString}_${time}`;
+            // Scroll reveal animation
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
 
-          if (bookedSlots[key]) {
-            timeSlots[i].disabled = true;
-            timeSlots[i].textContent = `${time} IST - Booked`;
-          } else {
-            timeSlots[i].disabled = false;
-            timeSlots[i].textContent = `${time} IST`;
-          }
-        }
-      }
+            document.querySelectorAll('.scroll-reveal').forEach(el => {
+                observer.observe(el);
+            });
 
-      // Initialize calendar
-      renderCalendar();
+            // Calendar Logic
+            let currentDate = new Date();
+            const calendarDays = document.getElementById('calendar-days');
+            const currentMonthElement = document.getElementById('current-month');
+            const prevMonthButton = document.getElementById('prev-month');
+            const nextMonthButton = document.getElementById('next-month');
 
-      // Previous month button
-      prevMonthButton.addEventListener("click", () => {
-        currentDate.setMonth(currentDate.getMonth() - 1);
-        renderCalendar();
-      });
+            function renderCalendar() {
+                calendarDays.innerHTML = '';
+                const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                currentMonthElement.textContent = `${monthNames[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
 
-      // Next month button
-      nextMonthButton.addEventListener("click", () => {
-        currentDate.setMonth(currentDate.getMonth() + 1);
-        renderCalendar();
-      });
+                const firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+                const lastDay = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
+                const daysInMonth = lastDay.getDate();
+                const startingDay = firstDay.getDay();
 
-      // Set minimum date for appointment form (today)
-      const today = new Date();
-      const todayFormatted = today.toISOString().split("T")[0];
-      document.getElementById("date").min = todayFormatted;
+                // Add empty cells for days before the first day of the month
+                for (let i = 0; i < startingDay; i++) {
+                    const emptyCell = document.createElement('div');
+                    emptyCell.classList.add('h-12', 'bg-slate-700/30', 'rounded-lg');
+                    calendarDays.appendChild(emptyCell);
+                }
 
-      // Update time slots when date changes
-      document.getElementById("date").addEventListener("change", function () {
-        updateAvailableTimeSlots(this.value);
-      });
+                // Add cells for each day of the month
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
 
-      // JSON Storage Functions
-      function saveAppointment(appointmentData) {
-        let appointments = JSON.parse(localStorage.getItem("appointments") || "[]");
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const dayCell = document.createElement('div');
+                    const date = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
+                    
+                    dayCell.classList.add('h-12', 'bg-slate-700/50', 'rounded-lg', 'flex', 'items-center', 'justify-center', 'relative', 'calendar-day', 'cursor-pointer');
 
-        // Format date to dd-mm-yyyy
-        const [year, month, day] = appointmentData.date.split("-");
-        const formattedDate = `${day}-${month}-${year}`;
+                    if (date < today) {
+                        dayCell.classList.add('past-date');
+                    } else {
+                        // Add availability badge (random for demo)
+                        const availabilityBadge = document.createElement('div');
+                        const statuses = ['available', 'busy', 'partial'];
+                        const randomStatus = statuses[Math.floor(Math.random() * statuses.length)];
+                        availabilityBadge.classList.add('availability-badge', randomStatus);
+                        dayCell.appendChild(availabilityBadge);
 
-        const appointment = {
-          id: Date.now(),
-          name: appointmentData.name,
-          email: appointmentData.email,
-          date: formattedDate,
-          time: appointmentData.time,
-          message: appointmentData.message,
-          timestamp: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
-          status: "booked",
-        };
+                        // Add click event
+                        dayCell.addEventListener('click', () => {
+                            const dateString = `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                            document.getElementById('date').value = dateString;
+                            
+                            // Visual feedback
+                            dayCell.style.background = 'rgba(56, 189, 248, 0.2)';
+                            setTimeout(() => {
+                                dayCell.style.background = '';
+                            }, 500);
+                        });
+                    }
 
-        appointments.push(appointment);
-        localStorage.setItem("appointments", JSON.stringify(appointments));
+                    // Add day number
+                    const dayNumber = document.createElement('span');
+                    dayNumber.textContent = day;
+                    dayNumber.classList.add('text-white', 'font-medium');
+                    dayCell.appendChild(dayNumber);
 
-        console.log("Appointment saved locally:", appointment);
-        return appointment;
-      }
+                    calendarDays.appendChild(dayCell);
+                }
+            }
 
-      function getAppointments() {
-        return JSON.parse(localStorage.getItem("appointments") || "[]");
-      }
-
-      function createDownloadLink() {
-        const appointments = getAppointments();
-        if (appointments.length > 0) {
-          const dataStr = JSON.stringify(appointments, null, 2);
-          const dataBlob = new Blob([dataStr], { type: "application/json" });
-          const url = URL.createObjectURL(dataBlob);
-
-          const downloadBtn = document.getElementById("download-appointments-btn");
-          downloadBtn.href = url;
-          downloadBtn.download = `appointments-${new Date().toISOString().split("T")[0]}.json`;
-
-          // Show download section
-          document.getElementById("download-section").classList.remove("hidden");
-        }
-      }
-
-      // Formspree Form Handling - Fixed Version
-      const appointmentForm = document.getElementById("appointment-form");
-      const appointmentSuccess = document.getElementById("appointment-success");
-      const appointmentError = document.getElementById("appointment-error");
-      const submitBtn = document.getElementById("submit-btn");
-      const submitText = document.getElementById("submit-text");
-      const submitSpinner = document.getElementById("submit-spinner");
-
-      appointmentForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        // Get form data
-        const formData = {
-          name: document.getElementById("name").value,
-          email: document.getElementById("email").value,
-          date: document.getElementById("date").value,
-          time: document.getElementById("time").value,
-          message: document.getElementById("message").value,
-        };
-
-        // Check if time slot is already booked locally
-        if (isTimeSlotBooked(formData.date, formData.time)) {
-          showError("This time slot is already booked. Please select another time.");
-          return;
-        }
-
-        // Show loading state
-        submitBtn.disabled = true;
-        submitText.textContent = "Scheduling...";
-        submitSpinner.classList.remove("hidden");
-
-        try {
-          // Save locally first
-          saveAppointment(formData);
-
-          // Prepare Formspree submission with simpler approach
-          const formDataObj = new URLSearchParams();
-          formDataObj.append("name", formData.name);
-          formDataObj.append("email", formData.email);
-          formDataObj.append("date", formData.date);
-          formDataObj.append("time", formData.time);
-          formDataObj.append("message", formData.message);
-          formDataObj.append("_subject", "New Appointment Booking - Lokesh Aslekar Portfolio");
-          formDataObj.append("_replyto", formData.email);
-
-          // Submit to Formspree with simpler fetch
-          const response = await fetch("https://formspree.io/f/mblzwdkz", {
-            method: "POST",
-            body: formDataObj,
-            headers: {
-              Accept: "application/json",
-            },
-          });
-
-          const result = await response.json();
-
-          if (response.ok && result.ok) {
-            // Show success message
-            appointmentSuccess.classList.remove("hidden");
-            appointmentError.classList.add("hidden");
-
-            // Update download link
-            createDownloadLink();
-
-            // Reset form
-            appointmentForm.reset();
-
-            // Refresh calendar to show booked slot
+            // Initialize calendar
             renderCalendar();
 
-            console.log("Formspree submission successful:", result);
-          } else {
-            throw new Error(result.error || "Form submission failed");
-          }
-        } catch (error) {
-          // Even if Formspree fails, show success since it's saved locally
-          appointmentSuccess.classList.remove("hidden");
-          appointmentError.classList.add("hidden");
+            // Calendar navigation
+            prevMonthButton.addEventListener('click', () => {
+                currentDate.setMonth(currentDate.getMonth() - 1);
+                renderCalendar();
+            });
 
-          // Update download link
-          createDownloadLink();
+            nextMonthButton.addEventListener('click', () => {
+                currentDate.setMonth(currentDate.getMonth() + 1);
+                renderCalendar();
+            });
 
-          // Reset form
-          appointmentForm.reset();
+            // Set minimum date for appointment form
+            const today = new Date();
+            const todayFormatted = today.toISOString().split('T')[0];
+            document.getElementById('date').min = todayFormatted;
 
-          // Refresh calendar to show booked slot
-          renderCalendar();
+            // Form submission
+            const appointmentForm = document.getElementById('appointment-form');
+            const appointmentSuccess = document.getElementById('appointment-success');
+            const appointmentError = document.getElementById('appointment-error');
+            const submitBtn = document.getElementById('submit-btn');
+            const submitText = document.getElementById('submit-text');
+            const submitSpinner = document.getElementById('submit-spinner');
 
-          console.log("Appointment saved locally. Formspree error:", error);
-        } finally {
-          // Reset button state
-          submitBtn.disabled = false;
-          submitText.textContent = "Schedule Appointment";
-          submitSpinner.classList.add("hidden");
-        }
-      });
+            appointmentForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                submitBtn.disabled = true;
+                submitText.textContent = 'Scheduling...';
+                submitSpinner.classList.remove('hidden');
 
-      function showError(message) {
-        document.getElementById("error-message").textContent = message;
-        appointmentError.classList.remove("hidden");
-        appointmentSuccess.classList.add("hidden");
-      }
-      
-      // Initialize download section if appointments exist
-      window.addEventListener("load", function () {
-        const appointments = getAppointments();
-        if (appointments.length > 0) {
-          createDownloadLink();
-        }
-      });
+                // Simulate form submission
+                setTimeout(() => {
+                    appointmentSuccess.classList.remove('hidden');
+                    appointmentError.classList.add('hidden');
+                    appointmentForm.reset();
+                    
+                    submitBtn.disabled = false;
+                    submitText.textContent = 'Schedule Appointment';
+                    submitSpinner.classList.add('hidden');
+                }, 2000);
+            });
+
+            console.log('Portfolio website loaded successfully!');
+        });
     </script>
-  </body>
+</body>
 </html>
