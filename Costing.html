@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phynile HomeCare | Premium Cleaning Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #2c5aa0;
+            --secondary-color: #f5c33c;
+            --accent-color: #e63946;
+            --success-color: #4CAF50;
+            --light-color: #f8f9fa;
+            --dark-color: #333;
+            --gray-color: #6c757d;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo i {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .cart-icon {
+            position: relative;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 90, 160, 0.85), rgba(44, 90, 160, 0.9)), url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #e8b52a;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #d32f2f;
+        }
+
+        .btn-success {
+            background-color: var(--success-color);
+            color: white;
+        }
+
+        /* Products Section */
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .category-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .category-btn {
+            padding: 10px 25px;
+            background-color: white;
+            border: 2px solid var(--primary-color);
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .category-btn:hover, .category-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-image {
+            height: 220px;
+            background-color: #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            max-height: 180px;
+            object-fit: contain;
+        }
+
+        .discount-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            height: 50px;
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            color: var(--gray-color);
+        }
+
+        .product-price-container {
+            margin-bottom: 20px;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .price-row:last-child {
+            border-bottom: none;
+            font-weight: bold;
+            color: var(--dark-color);
+        }
+
+        .price-label {
+            color: var(--gray-color);
+        }
+
+        .current-price {
+            font-weight: bold;
+            color: var(--accent-color);
+            font-size: 1.3rem;
+        }
+
+        .saving {
+            color: var(--success-color);
+            font-weight: bold;
+        }
+
+        .mrp-price {
+            color: var(--gray-color);
+            text-decoration: line-through;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .product-actions button {
+            flex: 1;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .add-to-cart {
+            background-color: var(--primary-color);
+            color: white;
+            border: 2px solid var(--primary-color);
+        }
+
+        .add-to-cart:hover {
+            background-color: #1d4a8a;
+        }
+
+        /* Bulk Order Section */
+        .bulk-order-section {
+            background-color: #f0f7ff;
+            padding: 60px 0;
+            margin: 60px 0;
+        }
+
+        .bulk-order-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .bulk-order-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: var(--shadow);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 30px;
+        }
+
+        .bulk-order-table th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .bulk-order-table th.wholesale-col {
+            background-color: var(--success-color);
+        }
+
+        .bulk-order-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .bulk-order-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .bulk-order-table tr:hover {
+            background-color: #eef5ff;
+        }
+
+        .price-cell {
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .wholesale-price {
+            color: var(--success-color);
+        }
+
+        /* Cart Modal */
+        .cart-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        .cart-content {
+            background-color: white;
+            width: 90%;
+            max-width: 800px;
+            margin: 50px auto;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .cart-header h3 {
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .close-cart:hover {
+            transform: scale(1.1);
+        }
+
+        .cart-body {
+            padding: 20px;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .cart-items {
+            width: 100%;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item-image {
+            width: 80px;
+            height: 80px;
+            background-color: #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+
+        .cart-item-image img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .cart-item-price {
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 5px;
+        }
+
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #f1f5f9;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .quantity-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .cart-item-total {
+            font-weight: bold;
+            color: var(--dark-color);
+        }
+
+        .remove-item {
+            background: none;
+            border: none;
+            color: var(--accent-color);
+            cursor: pointer;
+            font-size: 1.2rem;
+            margin-left: 15px;
+            transition: transform 0.3s;
+        }
+
+        .remove-item:hover {
+            transform: scale(1.1);
+        }
+
+        .cart-footer {
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 0 0 10px 10px;
+            border-top: 1px solid #eee;
+        }
+
+        .cart-summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-total {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .cart-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+        }
+
+        .empty-cart {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--gray-color);
+        }
+
+        .empty-cart i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #ddd;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: var(--secondary-color);
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .contact-info i {
+            margin-top: 3px;
+            min-width: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2.3rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .bulk-order-table {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-wrap: wrap;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                width: 100%;
+                margin-top: 20px;
+                display: none;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .bulk-order-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .cart-item {
+                flex-wrap: wrap;
+            }
+            
+            .cart-item-image {
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-actions {
+                flex-direction: column;
+            }
+            
+            .cart-content {
+                width: 95%;
+                margin: 20px auto;
+            }
+            
+            .cart-actions {
+                flex-direction: column;
+            }
+            
+            .cart-actions button {
+                width: 100%;
+            }
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-spray-can"></i>
+                <div>
+                    <h1>Phynile <span>HomeCare</span></h1>
+                    <p>Premium Cleaning Solutions</p>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#bulk">Wholesale Rates</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-right">
+                <div class="cart-icon" id="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Premium Cleaning Products at Best Prices</h2>
+            <p>Discover our wide range of high-quality cleaning solutions, from air fresheners to dish wash and toilet cleaners. Enjoy massive discounts on MRP!</p>
+            <a href="#products" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Products</h2>
+            </div>
+            
+            <div class="category-filter">
+                <button class="category-btn active" data-category="all">All Products</button>
+                <button class="category-btn" data-category="phynile">Phynile Air Fresheners</button>
+                <button class="category-btn" data-category="sunny">Sunny Products</button>
+                <button class="category-btn" data-category="dish">Dish Wash</button>
+                <button class="category-btn" data-category="toilet">Toilet Cleaners</button>
+                <button class="category-btn" data-category="hand">Hand Wash</button>
+                <button class="category-btn" data-category="other">Other Products</button>
+            </div>
+            
+            <div class="products-grid" id="products-container">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Bulk Order Section -->
+    <section class="bulk-order-section" id="bulk">
+        <div class="container bulk-order-container">
+            <div class="section-title">
+                <h2>Wholesale Rates for Bulk Orders</h2>
+                <p style="text-align: center; max-width: 800px; margin: 10px auto 0; color: var(--gray-color);">
+                    Special discounted rates for bulk purchases. Contact us for customized solutions for businesses, institutions, and resellers.
+                </p>
+            </div>
+            
+            <div class="bulk-order-table-container">
+                <table class="bulk-order-table">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Retail Price</th>
+                            <th class="wholesale-col">Wholesale Price</th>
+                            <th>MRP</th>
+                        </tr>
+                    </thead>
+                    <tbody id="wholesale-table-body">
+                        <!-- Wholesale data will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="btn btn-success" onclick="contactWhatsApp()">
+                    <i class="fab fa-whatsapp"></i> Contact for Bulk Orders
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3><i class="fas fa-shopping-cart"></i> Your Shopping Cart</h3>
+                <button class="close-cart" id="close-cart">&times;</button>
+            </div>
+            
+            <div class="cart-body" id="cart-body">
+                <!-- Cart items will be loaded here -->
+            </div>
+            
+            <div class="cart-footer">
+                <div class="cart-summary">
+                    <div>
+                        <div style="font-size: 0.9rem; color: var(--gray-color);">Total Items: <span id="cart-total-items">0</span></div>
+                        <div class="cart-total">Total: ₹<span id="cart-total-price">0</span></div>
+                    </div>
+                    <div class="cart-actions">
+                        <button class="btn" id="continue-shopping">Continue Shopping</button>
+                        <button class="btn btn-primary" id="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Phynile HomeCare</h3>
+                    <p>Providing premium cleaning solutions for homes and businesses across India. Quality products at affordable prices with massive savings.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://wa.me/919404361842" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#bulk">Wholesale Rates</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Delivery Information</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Narhe, Maharashtra, India</p>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <p>+91 9404361842</p>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <p>aslekarlokesh@gmail.com</p>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-clock"></i>
+                        <p>Mon-Sat: 9:00 AM - 7:00 PM</p>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Why Choose Us?</h3>
+                    <ul>
+                        <li>✔ Premium Quality Products</li>
+                        <li>✔ Best Market Prices</li>
+                        <li>✔ Huge Savings on MRP</li>
+                        <li>✔ Bulk Order Discounts</li>
+                        <li>✔ Reliable Service</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Phynile HomeCare. All rights reserved. | Premium Cleaning Solutions</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Product Data - Retail prices (25% margin) and Wholesale prices (10% margin)
+        const products = [
+            // Phynile 1L Products
+            { id: 1, name: "Phynile Lemon", quantity: "1 L", retailPrice: 31.25, wholesalePrice: 27.5, mrp: 90, category: "phynile", image: "https://images.unsplash.com/photo-1590736969955-0126f7e1e88d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            { id: 2, name: "Phynile Lavender", quantity: "1 L", retailPrice: 31.25, wholesalePrice: 27.5, mrp: 90, category: "phynile", image: "https://images.unsplash.com/photo-1590736969955-0126f7e1e88d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            { id: 3, name: "Phynile Sandal", quantity: "1 L", retailPrice: 31.25, wholesalePrice: 27.5, mrp: 90, category: "phynile", image: "https://images.unsplash.com/photo-1590736969955-0126f7e1e88d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            { id: 4, name: "Phynile Mogara", quantity: "1 L", retailPrice: 31.25, wholesalePrice: 27.5, mrp: 90, category: "phynile", image: "https://images.unsplash.com/photo-1590736969955-0126f7e1e88d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            { id: 5, name: "Phynile Rose", quantity: "1 L", retailPrice: 31.25, wholesalePrice: 27.5, mrp: 90, category: "phynile", image: "https://images.unsplash.com/photo-1590736969955-0126f7e1e88d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            
+            // Phynile 5L Products
+            { id: 6, name: "Phynile Lemon", quantity: "5 L", retailPrice: 125, wholesalePrice: 110, mrp: 365, category: "phynile", image: "https://images.unsplash.com/photo-1590736969955-0126f7e1e88d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            { id: 7, name: "Phynile Lavender", quantity: "5 L", retailPrice: 125, wholesalePrice: 110, mrp: 365, category: "phynile", image: "https://images.unsplash.com/photo-1590736969955-0126f7e1e88d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            { id: 8, name: "Phynile Sandal", quantity: "5 L", retailPrice: 125, wholesalePrice: 110, mrp: 365, category: "phynile", image: "https://images.unsplash.com/photo-1590736969955-0126f7e1e88d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            { id: 9, name: "Phynile Mogara", quantity: "5 L", retailPrice: 125, wholesalePrice: 110, mrp: 365, category: "phynile", image: "https://images.unsplash.com/photo-1590736969955-0126f7e1e88d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            { id: 10, name: "Phynile Rose", quantity: "5 L", retailPrice: 125, wholesalePrice: 110, mrp: 365, category: "phynile", image: "https://images.unsplash.com/photo-1590736969955-0126f7e1e88d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            
+            // Sunny Products
+            { id: 11, name: "Sunny", quantity: "200 mL", retailPrice: 41.25, wholesalePrice: 36.3, mrp: 65, category: "sunny", image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            { id: 12, name: "Sunny", quantity: "500 mL", retailPrice: 101.25, wholesalePrice: 89.1, mrp: 150, category: "sunny", image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            { id: 13, name: "Sunny", quantity: "1 L", retailPrice: 200, wholesalePrice: 176, mrp: 275, category: "sunny", image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            { id: 14, name: "Sunny", quantity: "5 L", retailPrice: 987.5, wholesalePrice: 869, mrp: 1200, category: "sunny", image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            
+            // Acid Products
+            { id: 15, name: "Acid", quantity: "1 L", retailPrice: 25, wholesalePrice: 22, mrp: 70, category: "other", image: "https://images.unsplash.com/photo-1563453392212-326f5e854473?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            { id: 16, name: "Acid", quantity: "5 L", retailPrice: 87.5, wholesalePrice: 77, mrp: 350, category: "other", image: "https://images.unsplash.com/photo-1563453392212-326f5e854473?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            
+            // Dish Wash Products
+            { id: 17, name: "Dish wash pouch", quantity: "1 L", retailPrice: 47.5, wholesalePrice: 41.8, mrp: 80, category: "dish", image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            { id: 18, name: "Dish wash pouch", quantity: "5 L", retailPrice: 150, wholesalePrice: 132, mrp: 350, category: "dish", image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            { id: 19, name: "Dish wash Bottle", quantity: "500 mL", retailPrice: 52.5, wholesalePrice: 46.2, mrp: 98, category: "dish", image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            
+            // Other Products
+            { id: 20, name: "Drainx", quantity: "1 Unit", retailPrice: 15, wholesalePrice: 13.2, mrp: 30, category: "other", image: "https://images.unsplash.com/photo-1563453392212-326f5e854473?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            { id: 21, name: "Bhaya powder", quantity: "200 G", retailPrice: 15, wholesalePrice: 13.2, mrp: 30, category: "other", image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            
+            // Toilet Cleaner Products
+            { id: 22, name: "Toilet cleaner Harpic", quantity: "500 mL", retailPrice: 43.75, wholesalePrice: 38.5, mrp: 88, category: "toilet", image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            { id: 23, name: "Toilet cleaner Harpic", quantity: "5 L", retailPrice: 200, wholesalePrice: 176, mrp: 700, category: "toilet", image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            { id: 24, name: "Toilet cleaner Harpic", quantity: "250 mL", retailPrice: 35, wholesalePrice: 30.8, mrp: 45, category: "toilet", image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            
+            // Kolin
+            { id: 25, name: "Kolin", quantity: "500 mL", retailPrice: 56.25, wholesalePrice: 49.5, mrp: 88, category: "other", image: "https://images.unsplash.com/photo-1563453392212-326f5e854473?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            
+            // Hand Wash 500mL Products
+            { id: 26, name: "Hand Wash Rose", quantity: "500 mL", retailPrice: 56.25, wholesalePrice: 49.5, mrp: 105, category: "hand", image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            { id: 27, name: "Hand Wash Neem", quantity: "500 mL", retailPrice: 56.25, wholesalePrice: 49.5, mrp: 105, category: "hand", image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            { id: 28, name: "Hand Wash Lemon", quantity: "500 mL", retailPrice: 56.25, wholesalePrice: 49.5, mrp: 105, category: "hand", image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            
+            // Hand Wash 1L Products
+            { id: 29, name: "Hand Wash Rose", quantity: "1 L", retailPrice: 93.75, wholesalePrice: 82.5, mrp: 200, category: "hand", image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            { id: 30, name: "Hand Wash Neem", quantity: "1 L", retailPrice: 93.75, wholesalePrice: 82.5, mrp: 200, category: "hand", image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            { id: 31, name: "Hand Wash Lemon", quantity: "1 L", retailPrice: 93.75, wholesalePrice: 82.5, mrp: 200, category: "hand", image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            
+            // Hand Wash 5L & Refill
+            { id: 32, name: "Hand Wash", quantity: "5 L", retailPrice: 275, wholesalePrice: 242, mrp: 700, category: "hand", image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            { id: 33, name: "Hand Wash Refill", quantity: "500 mL", retailPrice: 52.5, wholesalePrice: 46.2, mrp: 0, category: "hand", image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
+            
+            // Dambar Golya
+            { id: 34, name: "Dambar Golya", quantity: "100 G", retailPrice: 25, wholesalePrice: 22, mrp: 50, category: "other", image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" }
+        ];
+
+        // Global variables
+        let cart = [];
+        const cartCountElement = document.querySelector('.cart-count');
+        const productsContainer = document.getElementById('products-container');
+        const cartModal = document.getElementById('cart-modal');
+        const cartBody = document.getElementById('cart-body');
+        const cartIcon = document.getElementById('cart-icon');
+        const closeCartBtn = document.getElementById('close-cart');
+        const continueShoppingBtn = document.getElementById('continue-shopping');
+        const wholesaleTableBody = document.getElementById('wholesale-table-body');
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('nav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+        
+        // Cart functionality
+        cartIcon.addEventListener('click', () => {
+            openCart();
+        });
+        
+        closeCartBtn.addEventListener('click', () => {
+            closeCart();
+        });
+        
+        continueShoppingBtn.addEventListener('click', () => {
+            closeCart();
+        });
+        
+        // Close cart when clicking outside
+        cartModal.addEventListener('click', (e) => {
+            if (e.target === cartModal) {
+                closeCart();
+            }
+        });
+        
+        // Category filtering
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const category = btn.getAttribute('data-category');
+                displayProducts(category);
+            });
+        });
+        
+        // Display products function
+        function displayProducts(category = 'all') {
+            productsContainer.innerHTML = '';
+            
+            const filteredProducts = category === 'all' 
+                ? products 
+                : products.filter(product => product.category === category);
+            
+            filteredProducts.forEach(product => {
+                const discount = product.mrp > 0 ? Math.round(((product.mrp - product.retailPrice) / product.mrp) * 100) : 0;
+                const saving = product.mrp > 0 ? (product.mrp - product.retailPrice).toFixed(2) : 0;
+                
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}">
+                        ${discount > 0 ? `<div class="discount-badge">${discount}% OFF</div>` : ''}
+                    </div>
+                    <div class="product-info">
+                        <h3>${product.name} - ${product.quantity}</h3>
+                        <div class="product-meta">
+                            <span class="category">${getCategoryName(product.category)}</span>
+                        </div>
+                        <div class="product-price-container">
+                            <div class="price-row">
+                                <span class="price-label">Our Price:</span>
+                                <span class="current-price">₹${product.retailPrice}</span>
+                            </div>
+                            ${product.mrp > 0 ? `
+                            <div class="price-row">
+                                <span class="price-label">MRP:</span>
+                                <span class="mrp-price">₹${product.mrp}</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-label">You Save:</span>
+                                <span class="saving">₹${saving}</span>
+                            </div>
+                            ` : ''}
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart" data-id="${product.id}">
+                                <i class="fas fa-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                productsContainer.appendChild(productCard);
+            });
+            
+            // Add event listeners to the new buttons
+            document.querySelectorAll('.add-to-cart').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const productId = parseInt(e.target.closest('.add-to-cart').getAttribute('data-id'));
+                    addToCart(productId);
+                });
+            });
+        }
+        
+        // Display wholesale table
+        function displayWholesaleTable() {
+            wholesaleTableBody.innerHTML = '';
+            
+            products.forEach(product => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${product.name}</td>
+                    <td>${product.quantity}</td>
+                    <td class="price-cell">₹${product.retailPrice}</td>
+                    <td class="price-cell wholesale-price">₹${product.wholesalePrice}</td>
+                    <td class="price-cell">${product.mrp > 0 ? '₹' + product.mrp : '—'}</td>
+                `;
+                wholesaleTableBody.appendChild(row);
+            });
+        }
+        
+        // Get category display name
+        function getCategoryName(category) {
+            const categoryNames = {
+                'phynile': 'Air Freshener',
+                'sunny': 'Cleaning Liquid',
+                'dish': 'Dish Wash',
+                'toilet': 'Toilet Cleaner',
+                'hand': 'Hand Wash',
+                'other': 'Other'
+            };
+            return categoryNames[category] || category;
+        }
+        
+        // Add to cart function
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    ...product,
+                    price: product.retailPrice, // Retail price for cart
+                    quantity: 1
+                });
+            }
+            
+            updateCartCount();
+            updateCartModal();
+            
+            // Show notification
+            showNotification(`${product.name} added to cart!`);
+        }
+        
+        // Update cart count
+        function updateCartCount() {
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCountElement.textContent = totalItems;
+        }
+        
+        // Open cart modal
+        function openCart() {
+            cartModal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+            updateCartModal();
+        }
+        
+        // Close cart modal
+        function closeCart() {
+            cartModal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+        
+        // Update cart modal content
+        function updateCartModal() {
+            if (cart.length === 0) {
+                cartBody.innerHTML = `
+                    <div class="empty-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h3>Your cart is empty</h3>
+                        <p>Add some products to your cart to see them here.</p>
+                    </div>
+                `;
+                document.getElementById('cart-total-items').textContent = '0';
+                document.getElementById('cart-total-price').textContent = '0';
+                return;
+            }
+            
+            let cartHTML = '<div class="cart-items">';
+            let totalPrice = 0;
+            let totalItems = 0;
+            
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                totalPrice += itemTotal;
+                totalItems += item.quantity;
+                
+                cartHTML += `
+                    <div class="cart-item">
+                        <div class="cart-item-image">
+                            <img src="${item.image}" alt="${item.name}">
+                        </div>
+                        <div class="cart-item-details">
+                            <div class="cart-item-name">${item.name} - ${item.quantity}</div>
+                            <div class="cart-item-price">₹${item.price} each</div>
+                            <div class="cart-item-quantity">
+                                <button class="quantity-btn" onclick="updateQuantity(${index}, -1)">-</button>
+                                <span>${item.quantity}</span>
+                                <button class="quantity-btn" onclick="updateQuantity(${index}, 1)">+</button>
+                            </div>
+                        </div>
+                        <div class="cart-item-total">₹${itemTotal.toFixed(2)}</div>
+                        <button class="remove-item" onclick="removeFromCart(${index})">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                `;
+            });
+            
+            cartHTML += '</div>';
+            cartBody.innerHTML = cartHTML;
+            document.getElementById('cart-total-items').textContent = totalItems;
+            document.getElementById('cart-total-price').textContent = totalPrice.toFixed(2);
+        }
+        
+        // Update quantity in cart
+        function updateQuantity(index, change) {
+            const item = cart[index];
+            item.quantity += change;
+            
+            if (item.quantity <= 0) {
+                cart.splice(index, 1);
+            }
+            
+            updateCartCount();
+            updateCartModal();
+        }
+        
+        // Remove item from cart
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartCount();
+            updateCartModal();
+        }
+        
+        // Checkout function
+        function checkout() {
+            if (cart.length === 0) {
+                showNotification("Your cart is empty. Add some products first!");
+                return;
+            }
+            
+            let message = "Order Details:\n\n";
+            let total = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                message += `${item.name} - ${item.quantity} x ₹${item.price} = ₹${itemTotal}\n`;
+            });
+            
+            message += `\nTotal: ₹${total.toFixed(2)}\n\n`;
+            message += `Name: \nPhone: \nAddress: \n\nPlease provide your details to confirm the order.`;
+            
+            const phoneNumber = "919404361842";
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+            
+            // Clear cart after checkout
+            cart = [];
+            updateCartCount();
+            closeCart();
+            showNotification("Order sent via WhatsApp! We'll contact you soon.");
+        }
+        
+        // WhatsApp contact function for bulk orders
+        function contactWhatsApp() {
+            const phoneNumber = "919404361842";
+            const message = "Hello, I'm interested in wholesale/bulk orders for Phynile HomeCare products. Can you provide more information?";
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+        
+        // Show notification
+        function showNotification(message) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: var(--primary-color);
+                color: white;
+                padding: 15px 25px;
+                border-radius: 5px;
+                box-shadow: var(--shadow);
+                z-index: 2001;
+                animation: slideIn 0.3s ease-out;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Remove notification after 3 seconds
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease-out';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+        
+        // Add CSS for notification animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            @keyframes slideOut {
+                from {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Initialize the page
+        displayProducts();
+        displayWholesaleTable();
+    </script>
+</body>
+</html>
