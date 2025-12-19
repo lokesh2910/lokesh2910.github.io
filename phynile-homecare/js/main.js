@@ -1,4 +1,4 @@
-// Product Data with correct pricing and image paths
+// Product Data with CORRECT GitHub Pages image paths
 const products = [
     // Phynile Air Fresheners - 1L
     {
@@ -9,7 +9,7 @@ const products = [
         price: 50,
         wholesalePrice: 40,
         packSize: "1L",
-        image: "phynile-homecare/Images/phynile_lemon_1l.png",
+        image: "Images/phynile_lemon_1l.png",
         description: "Citrus lemon freshness"
     },
     {
@@ -20,7 +20,7 @@ const products = [
         price: 50,
         wholesalePrice: 40,
         packSize: "1L",
-        image: "phynile-homecare/Images/phynile_lavender_1l.png",
+        image: "Images/phynile_lavender_1l.png",
         description: "Long-lasting lavender fragrance"
     },
     {
@@ -31,7 +31,7 @@ const products = [
         price: 50,
         wholesalePrice: 40,
         packSize: "1L",
-        image: "phynile-homecare/Images/phynile_sandal_5l.png",
+        image: "Images/phynile_sandal_5l.png",
         description: "Premium sandalwood fragrance"
     },
     {
@@ -42,7 +42,7 @@ const products = [
         price: 50,
         wholesalePrice: 40,
         packSize: "1L",
-        image: "phynile-homecare/Images/phynile_mogara_1l.png",
+        image: "Images/phynile_mogara_1l.png",
         description: "Traditional mogra fragrance"
     },
     {
@@ -53,7 +53,7 @@ const products = [
         price: 50,
         wholesalePrice: 40,
         packSize: "1L",
-        image: "phynile-homecare/Images/phynile_rose_1l.png",
+        image: "Images/phynile_rose_1l.png",
         description: "Fresh rose fragrance"
     },
     // Phynile Air Fresheners - 5L
@@ -65,7 +65,7 @@ const products = [
         price: 200,
         wholesalePrice: 180,
         packSize: "5L",
-        image: "phynile-homecare/Images/phynile_lemon_5l.png",
+        image: "Images/phynile_lemon_5l.png",
         description: "Citrus lemon freshness"
     },
     {
@@ -76,7 +76,7 @@ const products = [
         price: 200,
         wholesalePrice: 180,
         packSize: "5L",
-        image: "phynile-homecare/Images/phynile_lavender_5l.png",
+        image: "Images/phynile_lavender_5l.png",
         description: "Long-lasting lavender fragrance"
     },
     {
@@ -87,7 +87,7 @@ const products = [
         price: 200,
         wholesalePrice: 180,
         packSize: "5L",
-        image: "phynile-homecare/Images/phynile_sandal_5l.png",
+        image: "Images/phynile_sandal_5l.png",
         description: "Premium sandalwood fragrance"
     },
     {
@@ -98,7 +98,7 @@ const products = [
         price: 200,
         wholesalePrice: 180,
         packSize: "5L",
-        image: "phynile-homecare/Images/phynile_mogara_5l.png",
+        image: "Images/phynile_mogara_5l.png",
         description: "Traditional mogra fragrance"
     },
     {
@@ -109,7 +109,7 @@ const products = [
         price: 200,
         wholesalePrice: 180,
         packSize: "5L",
-        image: "phynile-homecare/Images/phynile_rose_5l.png",
+        image: "Images/phynile_rose_5l.png",
         description: "Fresh rose fragrance"
     },
     // Sunny Products
@@ -121,7 +121,7 @@ const products = [
         price: 66,
         wholesalePrice: 60,
         packSize: "200ml",
-        image: "phynile-homecare/Images/sunny_200ml.png",
+        image: "Images/sunny_200ml.png",
         description: "Effective floor cleaner"
     },
     {
@@ -132,7 +132,7 @@ const products = [
         price: 162,
         wholesalePrice: 145,
         packSize: "500ml",
-        image: "phynile-homecare/Images/sunny_500ml.png",
+        image: "Images/sunny_500ml.png",
         description: "Effective floor cleaner"
     },
     {
@@ -143,7 +143,7 @@ const products = [
         price: 320,
         wholesalePrice: 290,
         packSize: "1L",
-        image: "phynile-homecare/Images/sunny_1l.png",
+        image: "Images/sunny_1l.png",
         description: "Effective floor cleaner"
     },
     {
@@ -154,10 +154,10 @@ const products = [
         price: 1580,
         wholesalePrice: 1420,
         packSize: "5L",
-        image: "phynile-homecare/Images/sunny_1l.png",
+        image: "Images/sunny_5l.png",
         description: "Economical floor cleaner"
     },
-    // Acid Cleaners
+    // Acid Cleaners - Using Bathroom Cleaner image
     {
         id: 15,
         name: "Acid Cleaner",
@@ -166,7 +166,7 @@ const products = [
         price: 40,
         wholesalePrice: 35,
         packSize: "1L",
-        image: "phynile-homecare/Images/Bathroom_Cleaner_500ml.png",
+        image: "Images/Bathroom_Cleaner_500ml.png",
         description: "Powerful acid cleaner"
     },
     {
@@ -177,10 +177,10 @@ const products = [
         price: 140,
         wholesalePrice: 125,
         packSize: "5L",
-        image: "phynile-homecare/Images/Bathroom_Cleaner_500ml.png",
+        image: "Images/Bathroom_Cleaner_500ml.png",
         description: "Economical acid cleaner"
     },
-    // Dish Wash Products
+    // Dish Wash Products - Using Sunny images as placeholders
     {
         id: 17,
         name: "Dish Wash Pouch",
@@ -189,7 +189,7 @@ const products = [
         price: 76,
         wholesalePrice: 68,
         packSize: "1L",
-        image: "phynile-homecare/Images/dish_wash_pouch.png",
+        image: "Images/sunny_1l.png",
         description: "Dish wash liquid pouch"
     },
     {
@@ -200,7 +200,7 @@ const products = [
         price: 240,
         wholesalePrice: 220,
         packSize: "5L",
-        image: "phynile-homecare/Images/dish_wash_5l.png",
+        image: "Images/sunny_5l.png",
         description: "Economical dish wash pouch"
     },
     {
@@ -211,7 +211,7 @@ const products = [
         price: 84,
         wholesalePrice: 75,
         packSize: "500ml",
-        image: "phynile-homecare/Images/dish_wash_bottle.png",
+        image: "Images/sunny_500ml.png",
         description: "Dish wash in bottle"
     },
     // Toilet Cleaners
@@ -223,7 +223,7 @@ const products = [
         price: 56,
         wholesalePrice: 50,
         packSize: "250ml",
-        image: "phynile-homecare/Images/toilet_cleaner_harpic_250ml.png",
+        image: "Images/toilet_cleaner_harpic_250ml.png",
         description: "Powerful toilet cleaner"
     },
     {
@@ -234,7 +234,7 @@ const products = [
         price: 70,
         wholesalePrice: 63,
         packSize: "500ml",
-        image: "phynile-homecare/Images/toilet_cleaner_harpic_500ml.png",
+        image: "Images/toilet_cleaner_harpic_500ml.png",
         description: "Powerful toilet cleaner"
     },
     {
@@ -245,7 +245,7 @@ const products = [
         price: 320,
         wholesalePrice: 290,
         packSize: "5L",
-        image: "phynile-homecare/Images/toilet_cleaner_harpic_5l.png",
+        image: "Images/toilet_cleaner_harpic_5l.png",
         description: "Economical toilet cleaner"
     },
     // Hand Wash Products
@@ -257,7 +257,7 @@ const products = [
         price: 90,
         wholesalePrice: 81,
         packSize: "500ml",
-        image: "phynile-homecare/Images/Hand_Wash_Products.png",
+        image: "Images/Hand_Wash_Products.png",
         description: "Rose fragrance hand wash"
     },
     {
@@ -268,7 +268,7 @@ const products = [
         price: 90,
         wholesalePrice: 81,
         packSize: "500ml",
-        image: "phynile-homecare/Images/Hand_Wash_Products_1.png",
+        image: "Images/Hand_Wash_Products_1.png",
         description: "Neem antibacterial hand wash"
     },
     {
@@ -279,7 +279,7 @@ const products = [
         price: 90,
         wholesalePrice: 81,
         packSize: "500ml",
-        image: "phynile-homecare/Images/Hand_Wash_Products.png",
+        image: "Images/Hand_Wash_Products.png",
         description: "Lemon fresh hand wash"
     },
     {
@@ -290,7 +290,7 @@ const products = [
         price: 150,
         wholesalePrice: 135,
         packSize: "1L",
-        image: "phynile-homecare/Images/Hand_Wash_Products.png",
+        image: "Images/Hand_Wash_Products.png",
         description: "Rose fragrance hand wash"
     },
     {
@@ -301,7 +301,7 @@ const products = [
         price: 150,
         wholesalePrice: 135,
         packSize: "1L",
-        image: "phynile-homecare/Images/Hand_Wash_Products_1.png",
+        image: "Images/Hand_Wash_Products_1.png",
         description: "Neem antibacterial hand wash"
     },
     {
@@ -312,7 +312,7 @@ const products = [
         price: 150,
         wholesalePrice: 135,
         packSize: "1L",
-        image: "phynile-homecare/Images/Hand_Wash_Products.png",
+        image: "Images/Hand_Wash_Products.png",
         description: "Lemon fresh hand wash"
     },
     {
@@ -323,7 +323,7 @@ const products = [
         price: 440,
         wholesalePrice: 400,
         packSize: "5L",
-        image: "phynile-homecare/Images/Hand_Wash_Products.png",
+        image: "Images/Hand_Wash_Products.png",
         description: "Economical hand wash"
     },
     {
@@ -334,10 +334,10 @@ const products = [
         price: 84,
         wholesalePrice: 75,
         packSize: "500ml",
-        image: "phynile-homecare/Images/Hand_Wash_Products_1.png",
+        image: "Images/Hand_Wash_Products_1.png",
         description: "Hand wash refill pack"
     },
-    // Other Products
+    // Other Products - Using available images
     {
         id: 31,
         name: "Kolin Cleaner",
@@ -346,7 +346,7 @@ const products = [
         price: 90,
         wholesalePrice: 81,
         packSize: "500ml",
-        image: "phynile-homecare/Images/kolin_cleaner.png",
+        image: "Images/Bathroom_Cleaner_500ml.png",
         description: "Kolin multipurpose cleaner"
     },
     {
@@ -357,7 +357,7 @@ const products = [
         price: 24,
         wholesalePrice: 22,
         packSize: "1 Unit",
-        image: "phynile-homecare/Images/drainx.png",
+        image: "Images/Bathroom_Cleaner_500ml.png",
         description: "Drain unblocking solution"
     },
     {
@@ -368,7 +368,7 @@ const products = [
         price: 24,
         wholesalePrice: 22,
         packSize: "200g",
-        image: "phynile-homecare/Images/bhaya_powder.png",
+        image: "Images/sunny_200ml.png",
         description: "Cleaning powder"
     },
     {
@@ -379,7 +379,7 @@ const products = [
         price: 40,
         wholesalePrice: 36,
         packSize: "100g",
-        image: "phynile-homecare/Images/dambar_golya.png",
+        image: "Images/sunny_200ml.png",
         description: "Cleaning balls"
     }
 ];
@@ -392,28 +392,42 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 const WHOLESALE_THRESHOLD = 7000;
 const WHATSAPP_NUMBER = "919404361842";
 
-// DOM Elements
-const productsContainer = document.getElementById('products-container');
-const categoryDropdownBtn = document.getElementById('category-dropdown-btn');
-const categoryDropdownContent = document.getElementById('category-dropdown-content');
-const categoryOptions = document.querySelectorAll('.category-option');
-const bulkCategoryFilter = document.getElementById('bulk-category-filter');
-const bulkTableBody = document.getElementById('bulk-table-body');
-const floatingCartBtn = document.getElementById('floating-cart-btn');
-const floatingCartCount = document.getElementById('floating-cart-count');
-const cartModal = document.getElementById('cart-modal');
-const closeCartBtn = document.getElementById('close-cart');
-const cartBody = document.getElementById('cart-body');
-const cartSummary = document.getElementById('cart-summary');
-const continueShoppingBtn = document.getElementById('continue-shopping');
-const checkoutBtn = document.getElementById('checkout-btn');
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const navMenu = document.querySelector('nav');
-const cartNotification = document.getElementById('cart-notification');
-const contactForm = document.getElementById('contact-form');
+// DOM Elements - Wait for DOM to be fully loaded
+let productsContainer, categoryDropdownBtn, categoryDropdownContent, categoryOptions;
+let bulkCategoryFilter, bulkTableBody, floatingCartBtn, floatingCartCount;
+let cartModal, closeCartBtn, cartBody, cartSummary, continueShoppingBtn;
+let checkoutBtn, mobileMenuBtn, navMenu, cartNotification, contactForm;
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM fully loaded, initializing...");
+    
+    // Initialize DOM elements
+    productsContainer = document.getElementById('products-container');
+    categoryDropdownBtn = document.getElementById('category-dropdown-btn');
+    categoryDropdownContent = document.getElementById('category-dropdown-content');
+    categoryOptions = document.querySelectorAll('.category-option');
+    bulkCategoryFilter = document.getElementById('bulk-category-filter');
+    bulkTableBody = document.getElementById('bulk-table-body');
+    floatingCartBtn = document.getElementById('floating-cart-btn');
+    floatingCartCount = document.getElementById('floating-cart-count');
+    cartModal = document.getElementById('cart-modal');
+    closeCartBtn = document.getElementById('close-cart');
+    cartBody = document.getElementById('cart-body');
+    cartSummary = document.getElementById('cart-summary');
+    continueShoppingBtn = document.getElementById('continue-shopping');
+    checkoutBtn = document.getElementById('checkout-btn');
+    mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    navMenu = document.querySelector('nav');
+    cartNotification = document.getElementById('cart-notification');
+    contactForm = document.getElementById('contact-form');
+    
+    // Check if elements exist
+    if (!productsContainer) {
+        console.error("products-container not found!");
+        return;
+    }
+    
     // Load products
     renderProducts('all');
     renderBulkTable('all');
@@ -430,13 +444,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Setup category filter links
     setupCategoryLinks();
     
-    // Update category dropdown options
-    updateCategoryOptions();
+    console.log("Website loaded successfully!");
 });
 
 // Update Category Options to match new categories
 function updateCategoryOptions() {
     const categoryDropdownContent = document.getElementById('category-dropdown-content');
+    if (!categoryDropdownContent) return;
+    
     categoryDropdownContent.innerHTML = `
         <div class="category-option active" data-category="all">All Products</div>
         <div class="category-option" data-category="phynile">Phynile Air Fresheners</div>
@@ -456,40 +471,74 @@ function updateCategoryOptions() {
 
 // Setup Event Listeners
 function setupEventListeners() {
+    console.log("Setting up event listeners...");
+    
     // Category dropdown
-    categoryDropdownBtn.addEventListener('click', toggleCategoryDropdown);
+    if (categoryDropdownBtn) {
+        categoryDropdownBtn.addEventListener('click', toggleCategoryDropdown);
+        console.log("Category dropdown button event listener added");
+    } else {
+        console.error("categoryDropdownBtn not found!");
+    }
     
     // Close category dropdown when clicking outside
     document.addEventListener('click', (e) => {
-        if (!categoryDropdownBtn.contains(e.target) && !categoryDropdownContent.contains(e.target)) {
+        if (categoryDropdownBtn && !categoryDropdownBtn.contains(e.target) && 
+            categoryDropdownContent && !categoryDropdownContent.contains(e.target)) {
             categoryDropdownContent.classList.remove('active');
-            categoryDropdownBtn.querySelector('i').className = 'fas fa-chevron-down';
+            if (categoryDropdownBtn.querySelector('i')) {
+                categoryDropdownBtn.querySelector('i').className = 'fas fa-chevron-down';
+            }
         }
     });
     
     // Cart functionality
-    floatingCartBtn.addEventListener('click', openCartModal);
-    closeCartBtn.addEventListener('click', closeCartModal);
-    continueShoppingBtn.addEventListener('click', closeCartModal);
+    if (floatingCartBtn) {
+        floatingCartBtn.addEventListener('click', openCartModal);
+        console.log("Floating cart button event listener added");
+    }
+    
+    if (closeCartBtn) {
+        closeCartBtn.addEventListener('click', closeCartModal);
+    }
+    
+    if (continueShoppingBtn) {
+        continueShoppingBtn.addEventListener('click', closeCartModal);
+    }
     
     // Checkout button (WhatsApp)
-    checkoutBtn.addEventListener('click', checkoutWithWhatsApp);
+    if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', checkoutWithWhatsApp);
+        console.log("Checkout button event listener added");
+    }
     
     // Contact form submission
     if (contactForm) {
-        contactForm.addEventListener('submit', handleContactSubmit);
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            handleContactSubmit(e);
+        });
     }
     
     // Close cart modal when clicking outside
-    cartModal.addEventListener('click', (e) => {
-        if (e.target === cartModal) {
-            closeCartModal();
-        }
-    });
+    if (cartModal) {
+        cartModal.addEventListener('click', (e) => {
+            if (e.target === cartModal) {
+                closeCartModal();
+            }
+        });
+    }
+    
+    console.log("Event listeners setup completed");
 }
 
 // Setup Mobile Menu
 function setupMobileMenu() {
+    if (!mobileMenuBtn || !navMenu) {
+        console.log("Mobile menu elements not found");
+        return;
+    }
+    
     mobileMenuBtn.addEventListener('click', () => {
         navMenu.classList.toggle('active');
         mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
@@ -508,16 +557,23 @@ function setupMobileMenu() {
 
 // Setup Category Links in Footer
 function setupCategoryLinks() {
-    document.querySelectorAll('[data-category]').forEach(link => {
+    const categoryLinks = document.querySelectorAll('[data-category]');
+    console.log(`Found ${categoryLinks.length} category links`);
+    
+    categoryLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const category = this.getAttribute('data-category');
+            console.log(`Category clicked: ${category}`);
             
             // Update dropdown
             updateCategoryDropdown(category);
             
             // Scroll to products section
-            document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+            const productsSection = document.getElementById('products');
+            if (productsSection) {
+                productsSection.scrollIntoView({ behavior: 'smooth' });
+            }
             
             // Filter products
             renderProducts(category);
@@ -530,15 +586,20 @@ function setupCategoryLinks() {
 
 // Category Dropdown Functions
 function toggleCategoryDropdown() {
+    if (!categoryDropdownContent) return;
+    
     categoryDropdownContent.classList.toggle('active');
     const icon = categoryDropdownBtn.querySelector('i');
-    icon.className = categoryDropdownContent.classList.contains('active') 
-        ? 'fas fa-chevron-up' 
-        : 'fas fa-chevron-down';
+    if (icon) {
+        icon.className = categoryDropdownContent.classList.contains('active') 
+            ? 'fas fa-chevron-up' 
+            : 'fas fa-chevron-down';
+    }
 }
 
 function handleCategorySelect(e) {
     const selectedCategory = e.target.getAttribute('data-category');
+    console.log(`Category selected: ${selectedCategory}`);
     
     // Update active state
     document.querySelectorAll('.category-option').forEach(option => {
@@ -547,11 +608,20 @@ function handleCategorySelect(e) {
     e.target.classList.add('active');
     
     // Update dropdown button text
-    categoryDropdownBtn.querySelector('span').textContent = e.target.textContent;
+    if (categoryDropdownBtn) {
+        const span = categoryDropdownBtn.querySelector('span');
+        if (span) {
+            span.textContent = e.target.textContent;
+        }
+    }
     
     // Close dropdown
-    categoryDropdownContent.classList.remove('active');
-    categoryDropdownBtn.querySelector('i').className = 'fas fa-chevron-down';
+    if (categoryDropdownContent) {
+        categoryDropdownContent.classList.remove('active');
+    }
+    if (categoryDropdownBtn && categoryDropdownBtn.querySelector('i')) {
+        categoryDropdownBtn.querySelector('i').className = 'fas fa-chevron-down';
+    }
     
     // Render products for selected category
     renderProducts(selectedCategory);
@@ -561,6 +631,8 @@ function handleCategorySelect(e) {
 }
 
 function updateCategoryDropdown(category) {
+    if (!categoryDropdownBtn) return;
+    
     // Update dropdown button text and active option
     let categoryText = 'All Products';
     if (category !== 'all') {
@@ -570,7 +642,10 @@ function updateCategoryDropdown(category) {
         }
     }
     
-    categoryDropdownBtn.querySelector('span').textContent = categoryText;
+    const span = categoryDropdownBtn.querySelector('span');
+    if (span) {
+        span.textContent = categoryText;
+    }
     
     // Update active state
     document.querySelectorAll('.category-option').forEach(option => {
@@ -583,6 +658,12 @@ function updateCategoryDropdown(category) {
 
 // Render Products
 function renderProducts(category) {
+    if (!productsContainer) {
+        console.error("productsContainer not found in renderProducts");
+        return;
+    }
+    
+    console.log(`Rendering products for category: ${category}`);
     productsContainer.innerHTML = '';
     
     // Filter products by category
@@ -591,15 +672,21 @@ function renderProducts(category) {
         filteredProducts = products.filter(product => product.category === category);
     }
     
+    console.log(`Filtered ${filteredProducts.length} products`);
+    
     // Render each product
     filteredProducts.forEach(product => {
         const productCard = createProductCard(product);
-        productsContainer.appendChild(productCard);
+        if (productCard) {
+            productsContainer.appendChild(productCard);
+        }
     });
 }
 
 // Create Product Card
 function createProductCard(product) {
+    if (!product) return null;
+    
     const discount = product.mrp > 0 ? Math.round(((product.mrp - product.price) / product.mrp) * 100) : 0;
     const cartItem = cart.find(item => item.id === product.id);
     const quantity = cartItem ? cartItem.quantity : 0;
@@ -608,9 +695,9 @@ function createProductCard(product) {
     card.className = 'product-card';
     card.innerHTML = `
         <div class="product-image">
-            <img src="${product.image}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/300x200?text=Product+Image'">
+            <img src="${product.image}" alt="${product.name}" 
+                 onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200?text=Product+Image'">
             ${discount > 0 ? `<div class="discount-badge">Save ${discount}%</div>` : ''}
-            ${product.mrp > 0 && product.price > product.mrp ? `<div class="discount-badge" style="background-color: #2196F3;">Premium</div>` : ''}
         </div>
         <div class="product-info">
             <h3>${product.name}</h3>
@@ -639,7 +726,6 @@ function createProductCard(product) {
                 <button class="add-to-cart ${quantity > 0 ? 'in-cart' : ''}" data-product-id="${product.id}">
                     ${quantity > 0 ? '<i class="fas fa-check"></i> In Cart' : '<i class="fas fa-cart-plus"></i> Add to Cart'}
                 </button>
-                <div class="cart-status" id="status-${product.id}"></div>
             </div>
         </div>
     `;
@@ -649,19 +735,31 @@ function createProductCard(product) {
     const plusBtn = card.querySelector('.plus-btn');
     const addToCartBtn = card.querySelector('.add-to-cart');
     
-    minusBtn.addEventListener('click', () => updateProductQuantity(product.id, -1));
-    plusBtn.addEventListener('click', () => updateProductQuantity(product.id, 1));
-    addToCartBtn.addEventListener('click', () => {
-        if (quantity === 0) {
-            updateProductQuantity(product.id, 1);
-        }
-    });
+    if (minusBtn) {
+        minusBtn.addEventListener('click', () => updateProductQuantity(product.id, -1));
+    }
+    if (plusBtn) {
+        plusBtn.addEventListener('click', () => updateProductQuantity(product.id, 1));
+    }
+    if (addToCartBtn) {
+        addToCartBtn.addEventListener('click', () => {
+            if (quantity === 0) {
+                updateProductQuantity(product.id, 1);
+            }
+        });
+    }
     
     return card;
 }
 
 // Render Bulk Table
 function renderBulkTable(category) {
+    if (!bulkTableBody) {
+        console.log("bulkTableBody not found");
+        return;
+    }
+    
+    console.log(`Rendering bulk table for category: ${category}`);
     bulkTableBody.innerHTML = '';
     
     // Filter products by category
@@ -688,7 +786,9 @@ function renderBulkTable(category) {
         const categoryProducts = filteredProducts.filter(product => product.category === cat);
         categoryProducts.forEach(product => {
             const row = createBulkTableRow(product);
-            bulkTableBody.appendChild(row);
+            if (row) {
+                bulkTableBody.appendChild(row);
+            }
         });
     });
     
@@ -698,6 +798,8 @@ function renderBulkTable(category) {
 
 // Create Bulk Table Row
 function createBulkTableRow(product) {
+    if (!product) return null;
+    
     const row = document.createElement('tr');
     
     row.innerHTML = `
@@ -718,19 +820,26 @@ function createBulkTableRow(product) {
     const addBtn = row.querySelector('.btn');
     const qtyInput = row.querySelector('.bulk-qty-input');
     
-    addBtn.addEventListener('click', () => {
-        const quantity = parseInt(qtyInput.value) || 0;
-        if (quantity > 0) {
-            updateProductQuantity(product.id, quantity);
-            qtyInput.value = 0;
-        }
-    });
+    if (addBtn && qtyInput) {
+        addBtn.addEventListener('click', () => {
+            const quantity = parseInt(qtyInput.value) || 0;
+            if (quantity > 0) {
+                updateProductQuantity(product.id, quantity);
+                qtyInput.value = 0;
+            }
+        });
+    }
     
     return row;
 }
 
 // Update Bulk Category Filter
 function updateBulkCategoryFilter() {
+    if (!bulkCategoryFilter) {
+        console.log("bulkCategoryFilter not found");
+        return;
+    }
+    
     // Get unique categories from bulk products
     const categories = ['all', ...new Set(bulkProducts.map(product => product.category))];
     
@@ -761,7 +870,10 @@ function updateBulkCategoryFilter() {
             renderProducts(cat);
             
             // Scroll to bulk section
-            document.getElementById('bulk').scrollIntoView({ behavior: 'smooth' });
+            const bulkSection = document.getElementById('bulk');
+            if (bulkSection) {
+                bulkSection.scrollIntoView({ behavior: 'smooth' });
+            }
         });
         
         bulkCategoryFilter.appendChild(button);
@@ -821,36 +933,31 @@ function updateProductQuantity(productId, change) {
     
     // Update UI
     updateCartCount();
-    renderProducts(document.querySelector('.category-option.active').dataset.category);
     
-    // Update cart modal if open
-    if (cartModal.style.display === 'block') {
-        renderCart();
+    // Re-render products to update quantity displays
+    const activeCategory = document.querySelector('.category-option.active');
+    if (activeCategory) {
+        renderProducts(activeCategory.dataset.category);
     }
     
-    // Show save animation if wholesale threshold is reached
-    const total = calculateCartTotal();
-    if (total >= WHOLESALE_THRESHOLD) {
-        showWholesaleAppliedAnimation();
+    // Update cart modal if open
+    if (cartModal && cartModal.style.display === 'block') {
+        renderCart();
     }
 }
 
 // Update Cart Count
 function updateCartCount() {
+    if (!floatingCartCount) return;
+    
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     floatingCartCount.textContent = totalItems;
-    
-    // Add animation when cart count changes
-    if (totalItems > 0) {
-        floatingCartCount.style.animation = 'none';
-        setTimeout(() => {
-            floatingCartCount.style.animation = 'pulse 0.5s ease-in-out';
-        }, 10);
-    }
 }
 
 // Open Cart Modal
 function openCartModal() {
+    if (!cartModal) return;
+    
     cartModal.style.display = 'block';
     document.body.style.overflow = 'hidden';
     renderCart();
@@ -858,12 +965,16 @@ function openCartModal() {
 
 // Close Cart Modal
 function closeCartModal() {
+    if (!cartModal) return;
+    
     cartModal.style.display = 'none';
     document.body.style.overflow = 'auto';
 }
 
 // Render Cart
 function renderCart() {
+    if (!cartBody || !cartSummary) return;
+    
     if (cart.length === 0) {
         cartBody.innerHTML = `
             <div class="empty-cart">
@@ -888,30 +999,64 @@ function renderCart() {
     const subtotal = calculateCartSubtotal();
     const wholesaleApplied = subtotal >= WHOLESALE_THRESHOLD;
     const total = calculateCartTotal();
-    const savings = calculateCartSavings();
+    const savings = subtotal - total;
     
     // Render cart items
-    cartBody.innerHTML = `
-        <div class="cart-items">
-            ${cart.map(item => createCartItemHTML(item)).join('')}
-        </div>
-    `;
+    let cartItemsHTML = '<div class="cart-items">';
+    
+    cart.forEach(item => {
+        const product = products.find(p => p.id === item.id);
+        if (!product) return;
+        
+        const pricePerItem = wholesaleApplied ? product.wholesalePrice : product.price;
+        const itemTotal = pricePerItem * item.quantity;
+        
+        cartItemsHTML += `
+            <div class="cart-item" data-product-id="${item.id}">
+                <div class="cart-item-image">
+                    <img src="${item.image}" alt="${item.name}" onerror="this.onerror=null; this.src='https://via.placeholder.com/100x100?text=Product'">
+                </div>
+                <div class="cart-item-details">
+                    <div class="cart-item-name">${item.name}</div>
+                    <div class="cart-item-price">₹${pricePerItem} each</div>
+                    <div class="cart-item-quantity">
+                        <button class="quantity-btn minus-btn">-</button>
+                        <span>${item.quantity}</span>
+                        <button class="quantity-btn plus-btn">+</button>
+                    </div>
+                </div>
+                <div class="cart-item-total">₹${itemTotal}</div>
+                <button class="remove-item" title="Remove item">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </div>
+        `;
+    });
+    
+    cartItemsHTML += '</div>';
+    cartBody.innerHTML = cartItemsHTML;
     
     // Add event listeners to cart item buttons
     document.querySelectorAll('.cart-item').forEach(item => {
-        const productId = parseInt(item.dataset.productId);
+        const productId = parseInt(item.getAttribute('data-product-id'));
         const minusBtn = item.querySelector('.minus-btn');
         const plusBtn = item.querySelector('.plus-btn');
         const removeBtn = item.querySelector('.remove-item');
         
-        minusBtn.addEventListener('click', () => updateProductQuantity(productId, -1));
-        plusBtn.addEventListener('click', () => updateProductQuantity(productId, 1));
-        removeBtn.addEventListener('click', () => {
-            const cartItem = cart.find(item => item.id === productId);
-            if (cartItem) {
-                updateProductQuantity(productId, -cartItem.quantity);
-            }
-        });
+        if (minusBtn) {
+            minusBtn.addEventListener('click', () => updateProductQuantity(productId, -1));
+        }
+        if (plusBtn) {
+            plusBtn.addEventListener('click', () => updateProductQuantity(productId, 1));
+        }
+        if (removeBtn) {
+            removeBtn.addEventListener('click', () => {
+                const cartItem = cart.find(item => item.id === productId);
+                if (cartItem) {
+                    updateProductQuantity(productId, -cartItem.quantity);
+                }
+            });
+        }
     });
     
     // Render cart summary
@@ -926,43 +1071,6 @@ function renderCart() {
                 : ''}
         </div>
         <div class="cart-total">₹${total}</div>
-    `;
-    
-    // Add animation to total if wholesale was just applied
-    if (wholesaleApplied) {
-        const totalElement = cartSummary.querySelector('.cart-total');
-        totalElement.style.animation = 'priceUpdate 0.5s ease-in-out';
-        setTimeout(() => {
-            totalElement.style.animation = '';
-        }, 500);
-    }
-}
-
-// Create Cart Item HTML
-function createCartItemHTML(item) {
-    const product = products.find(p => p.id === item.id);
-    const pricePerItem = calculateItemPrice(item);
-    const total = pricePerItem * item.quantity;
-    
-    return `
-        <div class="cart-item" data-product-id="${item.id}">
-            <div class="cart-item-image">
-                <img src="${item.image}" alt="${item.name}" onerror="this.src='https://via.placeholder.com/100x100?text=Product'">
-            </div>
-            <div class="cart-item-details">
-                <div class="cart-item-name">${item.name}</div>
-                <div class="cart-item-price">₹${pricePerItem} each</div>
-                <div class="cart-item-quantity">
-                    <button class="quantity-btn minus-btn">-</button>
-                    <span>${item.quantity}</span>
-                    <button class="quantity-btn plus-btn">+</button>
-                </div>
-            </div>
-            <div class="cart-item-total">₹${total}</div>
-            <button class="remove-item" title="Remove item">
-                <i class="fas fa-trash"></i>
-            </button>
-        </div>
     `;
 }
 
@@ -988,30 +1096,10 @@ function calculateCartTotal() {
     return subtotal;
 }
 
-function calculateCartSavings() {
-    const mrpTotal = cart.reduce((sum, item) => {
-        const product = products.find(p => p.id === item.id);
-        return sum + (product.mrp * item.quantity);
-    }, 0);
-    
-    const finalTotal = calculateCartTotal();
-    
-    return mrpTotal - finalTotal;
-}
-
-function calculateItemPrice(item) {
-    const subtotal = calculateCartSubtotal();
-    const product = products.find(p => p.id === item.id);
-    
-    if (subtotal >= WHOLESALE_THRESHOLD) {
-        return product.wholesalePrice;
-    }
-    
-    return product.price;
-}
-
 // Show Cart Notification
 function showCartNotification(message) {
+    if (!cartNotification) return;
+    
     cartNotification.innerHTML = `
         <i class="fas fa-check-circle"></i>
         <span>${message}</span>
@@ -1046,7 +1134,9 @@ function generateWhatsAppMessage() {
     
     cart.forEach((item, index) => {
         const product = products.find(p => p.id === item.id);
-        const price = calculateItemPrice(item);
+        if (!product) return;
+        
+        const price = wholesaleApplied ? product.wholesalePrice : product.price;
         const itemTotal = price * item.quantity;
         message += `${index + 1}. ${item.name} (${item.packSize})\n`;
         message += `   Qty: ${item.quantity} × ₹${price} = ₹${itemTotal}\n`;
@@ -1089,12 +1179,6 @@ function checkoutWithWhatsApp() {
     
     // Open WhatsApp in new tab
     window.open(whatsappUrl, '_blank');
-    
-    // Optional: Clear cart after sending
-    // cart = [];
-    // localStorage.setItem('cart', JSON.stringify(cart));
-    // updateCartCount();
-    // renderCart();
 }
 
 // WhatsApp contact function for bulk orders
@@ -1109,11 +1193,10 @@ function handleContactSubmit(e) {
     e.preventDefault();
     
     // Get form data
-    const formData = new FormData(e.target);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const phone = formData.get('phone');
-    const message = formData.get('message');
+    const name = e.target.querySelector('input[type="text"]').value;
+    const email = e.target.querySelector('input[type="email"]').value;
+    const phone = e.target.querySelector('input[type="tel"]').value;
+    const message = e.target.querySelector('textarea').value;
     
     // Send via WhatsApp
     const whatsappMessage = `New Contact Form Submission\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`;
@@ -1155,3 +1238,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Make functions globally available
+window.contactWhatsAppBulk = contactWhatsAppBulk;
+window.checkoutWithWhatsApp = checkoutWithWhatsApp;
+window.openDeliveryInfo = openDeliveryInfo;
+
+// Debug function to check image loading
+window.checkImages = function() {
+    products.forEach(product => {
+        const img = new Image();
+        img.onload = function() {
+            console.log(`✓ ${product.image} loaded successfully`);
+        };
+        img.onerror = function() {
+            console.error(`✗ ${product.image} failed to load`);
+        };
+        img.src = product.image;
+    });
+};
