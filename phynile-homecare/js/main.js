@@ -411,6 +411,9 @@ const navMenu = document.querySelector('nav');
 const cartNotification = document.getElementById('cart-notification');
 const contactForm = document.getElementById('contact-form');
 
+// WhatsApp phone number (replace with your actual number)
+const WHATSAPP_NUMBER = "9404361842"; // Replace with your WhatsApp number
+
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
     // Load products
@@ -1070,7 +1073,38 @@ function showWholesaleAppliedAnimation() {
     }, 2000);
 }
 
-// Handle Checkout
+// Generate WhatsApp Message
+function generateWhatsAppMessage() {
+    let message = "*📦 Order Details - Phynile HomeCare*\n\n";
+    message += "*Order Summary:*\n";
+    
+    cart.forEach(item => {
+        const pricePerItem = calculateItemPrice(item);
+        const total = pricePerItem * item.quantity;
+        message += `• ${item.name} (${item.packSize}) - ${item.quantity} x ₹${pricePerItem} = ₹${total}\n`;
+    });
+    
+    const totalAmount = calculateCartTotal();
+    const wholesaleApplied = calculateCartSubtotal() >= WHOLESALE_THRESHOLD;
+    
+    message += `\n*Subtotal:* ₹${calculateCartSubtotal()}`;
+    if (wholesaleApplied) {
+        message += `\n*Wholesale Discount Applied!*`;
+        message += `\n*Final Total:* ₹${totalAmount}`;
+    } else {
+        message += `\n*Final Total:* ₹${totalAmount}`;
+    }
+    
+    message += `\n\n*Customer Details:*\n`;
+    message += `Name: \n`;
+    message += `Phone: \n`;
+    message += `Address: \n\n`;
+    message += `Please provide your details to confirm the order.`;
+    
+    return encodeURIComponent(message);
+}
+
+// Handle Checkout - Open WhatsApp
 function handleCheckout() {
     if (cart.length === 0) {
         alert('Your cart is empty!');
@@ -1078,34 +1112,38 @@ function handleCheckout() {
     }
     
     const total = calculateCartTotal();
-    const wholesaleApplied = total >= WHOLESALE_THRESHOLD;
+    const wholesaleApplied = calculateCartSubtotal() >= WHOLESALE_THRESHOLD;
     
-    // In a real application, this would redirect to a checkout page
-    // For now, we'll show a confirmation message
-    let message = `Order Summary:\n\n`;
+    // Ask for confirmation before sending to WhatsApp
+    let confirmMessage = `Proceed to WhatsApp to complete your order?\n\n`;
     cart.forEach(item => {
-        const price = calculateItemPrice(item);
-        message += `${item.name} (${item.packSize}) x ${item.quantity}: ₹${price * item.quantity}\n`;
+        const pricePerItem = calculateItemPrice(item);
+        const itemTotal = pricePerItem * item.quantity;
+        confirmMessage += `${item.name} (${item.packSize}) x ${item.quantity}: ₹${itemTotal}\n`;
     });
     
-    message += `\nTotal: ₹${total}\n`;
+    confirmMessage += `\nTotal: ₹${total}`;
     if (wholesaleApplied) {
-        message += `✓ Wholesale rates applied!\n`;
+        confirmMessage += ` (Wholesale rates applied)`;
     }
     
-    message += `\nThank you for your order! Our team will contact you shortly for delivery details.`;
-    
-    alert(message);
-    
-    // Clear cart
-    cart = [];
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartCount();
-    renderCart();
-    renderProducts(document.querySelector('.category-option.active').dataset.category);
-    
-    // Close cart modal
-    closeCartModal();
+    if (confirm(confirmMessage)) {
+        // Generate WhatsApp message
+        const message = generateWhatsAppMessage();
+        
+        // WhatsApp API URL
+        const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+        
+        // Open WhatsApp in new tab
+        window.open(whatsappUrl, '_blank');
+        
+        // Optionally clear cart after sending to WhatsApp
+        // cart = [];
+        // localStorage.setItem('cart', JSON.stringify(cart));
+        // updateCartCount();
+        // renderCart();
+        // closeCartModal();
+    }
 }
 
 // Handle Contact Form Submission
@@ -1147,3 +1185,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Add WhatsApp order button functionality
+function addWhatsAppOrderButton() {
+    // Check if we're on mobile for direct WhatsApp
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    
+    // Update footer WhatsApp link to send order template
+    const whatsappLinks = document.querySelectorAll('a[href*="whatsapp"]');
+    whatsappLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            if (cart.length > 0) {
+                e.preventDefault();
+                const message = generateWhatsAppMessage();
+                const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+                window.open(whatsappUrl, '_blank');
+            }
+        });
+    });
+}
+
+// Initialize WhatsApp button on load
+document.addEventListener('DOMContentLoaded', addWhatsAppOrderButton);
