@@ -9,7 +9,7 @@ const products = [
         price: 50,
         wholesalePrice: 40,
         packSize: "1L",
-        image: "images/phynile_lemon_1l.png",
+        image: "phynile-homecare/Images/phynile_lemon_1l.png",
         description: "Citrus lemon freshness"
     },
     {
@@ -20,7 +20,7 @@ const products = [
         price: 50,
         wholesalePrice: 40,
         packSize: "1L",
-        image: "images/phynile_lavender_1l.png",
+        image: "phynile-homecare/Images/phynile_lavender_1l.png",
         description: "Long-lasting lavender fragrance"
     },
     {
@@ -31,7 +31,7 @@ const products = [
         price: 50,
         wholesalePrice: 40,
         packSize: "1L",
-        image: "images/phynile_sandal_5l.png", // Using 5L image as placeholder
+        image: "phynile-homecare/Images/phynile_sandal_5l.png", // Using 5L image as placeholder
         description: "Premium sandalwood fragrance"
     },
     {
@@ -42,7 +42,7 @@ const products = [
         price: 50,
         wholesalePrice: 40,
         packSize: "1L",
-        image: "images/phynile_mogara_1l.png",
+        image: "phynile-homecare/Images/phynile_mogara_1l.png",
         description: "Traditional mogra fragrance"
     },
     {
@@ -53,7 +53,7 @@ const products = [
         price: 50,
         wholesalePrice: 40,
         packSize: "1L",
-        image: "images/phynile_rose_1l.png",
+        image: "phynile-homecare/Images/phynile_rose_1l.png",
         description: "Fresh rose fragrance"
     },
     // Phynile Air Fresheners - 5L
@@ -65,7 +65,7 @@ const products = [
         price: 200,
         wholesalePrice: 180,
         packSize: "5L",
-        image: "images/phynile_lemon_5l.png",
+        image: "phynile-homecare/Images/phynile_lemon_5l.png",
         description: "Citrus lemon freshness"
     },
     {
@@ -76,7 +76,7 @@ const products = [
         price: 200,
         wholesalePrice: 180,
         packSize: "5L",
-        image: "images/phynile_lavender_5l.png",
+        image: "phynile-homecare/Images/phynile_lavender_5l.png",
         description: "Long-lasting lavender fragrance"
     },
     {
@@ -87,7 +87,7 @@ const products = [
         price: 200,
         wholesalePrice: 180,
         packSize: "5L",
-        image: "images/phynile_sandal_5l.png",
+        image: "phynile-homecare/Images/phynile_sandal_5l.png",
         description: "Premium sandalwood fragrance"
     },
     {
@@ -98,7 +98,7 @@ const products = [
         price: 200,
         wholesalePrice: 180,
         packSize: "5L",
-        image: "images/phynile_mogara_5l.png",
+        image: "phynile-homecare/Images/phynile_mogara_5l.png",
         description: "Traditional mogra fragrance"
     },
     {
@@ -109,7 +109,7 @@ const products = [
         price: 200,
         wholesalePrice: 180,
         packSize: "5L",
-        image: "images/phynile_rose_5l.png",
+        image: "phynile-homecare/Images/phynile_rose_5l.png",
         description: "Fresh rose fragrance"
     },
     // Sunny Products
@@ -121,7 +121,7 @@ const products = [
         price: 66,
         wholesalePrice: 60,
         packSize: "200ml",
-        image: "images/sunny_200ml.png",
+        image: "phynile-homecare/Images/sunny_200ml.png",
         description: "Effective floor cleaner"
     },
     {
@@ -132,7 +132,7 @@ const products = [
         price: 162,
         wholesalePrice: 145,
         packSize: "500ml",
-        image: "images/sunny_500ml.png",
+        image: "phynile-homecare/Images/sunny_500ml.png",
         description: "Effective floor cleaner"
     },
     {
@@ -143,7 +143,7 @@ const products = [
         price: 320,
         wholesalePrice: 290,
         packSize: "1L",
-        image: "images/sunny_1l.png",
+        image: "phynile-homecare/Images/sunny_1l.png",
         description: "Effective floor cleaner"
     },
     {
@@ -154,7 +154,7 @@ const products = [
         price: 1580,
         wholesalePrice: 1420,
         packSize: "5L",
-        image: "images/sunny_1l.png", // Using 1L image as fallback
+        image: "phynile-homecare/Images/sunny_1l.png", // Using 1L image as fallback
         description: "Economical floor cleaner"
     },
     // Acid Cleaners
@@ -166,7 +166,7 @@ const products = [
         price: 40,
         wholesalePrice: 35,
         packSize: "1L",
-        image: "images/Bathroom_Cleaner_500ml.png", // Using bathroom cleaner image
+        image: "phynile-homecare/Images/Bathroom_Cleaner_500ml.png", // Using bathroom cleaner image
         description: "Powerful acid cleaner"
     },
     {
@@ -177,7 +177,7 @@ const products = [
         price: 140,
         wholesalePrice: 125,
         packSize: "5L",
-        image: "images/Bathroom_Cleaner_500ml.png", // Using bathroom cleaner image
+        image: "phynile-homecare/Images/Bathroom_Cleaner_500ml.png", // Using bathroom cleaner image
         description: "Economical acid cleaner"
     },
     // Dish Wash Products
@@ -223,7 +223,7 @@ const products = [
         price: 56,
         wholesalePrice: 50,
         packSize: "250ml",
-        image: "images/toilet_cleaner_harpic_250ml.png",
+        image: "phynile-homecare/Images/toilet_cleaner_harpic_250ml.png",
         description: "Powerful toilet cleaner"
     },
     {
@@ -234,7 +234,7 @@ const products = [
         price: 70,
         wholesalePrice: 63,
         packSize: "500ml",
-        image: "images/toilet_cleaner_harpic_500ml.png",
+        image: "phynile-homecare/Images/toilet_cleaner_harpic_500ml.png",
         description: "Powerful toilet cleaner"
     },
     {
@@ -245,7 +245,7 @@ const products = [
         price: 320,
         wholesalePrice: 290,
         packSize: "5L",
-        image: "images/toilet_cleaner_harpic_5l.png",
+        image: "phynile-homecare/Images/toilet_cleaner_harpic_5l.png",
         description: "Economical toilet cleaner"
     },
     // Hand Wash Products
@@ -257,7 +257,7 @@ const products = [
         price: 90,
         wholesalePrice: 81,
         packSize: "500ml",
-        image: "images/Hand_Wash_Products.png",
+        image: "phynile-homecare/Images/Hand_Wash_Products.png",
         description: "Rose fragrance hand wash"
     },
     {
@@ -268,7 +268,7 @@ const products = [
         price: 90,
         wholesalePrice: 81,
         packSize: "500ml",
-        image: "images/Hand_Wash_Products_1.png",
+        image: "phynile-homecare/Images/Hand_Wash_Products_1.png",
         description: "Neem antibacterial hand wash"
     },
     {
@@ -279,7 +279,7 @@ const products = [
         price: 90,
         wholesalePrice: 81,
         packSize: "500ml",
-        image: "images/Hand_Wash_Products.png", // Using same image
+        image: "phynile-homecare/Images/Hand_Wash_Products.png", // Using same image
         description: "Lemon fresh hand wash"
     },
     {
@@ -290,7 +290,7 @@ const products = [
         price: 150,
         wholesalePrice: 135,
         packSize: "1L",
-        image: "images/Hand_Wash_Products.png", // Using same image
+        image: "phynile-homecare/Images/Hand_Wash_Products.png", // Using same image
         description: "Rose fragrance hand wash"
     },
     {
@@ -301,7 +301,7 @@ const products = [
         price: 150,
         wholesalePrice: 135,
         packSize: "1L",
-        image: "images/Hand_Wash_Products_1.png",
+        image: "phynile-homecare/Images/Hand_Wash_Products_1.png",
         description: "Neem antibacterial hand wash"
     },
     {
@@ -312,7 +312,7 @@ const products = [
         price: 150,
         wholesalePrice: 135,
         packSize: "1L",
-        image: "images/Hand_Wash_Products.png", // Using same image
+        image: "phynile-homecare/Images/Hand_Wash_Products.png", // Using same image
         description: "Lemon fresh hand wash"
     },
     {
@@ -323,7 +323,7 @@ const products = [
         price: 440,
         wholesalePrice: 400,
         packSize: "5L",
-        image: "images/Hand_Wash_Products.png", // Using same image
+        image: "phynile-homecare/Images/Hand_Wash_Products.png", // Using same image
         description: "Economical hand wash"
     },
     {
@@ -334,7 +334,7 @@ const products = [
         price: 84,
         wholesalePrice: 75,
         packSize: "500ml",
-        image: "images/Hand_Wash_Products_1.png",
+        image: "phynile-homecare/Images/Hand_Wash_Products_1.png",
         description: "Hand wash refill pack"
     },
     // Other Products
@@ -412,7 +412,7 @@ const cartNotification = document.getElementById('cart-notification');
 const contactForm = document.getElementById('contact-form');
 
 // WhatsApp phone number (replace with your actual number)
-const WHATSAPP_NUMBER = "9404361842"; // Replace with your WhatsApp number
+const WHATSAPP_NUMBER = "919876543210"; // Replace with your WhatsApp number
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
