@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phynile HomeCare | Premium Cleaning Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Notification Banner -->
+    <div class="notification-banner">
+        <div class="container">
+            <i class="fas fa-shipping-fast"></i>
+            Shop Monday to Friday - Saturday & Sunday for dispatch | 
+            <i class="fas fa-truck"></i>
+            Currently FREE delivery in Dhayari, Narhe, Ambegaon only
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-spray-can"></i>
+                <div>
+                    <h1>Phynile <span>HomeCare</span></h1>
+                    <p>Premium Cleaning Solutions</p>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#bulk">Wholesale</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Floating Cart Button -->
+    <div class="floating-cart-btn" id="floating-cart-btn">
+        <div class="floating-cart-count" id="floating-cart-count">0</div>
+        <i class="fas fa-shopping-cart"></i>
+        <div class="floating-cart-text">Cart</div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Premium Cleaning Products at Best Prices</h2>
+            <p>Discover our wide range of high-quality cleaning solutions, from air fresheners to dish wash and toilet cleaners. Enjoy massive discounts on MRP!</p>
+            <a href="#products" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Products</h2>
+            </div>
+            
+            <!-- Category Dropdown -->
+            <div class="category-dropdown-container">
+                <div class="category-dropdown-btn" id="category-dropdown-btn">
+                    <span>Select Category</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="category-dropdown-content" id="category-dropdown-content">
+                    <div class="category-option active" data-category="all">All Products</div>
+                    <div class="category-option" data-category="phynile">Phynile Air Fresheners</div>
+                    <div class="category-option" data-category="sunny">Sunny Products</div>
+                    <div class="category-option" data-category="toilet">Toilet Cleaners</div>
+                    <div class="category-option" data-category="hand">Hand Wash</div>
+                    <div class="category-option" data-category="bathroom">Bathroom Cleaners</div>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="products-container">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Bulk Order Section -->
+    <section class="bulk-order-section" id="bulk">
+        <div class="container bulk-order-container">
+            <div class="section-title">
+                <h2>Wholesale Rates for Bulk Orders</h2>
+                <p class="section-subtitle">
+                    Special discounted rates for bulk purchases. Contact us for customized solutions for businesses, institutions, and resellers.
+                </p>
+            </div>
+            
+            <div class="bulk-info-box">
+                <h3>Wholesale Benefits</h3>
+                <p>Get wholesale prices on orders above ₹7,000/-</p>
+                <div class="bulk-highlight">
+                    <i class="fas fa-gift"></i> Auto-apply wholesale rates on orders above ₹7,000
+                </div>
+                <p>Contact us for even better rates on very large orders!</p>
+            </div>
+            
+            <!-- Bulk Category Filter -->
+            <div class="bulk-category-filter" id="bulk-category-filter">
+                <!-- Category buttons will be loaded by JavaScript -->
+            </div>
+            
+            <!-- Bulk Order Table -->
+            <div class="bulk-order-table-container">
+                <div class="bulk-order-table-wrapper">
+                    <table class="bulk-order-table" id="bulk-order-table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Pack Size</th>
+                                <th>MRP</th>
+                                <th>Our Price</th>
+                                <th class="wholesale-col">Wholesale Price</th>
+                                <th>Order</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bulk-table-body">
+                            <!-- Table rows will be loaded by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p class="section-subtitle">
+                    Get in touch for bulk orders, business inquiries, or any questions about our products
+                </p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info-box">
+                    <h3>Contact Information</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Our Location</h4>
+                            <p>Dhanyari, Pune, Maharashtra 411041</p>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone Number</h4>
+                            <p>+91 12345 67890</p>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email Address</h4>
+                            <p>info@phynilehomecare.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p>Monday - Saturday: 9:00 AM - 7:00 PM</p>
+                            <p>Sunday: 10:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-box">
+                    <h3>Send us a Message</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Your Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Phynile HomeCare</h3>
+                    <p>Premium cleaning solutions for homes and businesses. We provide high-quality products at competitive prices with excellent customer service.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#bulk">Wholesale</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Product Categories</h3>
+                    <ul>
+                        <li><a href="#" data-category="phynile">Phynile Air Fresheners</a></li>
+                        <li><a href="#" data-category="sunny">Sunny Products</a></li>
+                        <li><a href="#" data-category="toilet">Toilet Cleaners</a></li>
+                        <li><a href="#" data-category="hand">Hand Wash</a></li>
+                        <li><a href="#" data-category="bathroom">Bathroom Cleaners</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Dhanyari, Pune, Maharashtra 411041</p>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <p>+91 12345 67890</p>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@phynilehomecare.com</p>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-clock"></i>
+                        <p>Mon-Sat: 9AM-7PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Phynile HomeCare. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3><i class="fas fa-shopping-cart"></i> Your Shopping Cart</h3>
+                <button class="close-cart" id="close-cart">&times;</button>
+            </div>
+            <div class="cart-body" id="cart-body">
+                <!-- Cart items will be loaded here by JavaScript -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-summary" id="cart-summary">
+                    <!-- Cart summary will be loaded here by JavaScript -->
+                </div>
+                <div class="cart-actions">
+                    <button class="btn" id="continue-shopping">Continue Shopping</button>
+                    <button class="btn btn-primary" id="checkout-btn">Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Update Notification -->
+    <div class="cart-update-notification" id="cart-notification">
+        <!-- Notification content will be added by JavaScript -->
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
