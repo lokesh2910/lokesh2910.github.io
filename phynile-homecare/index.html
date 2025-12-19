@@ -80,6 +80,8 @@
                     <div class="category-option" data-category="toilet">Toilet Cleaners</div>
                     <div class="category-option" data-category="hand">Hand Wash</div>
                     <div class="category-option" data-category="bathroom">Bathroom Cleaners</div>
+                    <div class="category-option" data-category="dish">Dish Wash</div>
+                    <div class="category-option" data-category="other">Other Products</div>
                 </div>
             </div>
             
@@ -133,6 +135,13 @@
                     </table>
                 </div>
             </div>
+            
+            <!-- WhatsApp Bulk Order Button -->
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="btn btn-success" onclick="contactWhatsAppBulk()">
+                    <i class="fab fa-whatsapp"></i> Contact for Bulk Orders via WhatsApp
+                </button>
+            </div>
         </div>
     </section>
 
@@ -153,21 +162,21 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h4>Our Location</h4>
-                            <p>Dhanyari, Pune, Maharashtra 411041</p>
+                            <p>Narhe, Pune, Maharashtra</p>
                         </div>
                     </div>
                     <div class="contact-info">
                         <i class="fas fa-phone"></i>
                         <div>
                             <h4>Phone Number</h4>
-                            <p>+91 12345 67890</p>
+                            <p>+91 9404361842</p>
                         </div>
                     </div>
                     <div class="contact-info">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h4>Email Address</h4>
-                            <p>info@phynilehomecare.com</p>
+                            <p>aslekarlokesh@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-info">
@@ -175,7 +184,13 @@
                         <div>
                             <h4>Business Hours</h4>
                             <p>Monday - Saturday: 9:00 AM - 7:00 PM</p>
-                            <p>Sunday: 10:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-truck"></i>
+                        <div>
+                            <h4>Delivery Areas</h4>
+                            <p>Free Delivery: Dhayari, Narhe, Ambegaon</p>
                         </div>
                     </div>
                 </div>
@@ -213,7 +228,7 @@
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/919404361842" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 
@@ -224,8 +239,7 @@
                         <li><a href="#products">Products</a></li>
                         <li><a href="#bulk">Wholesale</a></li>
                         <li><a href="#contact">Contact</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#" onclick="openDeliveryInfo()">Delivery Information</a></li>
                     </ul>
                 </div>
                 
@@ -237,6 +251,7 @@
                         <li><a href="#" data-category="toilet">Toilet Cleaners</a></li>
                         <li><a href="#" data-category="hand">Hand Wash</a></li>
                         <li><a href="#" data-category="bathroom">Bathroom Cleaners</a></li>
+                        <li><a href="#" data-category="dish">Dish Wash</a></li>
                     </ul>
                 </div>
                 
@@ -244,19 +259,23 @@
                     <h3>Contact Info</h3>
                     <div class="contact-info">
                         <i class="fas fa-map-marker-alt"></i>
-                        <p>Dhanyari, Pune, Maharashtra 411041</p>
+                        <p>Narhe, Pune, Maharashtra</p>
                     </div>
                     <div class="contact-info">
                         <i class="fas fa-phone"></i>
-                        <p>+91 12345 67890</p>
+                        <p>+91 9404361842</p>
                     </div>
                     <div class="contact-info">
                         <i class="fas fa-envelope"></i>
-                        <p>info@phynilehomecare.com</p>
+                        <p>aslekarlokesh@gmail.com</p>
                     </div>
                     <div class="contact-info">
                         <i class="fas fa-clock"></i>
                         <p>Mon-Sat: 9AM-7PM</p>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-truck"></i>
+                        <p>Free Delivery: Dhayari, Narhe, Ambegaon</p>
                     </div>
                 </div>
             </div>
@@ -283,7 +302,9 @@
                 </div>
                 <div class="cart-actions">
                     <button class="btn" id="continue-shopping">Continue Shopping</button>
-                    <button class="btn btn-primary" id="checkout-btn">Proceed to Checkout</button>
+                    <button class="btn btn-whatsapp" id="checkout-btn">
+                        <i class="fab fa-whatsapp"></i> Checkout via WhatsApp
+                    </button>
                 </div>
             </div>
         </div>
