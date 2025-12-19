@@ -1,4 +1,4 @@
-// Product Data with correct pricing from the table
+// Product Data with correct pricing and image paths
 const products = [
     // Phynile Air Fresheners - 1L
     {
@@ -31,7 +31,7 @@ const products = [
         price: 50,
         wholesalePrice: 40,
         packSize: "1L",
-        image: "phynile-homecare/Images/phynile_sandal_5l.png", // Using 5L image as placeholder
+        image: "phynile-homecare/Images/phynile_sandal_5l.png",
         description: "Premium sandalwood fragrance"
     },
     {
@@ -154,7 +154,7 @@ const products = [
         price: 1580,
         wholesalePrice: 1420,
         packSize: "5L",
-        image: "phynile-homecare/Images/sunny_1l.png", // Using 1L image as fallback
+        image: "phynile-homecare/Images/sunny_1l.png",
         description: "Economical floor cleaner"
     },
     // Acid Cleaners
@@ -166,7 +166,7 @@ const products = [
         price: 40,
         wholesalePrice: 35,
         packSize: "1L",
-        image: "phynile-homecare/Images/Bathroom_Cleaner_500ml.png", // Using bathroom cleaner image
+        image: "phynile-homecare/Images/Bathroom_Cleaner_500ml.png",
         description: "Powerful acid cleaner"
     },
     {
@@ -177,7 +177,7 @@ const products = [
         price: 140,
         wholesalePrice: 125,
         packSize: "5L",
-        image: "phynile-homecare/Images/Bathroom_Cleaner_500ml.png", // Using bathroom cleaner image
+        image: "phynile-homecare/Images/Bathroom_Cleaner_500ml.png",
         description: "Economical acid cleaner"
     },
     // Dish Wash Products
@@ -189,7 +189,7 @@ const products = [
         price: 76,
         wholesalePrice: 68,
         packSize: "1L",
-        image: "https://via.placeholder.com/300x200?text=Dish+Wash+1L",
+        image: "phynile-homecare/Images/dish_wash_pouch.png",
         description: "Dish wash liquid pouch"
     },
     {
@@ -200,7 +200,7 @@ const products = [
         price: 240,
         wholesalePrice: 220,
         packSize: "5L",
-        image: "https://via.placeholder.com/300x200?text=Dish+Wash+5L",
+        image: "phynile-homecare/Images/dish_wash_5l.png",
         description: "Economical dish wash pouch"
     },
     {
@@ -211,7 +211,7 @@ const products = [
         price: 84,
         wholesalePrice: 75,
         packSize: "500ml",
-        image: "https://via.placeholder.com/300x200?text=Dish+Wash+Bottle",
+        image: "phynile-homecare/Images/dish_wash_bottle.png",
         description: "Dish wash in bottle"
     },
     // Toilet Cleaners
@@ -279,7 +279,7 @@ const products = [
         price: 90,
         wholesalePrice: 81,
         packSize: "500ml",
-        image: "phynile-homecare/Images/Hand_Wash_Products.png", // Using same image
+        image: "phynile-homecare/Images/Hand_Wash_Products.png",
         description: "Lemon fresh hand wash"
     },
     {
@@ -290,7 +290,7 @@ const products = [
         price: 150,
         wholesalePrice: 135,
         packSize: "1L",
-        image: "phynile-homecare/Images/Hand_Wash_Products.png", // Using same image
+        image: "phynile-homecare/Images/Hand_Wash_Products.png",
         description: "Rose fragrance hand wash"
     },
     {
@@ -312,7 +312,7 @@ const products = [
         price: 150,
         wholesalePrice: 135,
         packSize: "1L",
-        image: "phynile-homecare/Images/Hand_Wash_Products.png", // Using same image
+        image: "phynile-homecare/Images/Hand_Wash_Products.png",
         description: "Lemon fresh hand wash"
     },
     {
@@ -323,14 +323,14 @@ const products = [
         price: 440,
         wholesalePrice: 400,
         packSize: "5L",
-        image: "phynile-homecare/Images/Hand_Wash_Products.png", // Using same image
+        image: "phynile-homecare/Images/Hand_Wash_Products.png",
         description: "Economical hand wash"
     },
     {
         id: 30,
         name: "Hand Wash Refill",
         category: "hand",
-        mrp: 0, // Not specified in table
+        mrp: 0,
         price: 84,
         wholesalePrice: 75,
         packSize: "500ml",
@@ -346,7 +346,7 @@ const products = [
         price: 90,
         wholesalePrice: 81,
         packSize: "500ml",
-        image: "https://via.placeholder.com/300x200?text=Kolin+Cleaner",
+        image: "phynile-homecare/Images/kolin_cleaner.png",
         description: "Kolin multipurpose cleaner"
     },
     {
@@ -357,7 +357,7 @@ const products = [
         price: 24,
         wholesalePrice: 22,
         packSize: "1 Unit",
-        image: "https://via.placeholder.com/300x200?text=Drainx",
+        image: "phynile-homecare/Images/drainx.png",
         description: "Drain unblocking solution"
     },
     {
@@ -368,7 +368,7 @@ const products = [
         price: 24,
         wholesalePrice: 22,
         packSize: "200g",
-        image: "https://via.placeholder.com/300x200?text=Bhaya+Powder",
+        image: "phynile-homecare/Images/bhaya_powder.png",
         description: "Cleaning powder"
     },
     {
@@ -379,7 +379,7 @@ const products = [
         price: 40,
         wholesalePrice: 36,
         packSize: "100g",
-        image: "https://via.placeholder.com/300x200?text=Dambar+Golya",
+        image: "phynile-homecare/Images/dambar_golya.png",
         description: "Cleaning balls"
     }
 ];
@@ -390,6 +390,7 @@ const bulkProducts = [...products];
 // Shopping Cart
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 const WHOLESALE_THRESHOLD = 7000;
+const WHATSAPP_NUMBER = "919404361842";
 
 // DOM Elements
 const productsContainer = document.getElementById('products-container');
@@ -410,9 +411,6 @@ const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const navMenu = document.querySelector('nav');
 const cartNotification = document.getElementById('cart-notification');
 const contactForm = document.getElementById('contact-form');
-
-// WhatsApp phone number (replace with your actual number)
-const WHATSAPP_NUMBER = "919876543210"; // Replace with your WhatsApp number
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
@@ -474,8 +472,8 @@ function setupEventListeners() {
     closeCartBtn.addEventListener('click', closeCartModal);
     continueShoppingBtn.addEventListener('click', closeCartModal);
     
-    // Checkout button
-    checkoutBtn.addEventListener('click', handleCheckout);
+    // Checkout button (WhatsApp)
+    checkoutBtn.addEventListener('click', checkoutWithWhatsApp);
     
     // Contact form submission
     if (contactForm) {
@@ -650,19 +648,11 @@ function createProductCard(product) {
     const minusBtn = card.querySelector('.minus-btn');
     const plusBtn = card.querySelector('.plus-btn');
     const addToCartBtn = card.querySelector('.add-to-cart');
-    const quantityControls = card.querySelector('.quantity-controls');
     
     minusBtn.addEventListener('click', () => updateProductQuantity(product.id, -1));
     plusBtn.addEventListener('click', () => updateProductQuantity(product.id, 1));
     addToCartBtn.addEventListener('click', () => {
         if (quantity === 0) {
-            updateProductQuantity(product.id, 1);
-        }
-    });
-    
-    // Add click event to whole quantity controls area
-    quantityControls.addEventListener('click', (e) => {
-        if (e.target.classList.contains('quantity-controls')) {
             updateProductQuantity(product.id, 1);
         }
     });
@@ -1038,112 +1028,80 @@ function showCartNotification(message) {
     }, 3000);
 }
 
-// Show Wholesale Applied Animation
-function showWholesaleAppliedAnimation() {
-    // Create animation container
-    const animationContainer = document.createElement('div');
-    animationContainer.className = 'save-animation-container';
-    animationContainer.id = 'wholesale-animation';
-    
-    // Create wipe animation
-    const wipe = document.createElement('div');
-    wipe.className = 'wipe-animation';
-    
-    // Create save message
-    const saveMessage = document.createElement('div');
-    saveMessage.className = 'save-message';
-    saveMessage.innerHTML = '<i class="fas fa-trophy"></i> Wholesale Applied!';
-    
-    // Add to container
-    animationContainer.appendChild(wipe);
-    animationContainer.appendChild(saveMessage);
-    
-    // Add to body
-    document.body.appendChild(animationContainer);
-    
-    // Animate wipe
-    wipe.style.animation = 'wipeIn 1s ease-in-out';
-    
-    // Animate message
-    saveMessage.style.animation = 'saveMessageIn 2s ease-in-out';
-    
-    // Remove after animation
-    setTimeout(() => {
-        animationContainer.remove();
-    }, 2000);
-}
-
-// Generate WhatsApp Message
+// WhatsApp Functions
 function generateWhatsAppMessage() {
-    let message = "*📦 Order Details - Phynile HomeCare*\n\n";
-    message += "*Order Summary:*\n";
+    const total = calculateCartTotal();
+    const subtotal = calculateCartSubtotal();
+    const wholesaleApplied = subtotal >= WHOLESALE_THRESHOLD;
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     
-    cart.forEach(item => {
-        const pricePerItem = calculateItemPrice(item);
-        const total = pricePerItem * item.quantity;
-        message += `• ${item.name} (${item.packSize}) - ${item.quantity} x ₹${pricePerItem} = ₹${total}\n`;
+    let message = `🛒 *PHYNILE HOMECARE ORDER*\n\n`;
+    message += `📋 *Order Details*\n`;
+    message += `Total Items: ${totalItems}\n`;
+    message += `Order Value: ₹${total}\n`;
+    message += wholesaleApplied ? `✅ Wholesale rates applied\n\n` : '\n';
+    
+    message += `*Items Ordered:*\n`;
+    message += `────────────────\n`;
+    
+    cart.forEach((item, index) => {
+        const product = products.find(p => p.id === item.id);
+        const price = calculateItemPrice(item);
+        const itemTotal = price * item.quantity;
+        message += `${index + 1}. ${item.name} (${item.packSize})\n`;
+        message += `   Qty: ${item.quantity} × ₹${price} = ₹${itemTotal}\n`;
     });
     
-    const totalAmount = calculateCartTotal();
-    const wholesaleApplied = calculateCartSubtotal() >= WHOLESALE_THRESHOLD;
-    
-    message += `\n*Subtotal:* ₹${calculateCartSubtotal()}`;
+    message += `\n────────────────\n`;
+    message += `Subtotal: ₹${subtotal}\n`;
     if (wholesaleApplied) {
-        message += `\n*Wholesale Discount Applied!*`;
-        message += `\n*Final Total:* ₹${totalAmount}`;
-    } else {
-        message += `\n*Final Total:* ₹${totalAmount}`;
+        const savings = subtotal - total;
+        message += `Wholesale Discount: -₹${savings}\n`;
     }
+    message += `*Grand Total: ₹${total}*\n\n`;
     
-    message += `\n\n*Customer Details:*\n`;
-    message += `Name: \n`;
-    message += `Phone: \n`;
-    message += `Address: \n\n`;
-    message += `Please provide your details to confirm the order.`;
+    message += `👤 *Customer Information*\n`;
+    message += `Please provide your details:\n`;
+    message += `• Name:\n`;
+    message += `• Phone:\n`;
+    message += `• Address:\n`;
+    message += `• Delivery Date/Time:\n\n`;
     
-    return encodeURIComponent(message);
+    message += `🚚 *Delivery Information*\n`;
+    message += `Free delivery in Dhayari, Narhe, Ambegaon\n`;
+    message += `Other areas: Delivery charges apply\n\n`;
+    
+    message += `📞 *Contact*\n`;
+    message += `Phone: +91 9404361842\n`;
+    message += `Thank you for shopping with Phynile HomeCare! 🏡✨`;
+    
+    return message;
 }
 
-// Handle Checkout - Open WhatsApp
-function handleCheckout() {
+function checkoutWithWhatsApp() {
     if (cart.length === 0) {
-        alert('Your cart is empty!');
+        showCartNotification('Your cart is empty!');
         return;
     }
     
-    const total = calculateCartTotal();
-    const wholesaleApplied = calculateCartSubtotal() >= WHOLESALE_THRESHOLD;
+    const message = generateWhatsAppMessage();
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     
-    // Ask for confirmation before sending to WhatsApp
-    let confirmMessage = `Proceed to WhatsApp to complete your order?\n\n`;
-    cart.forEach(item => {
-        const pricePerItem = calculateItemPrice(item);
-        const itemTotal = pricePerItem * item.quantity;
-        confirmMessage += `${item.name} (${item.packSize}) x ${item.quantity}: ₹${itemTotal}\n`;
-    });
+    // Open WhatsApp in new tab
+    window.open(whatsappUrl, '_blank');
     
-    confirmMessage += `\nTotal: ₹${total}`;
-    if (wholesaleApplied) {
-        confirmMessage += ` (Wholesale rates applied)`;
-    }
-    
-    if (confirm(confirmMessage)) {
-        // Generate WhatsApp message
-        const message = generateWhatsAppMessage();
-        
-        // WhatsApp API URL
-        const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
-        
-        // Open WhatsApp in new tab
-        window.open(whatsappUrl, '_blank');
-        
-        // Optionally clear cart after sending to WhatsApp
-        // cart = [];
-        // localStorage.setItem('cart', JSON.stringify(cart));
-        // updateCartCount();
-        // renderCart();
-        // closeCartModal();
-    }
+    // Optional: Clear cart after sending
+    // cart = [];
+    // localStorage.setItem('cart', JSON.stringify(cart));
+    // updateCartCount();
+    // renderCart();
+}
+
+// WhatsApp contact function for bulk orders
+function contactWhatsAppBulk() {
+    const message = `Hello Phynile HomeCare!\n\nI'm interested in wholesale/bulk orders for cleaning products.\n\nPlease provide information about:\n• Wholesale rates for orders above ₹7,000\n• Customized solutions for businesses\n• Delivery options for bulk orders\n\nThank you!`;
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
 }
 
 // Handle Contact Form Submission
@@ -1157,12 +1115,24 @@ function handleContactSubmit(e) {
     const phone = formData.get('phone');
     const message = formData.get('message');
     
-    // In a real application, this would send data to a server
-    // For now, we'll show a confirmation message
-    alert(`Thank you, ${name}! Your message has been received. We will contact you at ${email} or ${phone} within 24 hours.`);
+    // Send via WhatsApp
+    const whatsappMessage = `New Contact Form Submission\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`;
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
+    
+    window.open(whatsappUrl, '_blank');
     
     // Reset form
     e.target.reset();
+    
+    showCartNotification('Message sent to WhatsApp!');
+}
+
+// Delivery Information Modal
+function openDeliveryInfo() {
+    const message = `🚚 *PHYNILE HOMECARE DELIVERY INFORMATION*\n\n📍 *Free Delivery Areas:*\n• Dhayari\n• Narhe\n• Ambegaon\n\n🚛 *Other Areas:*\nDelivery charges apply based on distance\n\n⏰ *Delivery Time:*\n• Orders placed before 3 PM: Same day delivery\n• Orders placed after 3 PM: Next day delivery\n• Weekend orders: Monday delivery\n\n📦 *Order Minimum:*\nNo minimum order amount\n\n💳 *Payment Options:*\n• Cash on Delivery\n• UPI Payment\n• Bank Transfer`;
+    
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
 }
 
 // Add smooth scrolling for anchor links
@@ -1185,25 +1155,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
-
-// Add WhatsApp order button functionality
-function addWhatsAppOrderButton() {
-    // Check if we're on mobile for direct WhatsApp
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    
-    // Update footer WhatsApp link to send order template
-    const whatsappLinks = document.querySelectorAll('a[href*="whatsapp"]');
-    whatsappLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            if (cart.length > 0) {
-                e.preventDefault();
-                const message = generateWhatsAppMessage();
-                const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
-                window.open(whatsappUrl, '_blank');
-            }
-        });
-    });
-}
-
-// Initialize WhatsApp button on load
-document.addEventListener('DOMContentLoaded', addWhatsAppOrderButton);
