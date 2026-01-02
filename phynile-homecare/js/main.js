@@ -245,8 +245,8 @@ const products = [
         name: "Toilet Cleaner Harpic",
         category: "toilet",
         mrp: 45,
-        price: 56,
-        wholesalePrice: 50,
+        price: 40,
+        wholesalePrice: 40,
         packSize: "250ml",
         image: "Images/toilet_cleaner_harpic_250ml.png",
         description: "Powerful toilet cleaner"
@@ -1169,3 +1169,4 @@ window.testImageLoading = testImageLoading;
 document.addEventListener('DOMContentLoaded', function() {
     updateCategoryOptions();
 });
+
