@@ -1,9 +1,9 @@
-// Product Data with CORRECT GitHub Pages image paths
+// Product Data with ALL images and correct selling prices
 const products = [
-    // Phynile Air Fresheners - 1L
+    // Phynile s - 1L
     {
         id: 1,
-        name: "Phynile Lemon Air Freshener",
+        name: "Phynile Lemon ",
         category: "phynile",
         mrp: 90,
         price: 50,
@@ -14,7 +14,7 @@ const products = [
     },
     {
         id: 2,
-        name: "Phynile Lavender Air Freshener",
+        name: "Phynile Lavender ",
         category: "phynile",
         mrp: 90,
         price: 50,
@@ -25,18 +25,18 @@ const products = [
     },
     {
         id: 3,
-        name: "Phynile Sandal Air Freshener",
+        name: "Phynile Sandal ",
         category: "phynile",
         mrp: 90,
         price: 50,
         wholesalePrice: 40,
         packSize: "1L",
-        image: "Images/phynile_sandal_5l.png",
+        image: "Images/phynile_sandal_1l.png",
         description: "Premium sandalwood fragrance"
     },
     {
         id: 4,
-        name: "Phynile Mogara Air Freshener",
+        name: "Phynile Mogara ",
         category: "phynile",
         mrp: 90,
         price: 50,
@@ -47,7 +47,7 @@ const products = [
     },
     {
         id: 5,
-        name: "Phynile Rose Air Freshener",
+        name: "Phynile Rose ",
         category: "phynile",
         mrp: 90,
         price: 50,
@@ -56,10 +56,10 @@ const products = [
         image: "Images/phynile_rose_1l.png",
         description: "Fresh rose fragrance"
     },
-    // Phynile Air Fresheners - 5L
+    // Phynile s - 5L
     {
         id: 6,
-        name: "Phynile Lemon Air Freshener",
+        name: "Phynile Lemon ",
         category: "phynile",
         mrp: 365,
         price: 200,
@@ -70,7 +70,7 @@ const products = [
     },
     {
         id: 7,
-        name: "Phynile Lavender Air Freshener",
+        name: "Phynile Lavender ",
         category: "phynile",
         mrp: 365,
         price: 200,
@@ -81,7 +81,7 @@ const products = [
     },
     {
         id: 8,
-        name: "Phynile Sandal Air Freshener",
+        name: "Phynile Sandal ",
         category: "phynile",
         mrp: 365,
         price: 200,
@@ -92,7 +92,7 @@ const products = [
     },
     {
         id: 9,
-        name: "Phynile Mogara Air Freshener",
+        name: "Phynile Mogara ",
         category: "phynile",
         mrp: 365,
         price: 200,
@@ -103,7 +103,7 @@ const products = [
     },
     {
         id: 10,
-        name: "Phynile Rose Air Freshener",
+        name: "Phynile Rose ",
         category: "phynile",
         mrp: 365,
         price: 200,
@@ -112,111 +112,136 @@ const products = [
         image: "Images/phynile_rose_5l.png",
         description: "Fresh rose fragrance"
     },
-    // Sunny Products
-    {
-        id: 11,
-        name: "Sunny Floor Cleaner",
-        category: "sunny",
-        mrp: 65,
-        price: 66,
-        wholesalePrice: 60,
-        packSize: "200ml",
-        image: "Images/sunny_200ml.png",
-        description: "Effective floor cleaner"
-    },
-    {
-        id: 12,
-        name: "Sunny Floor Cleaner",
-        category: "sunny",
-        mrp: 150,
-        price: 162,
-        wholesalePrice: 145,
-        packSize: "500ml",
-        image: "Images/sunny_500ml.png",
-        description: "Effective floor cleaner"
-    },
-    {
-        id: 13,
-        name: "Sunny Floor Cleaner",
-        category: "sunny",
-        mrp: 275,
-        price: 320,
-        wholesalePrice: 290,
-        packSize: "1L",
-        image: "Images/sunny_1l.png",
-        description: "Effective floor cleaner"
-    },
-    {
-        id: 14,
-        name: "Sunny Floor Cleaner",
-        category: "sunny",
-        mrp: 1200,
-        price: 1580,
-        wholesalePrice: 1420,
-        packSize: "5L",
-        image: "Images/sunny_5l.png",
-        description: "Economical floor cleaner"
-    },
-    // Acid Cleaners - Using Bathroom Cleaner image
+    
+    // Sunny Products - Liquid
     {
         id: 15,
+        name: "Sunny Floor Cleaner Liquid",
+        category: "sunny",
+        mrp: 65,
+        price: 60,
+        wholesalePrice: 60,
+        packSize: "200ml",
+        image: "Images/sunny_200ml_liquid.png",
+        description: "Effective floor cleaner liquid"
+    },
+    {
+        id: 16,
+        name: "Sunny Floor Cleaner Liquid",
+        category: "sunny",
+        mrp: 150,
+        price: 145,
+        wholesalePrice: 145,
+        packSize: "500ml",
+        image: "Images/sunny_500ml_liquid.png",
+        description: "Effective floor cleaner liquid"
+    },
+    {
+        id: 17,
+        name: "Sunny Floor Cleaner Liquid",
+        category: "sunny",
+        mrp: 275,
+        price: 250,
+        wholesalePrice: 250,
+        packSize: "1L",
+        image: "Images/sunny_1l_Liquid.png",
+        description: "Effective floor cleaner liquid"
+    },
+    {
+        id: 18,
+        name: "Sunny Floor Cleaner Liquid",
+        category: "sunny",
+        mrp: 1200,
+        price: 1100,
+        wholesalePrice: 1100,
+        packSize: "5L",
+        image: "Images/sunny_5l_Liquid.png",
+        description: "Economical floor cleaner liquid"
+    },
+    // Acid Cleaners
+    {
+        id: 19,
         name: "Acid Cleaner",
         category: "bathroom",
         mrp: 70,
         price: 40,
         wholesalePrice: 35,
         packSize: "1L",
-        image: "Images/Bathroom_Cleaner_500ml.png",
+        image: "Images/acid_1l.png",
         description: "Powerful acid cleaner"
     },
     {
-        id: 16,
+        id: 20,
         name: "Acid Cleaner",
         category: "bathroom",
         mrp: 350,
         price: 140,
         wholesalePrice: 125,
         packSize: "5L",
-        image: "Images/Bathroom_Cleaner_500ml.png",
+        image: "Images/acid_5l.png",
         description: "Economical acid cleaner"
     },
-    // Dish Wash Products - Using Sunny images as placeholders
+    // Dish Wash Products
     {
-        id: 17,
+        id: 21,
         name: "Dish Wash Pouch",
         category: "dish",
         mrp: 80,
         price: 76,
         wholesalePrice: 68,
         packSize: "1L",
-        image: "Images/sunny_1l.png",
+        image: "Images/sunny_1l_Liquid.png", // Placeholder
         description: "Dish wash liquid pouch"
     },
+
+    // Other Products
     {
-        id: 18,
-        name: "Dish Wash Pouch",
-        category: "dish",
-        mrp: 350,
-        price: 240,
-        wholesalePrice: 220,
-        packSize: "5L",
-        image: "Images/sunny_5l.png",
-        description: "Economical dish wash pouch"
+        id: 24,
+        name: "Drainx Unblocker",
+        category: "other",
+        mrp: 30,
+        price: 24,
+        wholesalePrice: 22,
+        packSize: "1 Unit",
+        image: "Images/drainx.png",
+        description: "Drain unblocking solution"
     },
     {
-        id: 19,
-        name: "Dish Wash Bottle",
-        category: "dish",
-        mrp: 98,
-        price: 84,
-        wholesalePrice: 75,
+        id: 25,
+        name: "Bhaya Powder",
+        category: "other",
+        mrp: 30,
+        price: 24,
+        wholesalePrice: 22,
+        packSize: "200g",
+        image: "Images/bhaiya_powder.png",
+        description: "Cleaning powder"
+    },
+    {
+        id: 26,
+        name: "Dambar Golya",
+        category: "other",
+        mrp: 50,
+        price: 40,
+        wholesalePrice: 36,
+        packSize: "100g",
+        image: "Images/dambar_golya.png",
+        description: "Cleaning balls"
+    },
+    {
+        id: 27,
+        name: "Kolin Cleaner",
+        category: "other",
+        mrp: 88,
+        price: 80,
+        wholesalePrice: 81,
         packSize: "500ml",
-        image: "Images/sunny_500ml.png",
-        description: "Dish wash in bottle"
+        image: "Images/kolin.png",
+        description: "Kolin multipurpose cleaner"
     },
     // Toilet Cleaners
     {
-        id: 20,
+        id: 28,
         name: "Toilet Cleaner Harpic",
         category: "toilet",
         mrp: 45,
@@ -227,7 +252,7 @@ const products = [
         description: "Powerful toilet cleaner"
     },
     {
-        id: 21,
+        id: 29,
         name: "Toilet Cleaner Harpic",
         category: "toilet",
         mrp: 88,
@@ -238,7 +263,7 @@ const products = [
         description: "Powerful toilet cleaner"
     },
     {
-        id: 22,
+        id: 30,
         name: "Toilet Cleaner Harpic",
         category: "toilet",
         mrp: 700,
@@ -250,7 +275,7 @@ const products = [
     },
     // Hand Wash Products
     {
-        id: 23,
+        id: 31,
         name: "Hand Wash Rose",
         category: "hand",
         mrp: 105,
@@ -261,7 +286,7 @@ const products = [
         description: "Rose fragrance hand wash"
     },
     {
-        id: 24,
+        id: 32,
         name: "Hand Wash Neem",
         category: "hand",
         mrp: 105,
@@ -272,7 +297,7 @@ const products = [
         description: "Neem antibacterial hand wash"
     },
     {
-        id: 25,
+        id: 33,
         name: "Hand Wash Lemon",
         category: "hand",
         mrp: 105,
@@ -283,7 +308,7 @@ const products = [
         description: "Lemon fresh hand wash"
     },
     {
-        id: 26,
+        id: 34,
         name: "Hand Wash Rose",
         category: "hand",
         mrp: 200,
@@ -294,7 +319,7 @@ const products = [
         description: "Rose fragrance hand wash"
     },
     {
-        id: 27,
+        id: 35,
         name: "Hand Wash Neem",
         category: "hand",
         mrp: 200,
@@ -305,7 +330,7 @@ const products = [
         description: "Neem antibacterial hand wash"
     },
     {
-        id: 28,
+        id: 36,
         name: "Hand Wash Lemon",
         category: "hand",
         mrp: 200,
@@ -316,7 +341,7 @@ const products = [
         description: "Lemon fresh hand wash"
     },
     {
-        id: 29,
+        id: 37,
         name: "Hand Wash",
         category: "hand",
         mrp: 700,
@@ -327,7 +352,7 @@ const products = [
         description: "Economical hand wash"
     },
     {
-        id: 30,
+        id: 38,
         name: "Hand Wash Refill",
         category: "hand",
         mrp: 0,
@@ -337,52 +362,26 @@ const products = [
         image: "Images/Hand_Wash_Products_1.png",
         description: "Hand wash refill pack"
     },
-    // Other Products - Using available images
-    {
-        id: 31,
-        name: "Kolin Cleaner",
-        category: "other",
-        mrp: 88,
-        price: 90,
-        wholesalePrice: 81,
-        packSize: "500ml",
-        image: "Images/Bathroom_Cleaner_500ml.png",
-        description: "Kolin multipurpose cleaner"
-    },
-    {
-        id: 32,
-        name: "Drainx Unblocker",
-        category: "other",
-        mrp: 30,
-        price: 24,
-        wholesalePrice: 22,
-        packSize: "1 Unit",
-        image: "Images/Bathroom_Cleaner_500ml.png",
-        description: "Drain unblocking solution"
-    },
-    {
-        id: 33,
-        name: "Bhaya Powder",
-        category: "other",
-        mrp: 30,
-        price: 24,
-        wholesalePrice: 22,
-        packSize: "200g",
-        image: "Images/sunny_200ml.png",
-        description: "Cleaning powder"
-    },
-    {
-        id: 34,
-        name: "Dambar Golya",
-        category: "other",
-        mrp: 50,
-        price: 40,
-        wholesalePrice: 36,
-        packSize: "100g",
-        image: "Images/sunny_200ml.png",
-        description: "Cleaning balls"
-    }
+    // Bathroom Cleaner
+    // {
+    //     id: 39,
+    //     name: "Bathroom Cleaner",
+    //     category: "bathroom",
+    //     mrp: 0,
+    //     price: 0,
+    //     wholesalePrice: 0,
+    //     packSize: "500ml",
+    //     image: "Images/Bathroom_Cleaner_500ml.png",
+    //     description: "Bathroom cleaner"
+    // }
 ];
+
+// Calculate wholesale prices (10% less than retail)
+products.forEach(product => {
+    if (product.price > 0) {
+        product.wholesalePrice = Math.round(product.price * 0.9);
+    }
+});
 
 // Bulk order products (same products but with different display)
 const bulkProducts = [...products];
@@ -392,7 +391,7 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 const WHOLESALE_THRESHOLD = 7000;
 const WHATSAPP_NUMBER = "919404361842";
 
-// DOM Elements - Wait for DOM to be fully loaded
+// DOM Elements
 let productsContainer, categoryDropdownBtn, categoryDropdownContent, categoryOptions;
 let bulkCategoryFilter, bulkTableBody, floatingCartBtn, floatingCartCount;
 let cartModal, closeCartBtn, cartBody, cartSummary, continueShoppingBtn;
@@ -400,33 +399,17 @@ let checkoutBtn, mobileMenuBtn, navMenu, cartNotification, contactForm;
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
-    console.log("DOM fully loaded, initializing...");
+    console.log("Phynile HomeCare - Loading...");
     
     // Initialize DOM elements
-    productsContainer = document.getElementById('products-container');
-    categoryDropdownBtn = document.getElementById('category-dropdown-btn');
-    categoryDropdownContent = document.getElementById('category-dropdown-content');
-    categoryOptions = document.querySelectorAll('.category-option');
-    bulkCategoryFilter = document.getElementById('bulk-category-filter');
-    bulkTableBody = document.getElementById('bulk-table-body');
-    floatingCartBtn = document.getElementById('floating-cart-btn');
-    floatingCartCount = document.getElementById('floating-cart-count');
-    cartModal = document.getElementById('cart-modal');
-    closeCartBtn = document.getElementById('close-cart');
-    cartBody = document.getElementById('cart-body');
-    cartSummary = document.getElementById('cart-summary');
-    continueShoppingBtn = document.getElementById('continue-shopping');
-    checkoutBtn = document.getElementById('checkout-btn');
-    mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    navMenu = document.querySelector('nav');
-    cartNotification = document.getElementById('cart-notification');
-    contactForm = document.getElementById('contact-form');
+    initializeDOMElements();
     
-    // Check if elements exist
     if (!productsContainer) {
-        console.error("products-container not found!");
+        console.error("ERROR: Main elements not found!");
         return;
     }
+    
+    console.log(`Loaded ${products.length} products`);
     
     // Load products
     renderProducts('all');
@@ -445,40 +428,62 @@ document.addEventListener('DOMContentLoaded', function() {
     setupCategoryLinks();
     
     console.log("Website loaded successfully!");
+    
+    // Test image loading
+    testImageLoading();
 });
 
-// Update Category Options to match new categories
-function updateCategoryOptions() {
-    const categoryDropdownContent = document.getElementById('category-dropdown-content');
-    if (!categoryDropdownContent) return;
+// Initialize DOM Elements
+function initializeDOMElements() {
+    productsContainer = document.getElementById('products-container');
+    categoryDropdownBtn = document.getElementById('category-dropdown-btn');
+    categoryDropdownContent = document.getElementById('category-dropdown-content');
+    categoryOptions = document.querySelectorAll('.category-option');
+    bulkCategoryFilter = document.getElementById('bulk-category-filter');
+    bulkTableBody = document.getElementById('bulk-table-body');
+    floatingCartBtn = document.getElementById('floating-cart-btn');
+    floatingCartCount = document.getElementById('floating-cart-count');
+    cartModal = document.getElementById('cart-modal');
+    closeCartBtn = document.getElementById('close-cart');
+    cartBody = document.getElementById('cart-body');
+    cartSummary = document.getElementById('cart-summary');
+    continueShoppingBtn = document.getElementById('continue-shopping');
+    checkoutBtn = document.getElementById('checkout-btn');
+    mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    navMenu = document.querySelector('nav');
+    cartNotification = document.getElementById('cart-notification');
+    contactForm = document.getElementById('contact-form');
+}
+
+// Test Image Loading
+function testImageLoading() {
+    console.log("Testing image loading...");
+    let loaded = 0;
+    let failed = 0;
     
-    categoryDropdownContent.innerHTML = `
-        <div class="category-option active" data-category="all">All Products</div>
-        <div class="category-option" data-category="phynile">Phynile Air Fresheners</div>
-        <div class="category-option" data-category="sunny">Sunny Products</div>
-        <div class="category-option" data-category="toilet">Toilet Cleaners</div>
-        <div class="category-option" data-category="hand">Hand Wash</div>
-        <div class="category-option" data-category="dish">Dish Wash</div>
-        <div class="category-option" data-category="bathroom">Bathroom Cleaners</div>
-        <div class="category-option" data-category="other">Other Products</div>
-    `;
-    
-    // Reattach event listeners to new options
-    document.querySelectorAll('.category-option').forEach(option => {
-        option.addEventListener('click', handleCategorySelect);
+    products.forEach((product, index) => {
+        const img = new Image();
+        img.onload = function() {
+            loaded++;
+            console.log(`✓ ${product.name}: ${product.image}`);
+        };
+        img.onerror = function() {
+            failed++;
+            console.error(`✗ ${product.name}: ${product.image}`);
+        };
+        img.src = product.image;
     });
+    
+    setTimeout(() => {
+        console.log(`Image loading test: ${loaded} loaded, ${failed} failed`);
+    }, 2000);
 }
 
 // Setup Event Listeners
 function setupEventListeners() {
-    console.log("Setting up event listeners...");
-    
     // Category dropdown
     if (categoryDropdownBtn) {
         categoryDropdownBtn.addEventListener('click', toggleCategoryDropdown);
-        console.log("Category dropdown button event listener added");
-    } else {
-        console.error("categoryDropdownBtn not found!");
     }
     
     // Close category dropdown when clicking outside
@@ -493,24 +498,12 @@ function setupEventListeners() {
     });
     
     // Cart functionality
-    if (floatingCartBtn) {
-        floatingCartBtn.addEventListener('click', openCartModal);
-        console.log("Floating cart button event listener added");
-    }
-    
-    if (closeCartBtn) {
-        closeCartBtn.addEventListener('click', closeCartModal);
-    }
-    
-    if (continueShoppingBtn) {
-        continueShoppingBtn.addEventListener('click', closeCartModal);
-    }
+    if (floatingCartBtn) floatingCartBtn.addEventListener('click', openCartModal);
+    if (closeCartBtn) closeCartBtn.addEventListener('click', closeCartModal);
+    if (continueShoppingBtn) continueShoppingBtn.addEventListener('click', closeCartModal);
     
     // Checkout button (WhatsApp)
-    if (checkoutBtn) {
-        checkoutBtn.addEventListener('click', checkoutWithWhatsApp);
-        console.log("Checkout button event listener added");
-    }
+    if (checkoutBtn) checkoutBtn.addEventListener('click', checkoutWithWhatsApp);
     
     // Contact form submission
     if (contactForm) {
@@ -523,21 +516,14 @@ function setupEventListeners() {
     // Close cart modal when clicking outside
     if (cartModal) {
         cartModal.addEventListener('click', (e) => {
-            if (e.target === cartModal) {
-                closeCartModal();
-            }
+            if (e.target === cartModal) closeCartModal();
         });
     }
-    
-    console.log("Event listeners setup completed");
 }
 
 // Setup Mobile Menu
 function setupMobileMenu() {
-    if (!mobileMenuBtn || !navMenu) {
-        console.log("Mobile menu elements not found");
-        return;
-    }
+    if (!mobileMenuBtn || !navMenu) return;
     
     mobileMenuBtn.addEventListener('click', () => {
         navMenu.classList.toggle('active');
@@ -557,14 +543,10 @@ function setupMobileMenu() {
 
 // Setup Category Links in Footer
 function setupCategoryLinks() {
-    const categoryLinks = document.querySelectorAll('[data-category]');
-    console.log(`Found ${categoryLinks.length} category links`);
-    
-    categoryLinks.forEach(link => {
+    document.querySelectorAll('[data-category]').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const category = this.getAttribute('data-category');
-            console.log(`Category clicked: ${category}`);
             
             // Update dropdown
             updateCategoryDropdown(category);
@@ -599,7 +581,6 @@ function toggleCategoryDropdown() {
 
 function handleCategorySelect(e) {
     const selectedCategory = e.target.getAttribute('data-category');
-    console.log(`Category selected: ${selectedCategory}`);
     
     // Update active state
     document.querySelectorAll('.category-option').forEach(option => {
@@ -610,23 +591,17 @@ function handleCategorySelect(e) {
     // Update dropdown button text
     if (categoryDropdownBtn) {
         const span = categoryDropdownBtn.querySelector('span');
-        if (span) {
-            span.textContent = e.target.textContent;
-        }
+        if (span) span.textContent = e.target.textContent;
     }
     
     // Close dropdown
-    if (categoryDropdownContent) {
-        categoryDropdownContent.classList.remove('active');
-    }
+    if (categoryDropdownContent) categoryDropdownContent.classList.remove('active');
     if (categoryDropdownBtn && categoryDropdownBtn.querySelector('i')) {
         categoryDropdownBtn.querySelector('i').className = 'fas fa-chevron-down';
     }
     
     // Render products for selected category
     renderProducts(selectedCategory);
-    
-    // Render bulk table for selected category
     renderBulkTable(selectedCategory);
 }
 
@@ -637,33 +612,23 @@ function updateCategoryDropdown(category) {
     let categoryText = 'All Products';
     if (category !== 'all') {
         const option = document.querySelector(`.category-option[data-category="${category}"]`);
-        if (option) {
-            categoryText = option.textContent;
-        }
+        if (option) categoryText = option.textContent;
     }
     
     const span = categoryDropdownBtn.querySelector('span');
-    if (span) {
-        span.textContent = categoryText;
-    }
+    if (span) span.textContent = categoryText;
     
     // Update active state
     document.querySelectorAll('.category-option').forEach(option => {
         option.classList.remove('active');
-        if (option.dataset.category === category) {
-            option.classList.add('active');
-        }
+        if (option.dataset.category === category) option.classList.add('active');
     });
 }
 
 // Render Products
 function renderProducts(category) {
-    if (!productsContainer) {
-        console.error("productsContainer not found in renderProducts");
-        return;
-    }
+    if (!productsContainer) return;
     
-    console.log(`Rendering products for category: ${category}`);
     productsContainer.innerHTML = '';
     
     // Filter products by category
@@ -672,14 +637,10 @@ function renderProducts(category) {
         filteredProducts = products.filter(product => product.category === category);
     }
     
-    console.log(`Filtered ${filteredProducts.length} products`);
-    
     // Render each product
     filteredProducts.forEach(product => {
         const productCard = createProductCard(product);
-        if (productCard) {
-            productsContainer.appendChild(productCard);
-        }
+        if (productCard) productsContainer.appendChild(productCard);
     });
 }
 
@@ -730,36 +691,24 @@ function createProductCard(product) {
         </div>
     `;
     
-    // Add event listeners to the card's buttons
+    // Add event listeners
     const minusBtn = card.querySelector('.minus-btn');
     const plusBtn = card.querySelector('.plus-btn');
     const addToCartBtn = card.querySelector('.add-to-cart');
     
-    if (minusBtn) {
-        minusBtn.addEventListener('click', () => updateProductQuantity(product.id, -1));
-    }
-    if (plusBtn) {
-        plusBtn.addEventListener('click', () => updateProductQuantity(product.id, 1));
-    }
-    if (addToCartBtn) {
-        addToCartBtn.addEventListener('click', () => {
-            if (quantity === 0) {
-                updateProductQuantity(product.id, 1);
-            }
-        });
-    }
+    if (minusBtn) minusBtn.addEventListener('click', () => updateProductQuantity(product.id, -1));
+    if (plusBtn) plusBtn.addEventListener('click', () => updateProductQuantity(product.id, 1));
+    if (addToCartBtn) addToCartBtn.addEventListener('click', () => {
+        if (quantity === 0) updateProductQuantity(product.id, 1);
+    });
     
     return card;
 }
 
 // Render Bulk Table
 function renderBulkTable(category) {
-    if (!bulkTableBody) {
-        console.log("bulkTableBody not found");
-        return;
-    }
+    if (!bulkTableBody) return;
     
-    console.log(`Rendering bulk table for category: ${category}`);
     bulkTableBody.innerHTML = '';
     
     // Filter products by category
@@ -768,7 +717,7 @@ function renderBulkTable(category) {
         filteredProducts = bulkProducts.filter(product => product.category === category);
     }
     
-    // Group products by category for the bulk table
+    // Group products by category
     const categories = [...new Set(filteredProducts.map(product => product.category))];
     
     categories.forEach(cat => {
@@ -786,9 +735,7 @@ function renderBulkTable(category) {
         const categoryProducts = filteredProducts.filter(product => product.category === cat);
         categoryProducts.forEach(product => {
             const row = createBulkTableRow(product);
-            if (row) {
-                bulkTableBody.appendChild(row);
-            }
+            if (row) bulkTableBody.appendChild(row);
         });
     });
     
@@ -816,7 +763,7 @@ function createBulkTableRow(product) {
         </td>
     `;
     
-    // Add event listeners to bulk table row
+    // Add event listeners
     const addBtn = row.querySelector('.btn');
     const qtyInput = row.querySelector('.bulk-qty-input');
     
@@ -835,12 +782,9 @@ function createBulkTableRow(product) {
 
 // Update Bulk Category Filter
 function updateBulkCategoryFilter() {
-    if (!bulkCategoryFilter) {
-        console.log("bulkCategoryFilter not found");
-        return;
-    }
+    if (!bulkCategoryFilter) return;
     
-    // Get unique categories from bulk products
+    // Get unique categories
     const categories = ['all', ...new Set(bulkProducts.map(product => product.category))];
     
     bulkCategoryFilter.innerHTML = '';
@@ -851,29 +795,21 @@ function updateBulkCategoryFilter() {
         button.textContent = getCategoryName(cat);
         button.dataset.category = cat;
         
-        if (cat === 'all') {
-            button.classList.add('active');
-        }
+        if (cat === 'all') button.classList.add('active');
         
         button.addEventListener('click', () => {
             // Update active state
-            document.querySelectorAll('.bulk-category-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
+            document.querySelectorAll('.bulk-category-btn').forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
             
-            // Render bulk table for selected category
+            // Render bulk table
             renderBulkTable(cat);
-            
-            // Also update products grid category
             updateCategoryDropdown(cat);
             renderProducts(cat);
             
             // Scroll to bulk section
             const bulkSection = document.getElementById('bulk');
-            if (bulkSection) {
-                bulkSection.scrollIntoView({ behavior: 'smooth' });
-            }
+            if (bulkSection) bulkSection.scrollIntoView({ behavior: 'smooth' });
         });
         
         bulkCategoryFilter.appendChild(button);
@@ -884,7 +820,7 @@ function updateBulkCategoryFilter() {
 function getCategoryName(category) {
     const categoryNames = {
         'all': 'All Products',
-        'phynile': 'Phynile Air Fresheners',
+        'phynile': 'Phynile s',
         'sunny': 'Sunny Products',
         'toilet': 'Toilet Cleaners',
         'hand': 'Hand Wash',
@@ -936,14 +872,10 @@ function updateProductQuantity(productId, change) {
     
     // Re-render products to update quantity displays
     const activeCategory = document.querySelector('.category-option.active');
-    if (activeCategory) {
-        renderProducts(activeCategory.dataset.category);
-    }
+    if (activeCategory) renderProducts(activeCategory.dataset.category);
     
     // Update cart modal if open
-    if (cartModal && cartModal.style.display === 'block') {
-        renderCart();
-    }
+    if (cartModal && cartModal.style.display === 'block') renderCart();
 }
 
 // Update Cart Count
@@ -991,7 +923,6 @@ function renderCart() {
             </div>
             <div class="cart-total">₹0</div>
         `;
-        
         return;
     }
     
@@ -1043,20 +974,12 @@ function renderCart() {
         const plusBtn = item.querySelector('.plus-btn');
         const removeBtn = item.querySelector('.remove-item');
         
-        if (minusBtn) {
-            minusBtn.addEventListener('click', () => updateProductQuantity(productId, -1));
-        }
-        if (plusBtn) {
-            plusBtn.addEventListener('click', () => updateProductQuantity(productId, 1));
-        }
-        if (removeBtn) {
-            removeBtn.addEventListener('click', () => {
-                const cartItem = cart.find(item => item.id === productId);
-                if (cartItem) {
-                    updateProductQuantity(productId, -cartItem.quantity);
-                }
-            });
-        }
+        if (minusBtn) minusBtn.addEventListener('click', () => updateProductQuantity(productId, -1));
+        if (plusBtn) plusBtn.addEventListener('click', () => updateProductQuantity(productId, 1));
+        if (removeBtn) removeBtn.addEventListener('click', () => {
+            const cartItem = cart.find(item => item.id === productId);
+            if (cartItem) updateProductQuantity(productId, -cartItem.quantity);
+        });
     });
     
     // Render cart summary
@@ -1127,7 +1050,7 @@ function generateWhatsAppMessage() {
     message += `📋 *Order Details*\n`;
     message += `Total Items: ${totalItems}\n`;
     message += `Order Value: ₹${total}\n`;
-    message += wholesaleApplied ? `✅ Wholesale rates applied\n\n` : '\n';
+    message += wholesaleApplied ? `✅ Wholesale rates applied (Order > ₹7,000)\n\n` : '\n';
     
     message += `*Items Ordered:*\n`;
     message += `────────────────\n`;
@@ -1203,10 +1126,7 @@ function handleContactSubmit(e) {
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
     
     window.open(whatsappUrl, '_blank');
-    
-    // Reset form
     e.target.reset();
-    
     showCartNotification('Message sent to WhatsApp!');
 }
 
@@ -1243,17 +1163,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.contactWhatsAppBulk = contactWhatsAppBulk;
 window.checkoutWithWhatsApp = checkoutWithWhatsApp;
 window.openDeliveryInfo = openDeliveryInfo;
+window.testImageLoading = testImageLoading;
 
-// Debug function to check image loading
-window.checkImages = function() {
-    products.forEach(product => {
-        const img = new Image();
-        img.onload = function() {
-            console.log(`✓ ${product.image} loaded successfully`);
-        };
-        img.onerror = function() {
-            console.error(`✗ ${product.image} failed to load`);
-        };
-        img.src = product.image;
-    });
-};
+// Update category dropdown on page load
+document.addEventListener('DOMContentLoaded', function() {
+    updateCategoryOptions();
+});
