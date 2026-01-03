@@ -362,23 +362,11 @@ const products = [
         image: "Images/Hand_Wash_Products_1.png",
         description: "Hand wash refill pack"
     },
-    // Bathroom Cleaner
-    // {
-    //     id: 39,
-    //     name: "Bathroom Cleaner",
-    //     category: "bathroom",
-    //     mrp: 0,
-    //     price: 0,
-    //     wholesalePrice: 0,
-    //     packSize: "500ml",
-    //     image: "Images/Bathroom_Cleaner_500ml.png",
-    //     description: "Bathroom cleaner"
-    // }
 ];
 
 // Calculate wholesale prices (10% less than retail)
 products.forEach(product => {
-    if (product.price > 0) {
+    if (product.price > 0 && product.wholesalePrice === undefined) {
         product.wholesalePrice = Math.round(product.price * 0.9);
     }
 });
@@ -426,6 +414,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Setup category filter links
     setupCategoryLinks();
+    
+    // Setup category options
+    setupCategoryOptions();
     
     console.log("Website loaded successfully!");
     
@@ -490,10 +481,7 @@ function setupEventListeners() {
     document.addEventListener('click', (e) => {
         if (categoryDropdownBtn && !categoryDropdownBtn.contains(e.target) && 
             categoryDropdownContent && !categoryDropdownContent.contains(e.target)) {
-            categoryDropdownContent.classList.remove('active');
-            if (categoryDropdownBtn.querySelector('i')) {
-                categoryDropdownBtn.querySelector('i').className = 'fas fa-chevron-down';
-            }
+            closeCategoryDropdown();
         }
     });
     
@@ -566,16 +554,23 @@ function setupCategoryLinks() {
     });
 }
 
+// Setup Category Options
+function setupCategoryOptions() {
+    if (!categoryOptions) return;
+    
+    categoryOptions.forEach(option => {
+        option.addEventListener('click', handleCategorySelect);
+    });
+}
+
 // Category Dropdown Functions
 function toggleCategoryDropdown() {
     if (!categoryDropdownContent) return;
     
-    categoryDropdownContent.classList.toggle('active');
+    const isActive = categoryDropdownContent.classList.toggle('active');
     const icon = categoryDropdownBtn.querySelector('i');
     if (icon) {
-        icon.className = categoryDropdownContent.classList.contains('active') 
-            ? 'fas fa-chevron-up' 
-            : 'fas fa-chevron-down';
+        icon.className = isActive ? 'fas fa-chevron-up' : 'fas fa-chevron-down';
     }
 }
 
@@ -594,15 +589,22 @@ function handleCategorySelect(e) {
         if (span) span.textContent = e.target.textContent;
     }
     
-    // Close dropdown
-    if (categoryDropdownContent) categoryDropdownContent.classList.remove('active');
-    if (categoryDropdownBtn && categoryDropdownBtn.querySelector('i')) {
-        categoryDropdownBtn.querySelector('i').className = 'fas fa-chevron-down';
-    }
+    // Close dropdown with animation
+    closeCategoryDropdown();
     
     // Render products for selected category
     renderProducts(selectedCategory);
     renderBulkTable(selectedCategory);
+}
+
+function closeCategoryDropdown() {
+    if (!categoryDropdownContent || !categoryDropdownBtn) return;
+    
+    categoryDropdownContent.classList.remove('active');
+    const icon = categoryDropdownBtn.querySelector('i');
+    if (icon) {
+        icon.className = 'fas fa-chevron-down';
+    }
 }
 
 function updateCategoryDropdown(category) {
@@ -841,14 +843,19 @@ function updateProductQuantity(productId, change) {
     
     if (cartItemIndex > -1) {
         // Update existing item
+        const oldQuantity = cart[cartItemIndex].quantity;
         cart[cartItemIndex].quantity += change;
         
         // Remove item if quantity is 0 or less
         if (cart[cartItemIndex].quantity <= 0) {
             cart.splice(cartItemIndex, 1);
-            showCartNotification(`${product.name} removed from cart`);
+            showCartNotification(`${product.name} removed from cart`, 'removed');
         } else {
-            showCartNotification(`${product.name} quantity updated to ${cart[cartItemIndex].quantity}`);
+            if (change > 0) {
+                showCartNotification(`${product.name} added to cart`, 'added');
+            } else {
+                showCartNotification(`${product.name} quantity updated to ${cart[cartItemIndex].quantity}`, 'updated');
+            }
         }
     } else if (change > 0) {
         // Add new item
@@ -861,7 +868,7 @@ function updateProductQuantity(productId, change) {
             image: product.image,
             quantity: change
         });
-        showCartNotification(`${product.name} added to cart`);
+        showCartNotification(`${product.name} added to cart`, 'added');
     }
     
     // Update localStorage
@@ -932,31 +939,51 @@ function renderCart() {
     const total = calculateCartTotal();
     const savings = subtotal - total;
     
+    // Calculate MRP savings
+    const mrpTotal = cart.reduce((sum, item) => {
+        const product = products.find(p => p.id === item.id);
+        return sum + (product.mrp * item.quantity);
+    }, 0);
+    const mrpSavings = mrpTotal - subtotal;
+    
     // Render cart items
     let cartItemsHTML = '<div class="cart-items">';
     
-    cart.forEach(item => {
+    cart.forEach((item, index) => {
         const product = products.find(p => p.id === item.id);
         if (!product) return;
         
         const pricePerItem = wholesaleApplied ? product.wholesalePrice : product.price;
         const itemTotal = pricePerItem * item.quantity;
+        const mrpItemTotal = product.mrp * item.quantity;
+        const itemMrpSavings = product.mrp > 0 ? mrpItemTotal - (product.price * item.quantity) : 0;
         
         cartItemsHTML += `
-            <div class="cart-item" data-product-id="${item.id}">
+            <div class="cart-item" data-product-id="${item.id}" style="animation-delay: ${index * 0.05}s">
                 <div class="cart-item-image">
                     <img src="${item.image}" alt="${item.name}" onerror="this.onerror=null; this.src='https://via.placeholder.com/100x100?text=Product'">
                 </div>
                 <div class="cart-item-details">
                     <div class="cart-item-name">${item.name}</div>
-                    <div class="cart-item-price">₹${pricePerItem} each</div>
+                    <div class="cart-item-meta">
+                        <div class="cart-item-price">
+                            <span class="price-now">₹${pricePerItem}</span>
+                            ${product.mrp > 0 ? `<span class="price-mrp">₹${product.mrp}</span>` : ''}
+                        </div>
+                        ${wholesaleApplied && product.wholesalePrice !== product.price ? 
+                            `<div class="wholesale-savings-badge">Wholesale Rate</div>` : ''}
+                    </div>
                     <div class="cart-item-quantity">
                         <button class="quantity-btn minus-btn">-</button>
                         <span>${item.quantity}</span>
                         <button class="quantity-btn plus-btn">+</button>
                     </div>
                 </div>
-                <div class="cart-item-total">₹${itemTotal}</div>
+                <div class="cart-item-total">
+                    <div class="item-total-amount">₹${itemTotal}</div>
+                    ${itemMrpSavings > 0 ? 
+                        `<div class="item-savings">Save ₹${itemMrpSavings}</div>` : ''}
+                </div>
                 <button class="remove-item" title="Remove item">
                     <i class="fas fa-trash"></i>
                 </button>
@@ -982,19 +1009,59 @@ function renderCart() {
         });
     });
     
-    // Render cart summary
+    // Render cart summary with animations
     cartSummary.innerHTML = `
-        <div>
+        <div class="cart-summary-details">
             <h3>Cart Summary</h3>
-            ${savings > 0 ? `<p>You save: ₹${savings}</p>` : ''}
+            ${mrpSavings > 0 ? `
+                <div class="savings-info mrp-savings animated-fade-in">
+                    <i class="fas fa-tag"></i>
+                    <span>Saved from MRP: <strong>₹${mrpSavings}</strong></span>
+                </div>
+            ` : ''}
+            ${savings > 0 ? `
+                <div class="savings-info wholesale-savings animated-fade-in" style="animation-delay: 0.2s">
+                    <i class="fas fa-percentage"></i>
+                    <span>Wholesale Discount: <strong>₹${savings}</strong></span>
+                </div>
+            ` : ''}
             ${wholesaleApplied ? 
-                `<div class="wholesale-applied">
+                `<div class="wholesale-applied animated-bounce">
                     <i class="fas fa-check-circle"></i> Wholesale rates applied!
                 </div>` 
+                : subtotal > 0 && WHOLESALE_THRESHOLD - subtotal > 0 ?
+                `<div class="wholesale-remaining animated-pulse">
+                    <i class="fas fa-bolt"></i>
+                    Add ₹${WHOLESALE_THRESHOLD - subtotal} more for wholesale rates!
+                </div>`
                 : ''}
         </div>
-        <div class="cart-total">₹${total}</div>
+        <div class="cart-total-section">
+            <div class="total-label">Total Amount</div>
+            <div class="cart-total animated-scale">₹${total}</div>
+        </div>
     `;
+    
+    // Trigger animations
+    setTimeout(() => {
+        document.querySelectorAll('.animated-fade-in').forEach(el => {
+            el.classList.add('visible');
+        });
+        document.querySelectorAll('.animated-bounce').forEach(el => {
+            el.classList.add('visible');
+        });
+        document.querySelectorAll('.animated-pulse').forEach(el => {
+            el.classList.add('visible');
+        });
+        document.querySelectorAll('.animated-scale').forEach(el => {
+            el.classList.add('visible');
+        });
+        
+        // Add animation to cart items
+        document.querySelectorAll('.cart-item').forEach(el => {
+            el.classList.add('cart-item-enter');
+        });
+    }, 100);
 }
 
 // Calculate Cart Totals
@@ -1020,13 +1087,24 @@ function calculateCartTotal() {
 }
 
 // Show Cart Notification
-function showCartNotification(message) {
+function showCartNotification(message, type = 'info') {
     if (!cartNotification) return;
     
+    // Set icon based on type
+    let icon = 'fas fa-info-circle';
+    if (type === 'added') icon = 'fas fa-check-circle';
+    if (type === 'removed') icon = 'fas fa-trash-alt';
+    if (type === 'updated') icon = 'fas fa-sync-alt';
+    
     cartNotification.innerHTML = `
-        <i class="fas fa-check-circle"></i>
+        <i class="${icon}"></i>
         <span>${message}</span>
     `;
+    
+    // Set color based on type
+    if (type === 'added') cartNotification.style.backgroundColor = '#4CAF50';
+    if (type === 'removed') cartNotification.style.backgroundColor = '#f44336';
+    if (type === 'updated') cartNotification.style.backgroundColor = '#2196F3';
     
     cartNotification.style.display = 'flex';
     cartNotification.style.animation = 'slideInRight 0.3s ease-out';
@@ -1164,9 +1242,3 @@ window.contactWhatsAppBulk = contactWhatsAppBulk;
 window.checkoutWithWhatsApp = checkoutWithWhatsApp;
 window.openDeliveryInfo = openDeliveryInfo;
 window.testImageLoading = testImageLoading;
-
-// Update category dropdown on page load
-document.addEventListener('DOMContentLoaded', function() {
-    updateCategoryOptions();
-});
-
