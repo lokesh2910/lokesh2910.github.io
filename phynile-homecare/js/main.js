@@ -190,8 +190,19 @@ const products = [
         price: 76,
         wholesalePrice: 68,
         packSize: "1L",
-        image: "Images/sunny_1l_Liquid.png", // Placeholder
+        image: "Images/dish_wash_1l.png", // Placeholder
         description: "Dish wash liquid pouch"
+    },
+        {
+        id: 22,
+        name: "Dish Wash Can",
+        category: "dish",
+        mrp: 300,
+        price: 150,
+        wholesalePrice: 68,
+        packSize: "5L",
+        image: "Images/dish_wash_5l.png", // Placeholder
+        description: "Dish wash liquid Can"
     },
 
     // Other Products
@@ -1242,3 +1253,4 @@ window.contactWhatsAppBulk = contactWhatsAppBulk;
 window.checkoutWithWhatsApp = checkoutWithWhatsApp;
 window.openDeliveryInfo = openDeliveryInfo;
 window.testImageLoading = testImageLoading;
+
